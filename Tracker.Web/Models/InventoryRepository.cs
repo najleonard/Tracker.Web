@@ -28,7 +28,7 @@ namespace Tracker.Web.Models
             {
                 var inventory = from s in db.LLInventoryViews
                   select s;
-                inventory = inventory.OrderByAscending(s => s.Type);
+                inventory = inventory.OrderBy(s => s.Type);
                 retvalue = inventory.ToList();
             }
             return retvalue;
