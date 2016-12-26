@@ -29,6 +29,6 @@ namespace Tracker.Web.Models
         public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<Tracking> Trackings { get; set; }
         public virtual DbSet<InventoryView> InventoryViews { get; set; }
-        public virtual DbSet<LLInventoryView> LLInventoryViews { get; set; }
+      //  public virtual DbSet<LLInventoryView> LLInventoryViews { get; set; }
     }
 }
