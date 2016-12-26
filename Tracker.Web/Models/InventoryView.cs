@@ -31,4 +31,3 @@ namespace Tracker.Web.Models
         public string Extras { get; set; }
     }
 }
-}
