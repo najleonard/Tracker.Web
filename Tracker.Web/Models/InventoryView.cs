@@ -20,7 +20,7 @@ namespace Tracker.Web.Models
         public string Location { get; set; }
     }
 
-    public partial class InventoryView
+    public partial class LLInventoryView
     {
         public int InventoryId { get; set; }
         public string Product_name { get; set; }
