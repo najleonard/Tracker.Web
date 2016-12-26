@@ -27,7 +27,7 @@ namespace Tracker.Web.Models
             using(var db = new trackerwebdbEntities())
             {
                 retvalue = db.LLInventoryViews;
-                retvalue2 = retvalue.ToList()
+                retvalue2 = retvalue.ToList();
             }
             return retvalue2;
         }
