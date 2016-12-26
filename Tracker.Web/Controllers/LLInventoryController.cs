@@ -10,12 +10,12 @@ namespace Tracker.Web.Controllers
     public class LLInventoryController : Controller
     {
         // GET: Inventory
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
             LLInventoryRepository repo = new LLInventoryRepository();
             var model = repo.GetCurrentLLInventory();
             return View(model);
-            //return "hello world";
+            
         }
     }
 }
