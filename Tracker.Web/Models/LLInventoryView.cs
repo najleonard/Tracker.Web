@@ -12,11 +12,14 @@ namespace Tracker.Web.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class InventoryView
+    public partial class LLInventoryView
     {
-        public int TagId { get; set; }
-        public string TagFriendlyName { get; set; }
-        public Nullable<System.DateTime> Reading { get; set; }
-        public string Location { get; set; }
+        public int InventoryId { get; set; }
+        public string Product_name { get; set; }
+        public string Product_sku { get; set; }
+        public string Type { get; set; }
+        public Nullable<int> Size { get; set; }
+        public string Color { get; set; }
+        public string Extras { get; set; }
     }
 }

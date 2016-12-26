@@ -47,6 +47,20 @@ warning 6002: The table/view 'trackerwebdb.dbo.InventoryView' does not have a pr
           <Property Name="Reading" Type="datetime" />
           <Property Name="Location" Type="varchar" MaxLength="255" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'trackerwebdb.dbo.LLInventoryView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="LLInventoryView">
+          <Key>
+            <PropertyRef Name="InventoryId" />
+          </Key>
+          <Property Name="InventoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Product_name" Type="varchar" MaxLength="20" />
+          <Property Name="Product_sku" Type="varchar" MaxLength="20" />
+          <Property Name="Type" Type="varchar" MaxLength="20" />
+          <Property Name="Size" Type="int" />
+          <Property Name="Color" Type="varchar" MaxLength="20" />
+          <Property Name="Extras" Type="varchar" MaxLength="20" />
+        </EntityType>
         <Association Name="FK_Tracking_Monitor">
           <End Role="Monitor" Type="Self.Monitor" Multiplicity="0..1" />
           <End Role="Tracking" Type="Self.Tracking" Multiplicity="*" />
@@ -82,6 +96,17 @@ warning 6002: The table/view 'trackerwebdb.dbo.InventoryView' does not have a pr
     [InventoryView].[Reading] AS [Reading], 
     [InventoryView].[Location] AS [Location]
     FROM [dbo].[InventoryView] AS [InventoryView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="LLInventoryView" EntityType="Self.LLInventoryView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [LLInventoryView].[InventoryId] AS [InventoryId], 
+    [LLInventoryView].[Product_name] AS [Product_name], 
+    [LLInventoryView].[Product_sku] AS [Product_sku], 
+    [LLInventoryView].[Type] AS [Type], 
+    [LLInventoryView].[Size] AS [Size], 
+    [LLInventoryView].[Color] AS [Color], 
+    [LLInventoryView].[Extras] AS [Extras]
+    FROM [dbo].[LLInventoryView] AS [LLInventoryView]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_Tracking_Monitor" Association="Self.FK_Tracking_Monitor">
             <End Role="Monitor" EntitySet="Monitor" />
@@ -168,6 +193,7 @@ warning 6002: The table/view 'trackerwebdb.dbo.InventoryView' does not have a pr
             <End Role="Tracking" EntitySet="Trackings" />
           </AssociationSet>
           <EntitySet Name="InventoryViews" EntityType="trackerwebdbModel.InventoryView" />
+          <EntitySet Name="LLInventoryViews" EntityType="trackerwebdbModel.LLInventoryView" />
         </EntityContainer>
         <EntityType Name="InventoryView">
           <Key>
@@ -177,6 +203,18 @@ warning 6002: The table/view 'trackerwebdb.dbo.InventoryView' does not have a pr
           <Property Name="TagFriendlyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Reading" Type="DateTime" Precision="3" />
           <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LLInventoryView">
+          <Key>
+            <PropertyRef Name="InventoryId" />
+          </Key>
+          <Property Name="InventoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Product_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Product_sku" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Size" Type="Int32" />
+          <Property Name="Color" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Extras" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -225,6 +263,19 @@ warning 6002: The table/view 'trackerwebdb.dbo.InventoryView' does not have a pr
                 <ScalarProperty Name="Reading" ColumnName="Reading" />
                 <ScalarProperty Name="TagFriendlyName" ColumnName="TagFriendlyName" />
                 <ScalarProperty Name="TagId" ColumnName="TagId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LLInventoryViews">
+            <EntityTypeMapping TypeName="trackerwebdbModel.LLInventoryView">
+              <MappingFragment StoreEntitySet="LLInventoryView">
+                <ScalarProperty Name="Extras" ColumnName="Extras" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Product_sku" ColumnName="Product_sku" />
+                <ScalarProperty Name="Product_name" ColumnName="Product_name" />
+                <ScalarProperty Name="InventoryId" ColumnName="InventoryId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
