@@ -26,10 +26,12 @@ namespace Tracker.Web.Models
             List<LLInventoryView> retvalue = null;
             using(var db = new trackerwebdbEntities())
             {
-                retvalue = db.LLInventoryViews;
-                retvalue2 = retvalue.ToList();
+                var inventory = from s in db.LLInventoryViews
+                  select s;
+                inventory = inventory.OrderByDescending(s => s.Type);
+                retvalue = inventory.ToList();
             }
-            return retvalue2;
+            return retvalue;
         }
     }
 }
