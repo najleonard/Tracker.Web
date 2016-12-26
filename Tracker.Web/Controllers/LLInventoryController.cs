@@ -14,7 +14,8 @@ namespace Tracker.Web.Controllers
         {
            LLInventoryRepository repo = new LLInventoryRepository();
             var model = repo.GetCurrentLLInventory();
-            return View(model);
+            //return View(model);
+            return "hello2";
         }
     }
 }
