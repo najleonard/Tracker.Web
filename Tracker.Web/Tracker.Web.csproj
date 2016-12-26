@@ -153,7 +153,6 @@
     </Compile>
     <Compile Include="Models\InventoryRepository.cs" />
     <Compile Include="Models\InventoryView.cs">
-    <Compile Include="Models\LLInventoryView.cs">
       <DependentUpon>TrackerWebDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Monitor.cs">

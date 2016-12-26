@@ -19,4 +19,16 @@ namespace Tracker.Web.Models
         public Nullable<System.DateTime> Reading { get; set; }
         public string Location { get; set; }
     }
+
+    public partial class LLInventoryView
+    {
+        public int InventoryId { get; set; }
+        public string Product_name { get; set; }
+        public string Product_sku { get; set; }
+        public string Type { get; set; }
+        public int Size { get; set; }
+        public string Color { get; set; }
+        public string Extras { get; set; }
+    }
+}
 }
