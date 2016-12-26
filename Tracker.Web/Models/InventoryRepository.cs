@@ -29,12 +29,13 @@ namespace Tracker.Web.Models
                 var inventory = from s in db.LLInventoryViews
                   select s;
                 inventory = inventory.OrderBy(s => s.Type);
+                
+                string searchString = "Dress";
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    inventory = inventory.Where(s => s.Contains(searchString));
+                }
                 retvalue = inventory.ToList();
-            }
-            string searchString = "Dress";
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                inventory = inventory.Where(s => s.Contains(searchString));
             }
             return retvalue;
         }
