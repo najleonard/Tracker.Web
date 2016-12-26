@@ -1,10 +1,21 @@
 @model IEnumerable<Tracker.Web.Models.LLInventoryView>
 
+ <head>
+   <title>Small Bakery Products</title>
+   <style>
+       table, th, td {
+         border: solid 1px #bbbbbb;
+         border-collapse: collapse;
+         padding: 2px;
+       }
+    </style>
+ </head>
+ 
 @{
-    ViewBag.Title = "Tag Inventory";
+    ViewBag.Title = "All Inventory";
 }
 
-<h2>Tag Inventory</h2>
+<h2>All Inventory</h2>
 
 
 <table class="table">
