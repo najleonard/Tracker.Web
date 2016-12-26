@@ -7,7 +7,7 @@ using Tracker.Web.Models;
 
 namespace Tracker.Web.Controllers
 {
-    public class InventoryController : Controller
+    public class LLInventoryController : Controller
     {
         // GET: Inventory
         public ActionResult Index()
