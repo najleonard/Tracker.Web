@@ -31,6 +31,11 @@ namespace Tracker.Web.Models
                 inventory = inventory.OrderBy(s => s.Type);
                 retvalue = inventory.ToList();
             }
+            string searchString = "Dress";
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                inventory = inventory.Where(s => s.Contains(searchString));
+            }
             return retvalue;
         }
     }
