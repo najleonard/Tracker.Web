@@ -140,6 +140,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
+    <Compile Include="Controllers\LLInventoryController.cs" />
     <Compile Include="Controllers\TrackerReadingController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -152,6 +153,7 @@
     </Compile>
     <Compile Include="Models\InventoryRepository.cs" />
     <Compile Include="Models\InventoryView.cs">
+    <Compile Include="Models\LLInventoryView.cs">
       <DependentUpon>TrackerWebDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Monitor.cs">
