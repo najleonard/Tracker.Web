@@ -13,7 +13,7 @@ namespace Tracker.Web.Controllers
         public ActionResult Index(string sortOrder)
         {
             LLInventoryRepository repo = new LLInventoryRepository();
-            var model = repo.GetCurrentLLInventory();
+            var model = repo.GetCurrentLLInventory(sortOrder);
             return View(model);
             
         }
