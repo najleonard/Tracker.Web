@@ -58,7 +58,7 @@ namespace Tracker.Web.Models
                                 t = new Tracking();
                                 t.MonitorId = monitor.Id;
                                 t.TagId = tag.Id;
-                                t.Reading = model.Reading;
+                                t.Reading = model.Reading.ToLocalTime();
                                 db.Trackings.Add(t);
                             }
                         }
@@ -68,7 +68,7 @@ namespace Tracker.Web.Models
                             t = new Tracking();
                             t.MonitorId = monitor.Id;
                             t.TagId = tag.Id;
-                            t.Reading = model.Reading;
+                            t.Reading = model.Reading.ToLocalTime();
                             db.Trackings.Add(t);
                         }
                         affectedRows = db.SaveChanges();
