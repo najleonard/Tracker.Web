@@ -33,7 +33,7 @@ namespace Tracker.Web.Models
                 string searchString = "Dress";
                 if (!String.IsNullOrEmpty(searchString))
                 {
-                    inventory = inventory.Where(s => s.Contains(searchString));
+                    inventory = inventory.Where(s => s.Type.Contains(searchString));
                 }
                 retvalue = inventory.ToList();
             }
