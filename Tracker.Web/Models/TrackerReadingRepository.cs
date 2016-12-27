@@ -30,7 +30,7 @@ namespace Tracker.Web.Models
                 if (monitor != null)
                 {
                     //update last ping
-                    monitor.LastPing = model.Reading;
+                    monitor.LastPing = model.Reading.ToLocalTime();
 
                     //look up tag
                     Tag tag = db.Tags.Where(x => x.TagId == model.TagId).FirstOrDefault();
@@ -46,7 +46,7 @@ namespace Tracker.Web.Models
                             if(mostRecent.MonitorId == monitor.Id)
                             {
                                 //just update reading
-                                mostRecent.Reading = model.Reading;
+                                mostRecent.Reading = model.Reading.ToLocalTime();
                             }
                             else
                             {
