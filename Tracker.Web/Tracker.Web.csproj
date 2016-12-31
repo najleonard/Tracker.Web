@@ -163,6 +163,7 @@
     </Compile>
     <Compile Include="Models\MonitorRepository.cs" />
     <Compile Include="Models\Tag.cs">
+    <Compile Include="Models\*.cs" />
       <DependentUpon>TrackerWebDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TagRepository.cs" />
