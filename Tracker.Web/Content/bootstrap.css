@@ -180,7 +180,6 @@ optgroup {
   font-weight: bold;
 }
 table {
-  font-size:4px;
   border-spacing: 0;
   border-collapse: collapse;
 }
@@ -252,9 +251,7 @@ th {
   .table {
     border-collapse: collapse !important;
   }
-  .table td {
-    font-size: 3pt;
-  }
+  .table td,
   .table th {
     background-color: #fff !important;
   }
@@ -1080,13 +1077,13 @@ th {
           box-sizing: border-box;
 }
 html {
-  font-size: 10px;
+  font-size: 3px;
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 10px;
+  font-size: 14px;
   line-height: 1.42857143;
   color: #333;
   background-color: #fff;
@@ -2275,8 +2272,8 @@ th {
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-  padding: 2px;
-  line-height: 1; 
+  padding: 8px;
+  line-height: 1.42857143;
   vertical-align: top;
   border-top: 1px solid #ddd;
 }
