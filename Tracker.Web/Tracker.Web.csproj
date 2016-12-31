@@ -170,7 +170,7 @@
     <Compile Include="Models\Client.cs">
       <DependentUpon>TrackerWebDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\LLInventoryView.cs">
+    <Compile Include="Models\LLInventoryVi*.cs">
       <DependentUpon>TrackerWebDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Monitor.cs">
