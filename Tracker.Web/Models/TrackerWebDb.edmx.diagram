@@ -12,6 +12,16 @@
         <AssociationConnector Association="trackerwebdbModel.FK_Tracking_Tag" ManuallyRouted="false" />
         <EntityTypeShape EntityType="trackerwebdbModel.InventoryView" Width="1.5" PointX="3.375" PointY="4.75" />
         <EntityTypeShape EntityType="trackerwebdbModel.LLInventoryView" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="trackerwebdbModel.Client" Width="1.5" PointX="5.75" PointY="5.5" />
+        <EntityTypeShape EntityType="trackerwebdbModel.Inventory" Width="1.5" PointX="8" PointY="9" />
+        <EntityTypeShape EntityType="trackerwebdbModel.ItemOrder" Width="1.5" PointX="10.25" PointY="5.375" />
+        <EntityTypeShape EntityType="trackerwebdbModel.Order" Width="1.5" PointX="8" PointY="5" />
+        <EntityTypeShape EntityType="trackerwebdbModel.Product" Width="1.5" PointX="5.75" PointY="9.25" />
+        <EntityTypeShape EntityType="trackerwebdbModel.LLInventoryView2" Width="1.5" PointX="0.75" PointY="6.75" />
+        <AssociationConnector Association="trackerwebdbModel.FK__Order__ClientId__151B244E" />
+        <AssociationConnector Association="trackerwebdbModel.FK__Inventory__Produ__14270015" />
+        <AssociationConnector Association="trackerwebdbModel.FK__ItemOrder__Inven__17036CC0" />
+        <AssociationConnector Association="trackerwebdbModel.FK__ItemOrder__Order__160F4887" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
