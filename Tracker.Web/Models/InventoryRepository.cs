@@ -30,7 +30,7 @@ namespace Tracker.Web.Models
                   select s;
                 inventory = inventory.OrderBy(s => s.Type);
                 
-                string searchString = "Dress";
+                string searchString = "";
                 if (!String.IsNullOrEmpty(searchString))
                 {
                     inventory = inventory.Where(s => s.Type.Contains(searchString));
