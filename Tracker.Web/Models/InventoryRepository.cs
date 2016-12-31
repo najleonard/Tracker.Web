@@ -21,12 +21,21 @@ namespace Tracker.Web.Models
 
     public class LLInventoryRepository
     {
-        public List<LLInventoryView> GetCurrentLLInventory()
+        public List<LLInventoryView> GetCurrentLLInventory(string sortOrder)
         {
             List<LLInventoryView> retvalue = null;
             using(var db = new trackerwebdbEntities())
             {
-                retvalue = db.LLInventoryViews.ToList();
+                var inventory = from s in db.LLInventoryViews
+                  select s;
+                inventory = inventory.OrderBy(s => s.Type);
+                
+                string searchString = "Dress";
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    inventory = inventory.Where(s => s.Type.Contains(searchString));
+                }
+                retvalue = inventory.ToList();
             }
             return retvalue;
         }
