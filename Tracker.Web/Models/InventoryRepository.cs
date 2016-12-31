@@ -26,7 +26,8 @@ namespace Tracker.Web.Models
             List<LLInventoryView> retvalue = null;
             using(var db = new trackerwebdbEntities())
             {
-                var inventory = from s in db.LLInventoryViews
+                  retvalue = db.LLInventoryViews.ToList();
+                /*var inventory = from s in db.LLInventoryViews
                   select s;
                 inventory = inventory.OrderBy(s => s.Type);
                 
@@ -35,7 +36,7 @@ namespace Tracker.Web.Models
                 {
                     inventory = inventory.Where(s => s.Type.Contains(searchString));
                 }
-                retvalue = inventory.ToList();
+                retvalue = inventory.ToList();*/
             }
             return retvalue;
         }
