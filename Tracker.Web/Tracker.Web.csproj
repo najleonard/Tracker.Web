@@ -180,9 +180,6 @@
     <Compile Include="Models\Tag.cs">
       <DependentUpon>TrackerWebDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\*.cs">
-      <DependentUpon>TrackerWebDb.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\TagRepository.cs" />
     <Compile Include="Models\TrackerReadingModel.cs" />
     <Compile Include="Models\TrackerReadingRepository.cs" />
