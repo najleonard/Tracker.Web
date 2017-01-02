@@ -18,8 +18,8 @@
     <script type="text/javascript" charset="utf8">
         var jquery = jQuery.noConflict();
         jquery(document).ready(function () {
-        jquery('#toah').dataTable();
-        jquery('#example').dataTable( {
+        $('#toah').dataTable();
+        $('#example').dataTable( {
             "processing": true,
             "ajax": {
             "url": "/TOAH/table",
@@ -36,12 +36,7 @@
             { "data": "Inventory3" },
             { "data": "Inventory4" }
         ]
-        });
-        jquery('#example').on( 'click', 'tbody td:not(:first-child)', function (e) {
-        editor.inline( this );
-    } );
- 
-   
+        }); 
     });
     
 </script>
