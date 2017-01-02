@@ -28,14 +28,6 @@ namespace Tracker.Web.Controllers
             {
                 var response = new Editor(db, "ItemOrder")
                     .Model<ItemOrder>()
-                    .Field(new Field("start_date")
-                        .Validator(Validation.DateFormat(
-                            Format.DATE_ISO_8601,
-                            new ValidationOpts { Message = "Please enter a date in the format yyyy-mm-dd" }
-                        ))
-                        .GetFormatter(Format.DateSqlToFormat(Format.DATE_ISO_8601))
-                        .SetFormatter(Format.DateFormatToSql(Format.DATE_ISO_8601))
-                    )
                     .Process(formData)
                     .Data();
     
