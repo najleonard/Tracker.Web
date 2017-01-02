@@ -10,12 +10,12 @@ namespace Tracker.Web.Controllers
     public class TOAHController : Controller
     {
         // GET: Inventory
-        public string Index()
+        public String Index()
         {
-            return "hello world";
-            LLInventoryRepository3 repo = new LLInventoryRepository3();
-            var model = repo.GetCurrentLLInventory();
-            return View(model);
+            return "hello wrold";
+            //LLInventoryRepository3 repo = new LLInventoryRepository3();
+            //var model = repo.GetCurrentLLInventory();
+            //return View(model);
         }
     }
 }
