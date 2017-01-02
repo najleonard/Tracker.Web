@@ -19,22 +19,30 @@ namespace Tracker.Web.Controllers
     //         return View(model);
     //     }
     // }
-    public class TOAHController : ApiController
-   {
-        [HttpGet, HttpPost, Route("api/upload")]
-        public IHttpActionResult Index()
+    [AcceptVerbs(HttpVerbs.Get|HttpVerbs.Post)]
+    public class TOAHController : Controller
+    {
+        public ActionResult Table()
         {
-            var request = HttpContext.Current.Request;
             var settings = Properties.Settings.Default;
-
+            var formData = HttpContext.Request.Form;
+    
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
-                DtResponse response = new Editor(db,"ItemOrder")
-                    .Model<ItemOrder>()
-                    .Process(request)
+                var response = new Editor(db, "staff")
+                    .Model<StaffModel>()
+                    .Field(new Field("start_date")
+                        .Validator(Validation.DateFormat(
+                            Format.DATE_ISO_8601,
+                            new ValidationOpts { Message = "Please enter a date in the format yyyy-mm-dd" }
+                        ))
+                        .GetFormatter(Format.DateSqlToFormat(Format.DATE_ISO_8601))
+                        .SetFormatter(Format.DateFormatToSql(Format.DATE_ISO_8601))
+                    )
+                    .Process(formData)
                     .Data();
- 
-                return Json(response);
+    
+                return Json(response, JsonRequestBehavior.AllowGet);
             }
         }
     }
