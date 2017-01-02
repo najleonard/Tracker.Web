@@ -27,16 +27,19 @@ namespace Tracker.Web.Models
             using(var db = new trackerwebdbEntities())
             {
                   retvalue = db.LLInventoryView2.ToList();
-                /*var inventory = from s in db.LLInventoryViews
-                  select s;
-                inventory = inventory.OrderBy(s => s.Type);
-                
-                string searchString = "";
-                if (!String.IsNullOrEmpty(searchString))
-                {
-                    inventory = inventory.Where(s => s.Type.Contains(searchString));
-                }
-                retvalue = inventory.ToList();*/
+            }
+            return retvalue;
+        }
+    }
+
+    public class LLInventoryRepository3
+    {
+        public List<LLInventoryView3> GetCurrentLLInventory(string sortOrder)
+        {
+            List<LLInventoryView3> retvalue = null;
+            using(var db = new trackerwebdbEntities())
+            {
+                  retvalue = db.LLInventoryView3.ToList();
             }
             return retvalue;
         }
