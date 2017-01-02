@@ -17,23 +17,6 @@ namespace Tracker.Web.Controllers
             var model = repo.GetTOAHList();
             return View(model);
         }
-    
-       // [AcceptVerbs(HttpVerbs.Get|HttpVerbs.Post)]
-        public ActionResult Table()
-        {
-            var settings = Properties.Settings.Default;
-            var formData = HttpContext.Request.Form;
-    
-            using (var db = new Database(settings.DbType, settings.DbConnection))
-            {
-                var response = new Editor(db, "ItemOrder")
-                    .Model<ItemOrder>()
-                    .Process(formData)
-                    .Data();
-    
-                return Json(response, JsonRequestBehavior.AllowGet);
-            }
-        }
     }
     
 }
