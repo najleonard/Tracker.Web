@@ -49,7 +49,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="DataTables">
-      <HintPath>..\..\Editor-NET-1.6.1\DataTables.dll</HintPath>
+      <HintPath>DataTables.dll</HintPath>
     </Reference>
     <Reference Include="DataTables.AspNet.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DataTables.AspNet.Core.2.0.0\lib\net45\DataTables.AspNet.Core.dll</HintPath>
