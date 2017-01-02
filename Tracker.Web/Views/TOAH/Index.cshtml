@@ -37,38 +37,11 @@
             { "data": "Inventory4" }
         ]
         });
-        $('#example').on( 'click', 'tbody td:not(:first-child)', function (e) {
+        jquery('#example').on( 'click', 'tbody td:not(:first-child)', function (e) {
         editor.inline( this );
     } );
  
-    $('#example').DataTable( {
-        dom: "Bfrtip",
-        ajax: "../php/staff.php",
-        order: [[ 1, 'asc' ]],
-        columns: [
-            {
-                data: null,
-                defaultContent: '',
-                className: 'select-checkbox',
-                orderable: false
-            },
-            { data: "first_name" },
-            { data: "last_name" },
-            { data: "position" },
-            { data: "office" },
-            { data: "start_date" },
-            { data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
-        ],
-        select: {
-            style:    'os',
-            selector: 'td:first-child'
-        },
-        buttons: [
-            { extend: "create", editor: editor },
-            { extend: "edit",   editor: editor },
-            { extend: "remove", editor: editor }
-        ]
-    } );
+   
     });
     
 </script>
