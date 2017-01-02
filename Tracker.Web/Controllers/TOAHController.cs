@@ -26,9 +26,9 @@ namespace Tracker.Web.Controllers
     
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
-                var response = new Editor(db, "Order")
-                    .Model<Order>()
-                    .Field(new Field("Date")
+                var response = new Editor(db, "LLInventoryView3")
+                    .Model<LLInventoryView3>()
+                    .Field(new Field("OrderDate")
                         .Validator(Validation.DateFormat(
                             Format.DATE_ISO_8601,
                             new ValidationOpts { Message = "Please enter a date in the format yyyy-mm-dd" }
