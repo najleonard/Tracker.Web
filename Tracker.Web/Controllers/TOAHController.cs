@@ -26,7 +26,7 @@ namespace Tracker.Web.Controllers
     
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
-                var response = new Editor(db, "LLInventoryView3", pkey="OrderId")
+                var response = new Editor(db, "LLInventoryView3", new []{"OrderId"})
                     .Model<LLInventoryView3>()
                     .Field(new Field("OrderDate")
                         .Validator(Validation.DateFormat(
