@@ -22,16 +22,15 @@ namespace Tracker.Web.Controllers
     public class TOAHController : ApiController
    {
         [HttpGet, HttpPost, Route("api/upload")]
-        public String Index()
+        public IHttpActionResult Index()
         {
             var request = HttpContext.Current.Request;
             var settings = Properties.Settings.Default;
 
-            return "hi there";
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
-                var response = new Editor(db, "users")
-                    .Model<UploadModel>()
+                var response = new Editor(db, "ItemOrder")
+                    .Model<ItemOrder>()
                     .Field(new Field("image")
                         .SetFormatter(Format.IfEmpty(null))
                         .Upload(new Upload(request.PhysicalApplicationPath + @"uploads\__ID____EXTN__")
