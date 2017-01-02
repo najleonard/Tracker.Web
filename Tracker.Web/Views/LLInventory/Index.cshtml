@@ -78,11 +78,26 @@
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.js">
 </script>
 
-<script type="text/javascript" charset="utf8">
-        var jquery = jQuery.noConflict();
-      jquery(document).ready(function () {
-      jquery('#neil').dataTable({
-           "iDisplayLength": 140
-      });
-});
-</script>
+  <script type="text/javascript">
+        $(document).ready(function () {
+            var serviceURL = '/TOAH/table';
+
+            $.ajax({
+                type: "POST",
+                url: serviceURL,
+                data: param = "",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: successFunc,
+                error: errorFunc
+            });
+
+            function successFunc(data, status) {     
+                alert(data);
+            }
+
+            function errorFunc() {
+                alert('error');
+            }
+        });
+    </script>
