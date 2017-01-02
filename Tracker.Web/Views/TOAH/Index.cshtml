@@ -20,6 +20,12 @@
         jquery(document).ready(function () {
         jquery('#toah').dataTable().makeEditable();
     });
+    $('#example').DataTable({
+    "serverSide": true,
+    "deferLoading": 10,
+    "processing": true,
+    "ajax": "/TOAH/table"
+});
 </script>
 </head>    
 <h2>LL Inventory</h2>
@@ -89,5 +95,6 @@
     </tr>
 }
 </tbody>
+
 
 </table>
