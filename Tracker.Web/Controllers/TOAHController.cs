@@ -26,8 +26,8 @@ namespace Tracker.Web.Controllers
  
         using (var db = new Database(settings.DbType, settings.DbConnection))
         {
-            var response = new Editor(db, "staff")
-                .Model<StaffModel>()
+            var response = new Editor(db, "ItemOrder")
+                .Model<ItemOrder>()
                 .Field(new Field("start_date")
                     .Validator(Validation.DateFormat(
                         Format.DATE_ISO_8601,
