@@ -8,6 +8,7 @@ using DataTables;
 
 namespace Tracker.Web.Controllers
 {
+    [AcceptVerbs(HttpVerbs.Get|HttpVerbs.Post)]
     public class TOAHController : Controller
     {
         // GET: Inventory
@@ -17,6 +18,29 @@ namespace Tracker.Web.Controllers
             var model = repo.GetTOAHList();
             return View(model);
         }
-    }
     
+        public ActionResult Table()
+        {
+            var settings = Properties.Settings.Default;
+            var formData = HttpContext.Request.Form;
+    
+            using (var db = new Database(settings.DbType, settings.DbConnection))
+            {
+                var response = new Editor(db, "Order")
+                    .Model<StaffModel>()
+                    .Field(new Field("Date")
+                        .Validator(Validation.DateFormat(
+                            Format.DATE_ISO_8601,
+                            new ValidationOpts { Message = "Please enter a date in the format yyyy-mm-dd" }
+                        ))
+                        .GetFormatter(Format.DateSqlToFormat(Format.DATE_ISO_8601))
+                        .SetFormatter(Format.DateFormatToSql(Format.DATE_ISO_8601))
+                    )
+                    .Process(formData)
+                    .Data();
+    
+                return Json(response, JsonRequestBehavior.AllowGet);
+            }
+        }
+    }    
 }
