@@ -3,7 +3,25 @@
 @{
     ViewBag.Title = "All Inventory";
 }
-    
+
+<head>
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.5/css/jquery.dataTables.css">
+
+    <!-- jQuery -->
+    <script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <!-- DataTables -->
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.js">
+    </script>
+
+    <script type="text/javascript" charset="utf8">
+        var jquery = jQuery.noConflict();
+        jquery(document).ready(function () {
+        jquery('#toah').dataTable();
+    });
+</script>
+</head>    
 <h2>LL Inventory</h2>
 
 <table id="toah" class="table table-condensed table-hover table-striped">
@@ -73,20 +91,3 @@
 </tbody>
 
 </table>
-
-<!-- DataTables CSS -->
-<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.5/css/jquery.dataTables.css">
-
-<!-- jQuery -->
-<script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-
-<!-- DataTables -->
-<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.js">
-</script>
-
-<script type="text/javascript" charset="utf8">
-        var jquery = jQuery.noConflict();
-      jquery(document).ready(function () {
-      jquery('#toah').dataTable();
-});
-</script>
