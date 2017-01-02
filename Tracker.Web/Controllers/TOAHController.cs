@@ -31,7 +31,7 @@ namespace Tracker.Web.Controllers
                     .Process(formData)
                     .Data();
     
-                return Json(response, JsonRequestBehavior.AllowGet);
+                return Json(response);
             }
         }
     }
