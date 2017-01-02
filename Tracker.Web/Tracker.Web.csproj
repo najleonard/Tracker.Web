@@ -188,6 +188,9 @@
     <Compile Include="Models\LLInventoryView2.cs">
       <DependentUpon>TrackerWebDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LLInventoryView3.cs">
+      <DependentUpon>TrackerWebDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Monitor.cs">
       <DependentUpon>TrackerWebDb.tt</DependentUpon>
     </Compile>
