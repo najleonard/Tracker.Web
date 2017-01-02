@@ -54,6 +54,10 @@
           <Property Name="ShippedDate" Type="date" />
           <Property Name="RequestItems" Type="varchar" MaxLength="200" />
           <Property Name="RequestDate" Type="varchar" MaxLength="50" />
+          <Property Name="InventoryItem1" Type="int" />
+          <Property Name="InventoryItem2" Type="int" />
+          <Property Name="InventoryItem3" Type="int" />
+          <Property Name="InventoryItem4" Type="int" />
         </EntityType>
         <EntityType Name="Products">
           <Key>
@@ -120,6 +124,10 @@ warning 6002: The table/view 'trackerwebdb.dbo.LLInventoryView2' does not have a
           <Property Name="SKU" Type="varchar" MaxLength="10" />
           <Property Name="Name" Type="varchar" MaxLength="50" />
           <Property Name="Type" Type="varchar" MaxLength="20" />
+          <Property Name="Size" Type="int" />
+          <Property Name="Color" Type="varchar" MaxLength="20" />
+          <Property Name="Extras" Type="varchar" MaxLength="50" />
+          <Property Name="Location" Type="varchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK__Inventory__Produ__14270015">
           <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
@@ -166,6 +174,54 @@ warning 6002: The table/view 'trackerwebdb.dbo.LLInventoryView2' does not have a
             </Principal>
             <Dependent Role="Order">
               <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__Inventory__208CD6FA">
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="InventoryItem1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__Inventory__2180FB33">
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="InventoryItem2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__Inventory__22751F6C">
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="InventoryItem3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__Inventory__236943A5">
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="InventoryItem4" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -226,7 +282,11 @@ warning 6002: The table/view 'trackerwebdb.dbo.LLInventoryView2' does not have a
     [LLInventoryView2].[InventoryId] AS [InventoryId], 
     [LLInventoryView2].[SKU] AS [SKU], 
     [LLInventoryView2].[Name] AS [Name], 
-    [LLInventoryView2].[Type] AS [Type]
+    [LLInventoryView2].[Type] AS [Type], 
+    [LLInventoryView2].[Size] AS [Size], 
+    [LLInventoryView2].[Color] AS [Color], 
+    [LLInventoryView2].[Extras] AS [Extras], 
+    [LLInventoryView2].[Location] AS [Location]
     FROM [dbo].[LLInventoryView2] AS [LLInventoryView2]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK__Inventory__Produ__14270015" Association="Self.FK__Inventory__Produ__14270015">
@@ -243,6 +303,22 @@ warning 6002: The table/view 'trackerwebdb.dbo.LLInventoryView2' does not have a
           </AssociationSet>
           <AssociationSet Name="FK__Order__ClientId__151B244E" Association="Self.FK__Order__ClientId__151B244E">
             <End Role="Client" EntitySet="Client" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__Inventory__208CD6FA" Association="Self.FK__Order__Inventory__208CD6FA">
+            <End Role="Inventory" EntitySet="Inventory" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__Inventory__2180FB33" Association="Self.FK__Order__Inventory__2180FB33">
+            <End Role="Inventory" EntitySet="Inventory" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__Inventory__22751F6C" Association="Self.FK__Order__Inventory__22751F6C">
+            <End Role="Inventory" EntitySet="Inventory" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__Inventory__236943A5" Association="Self.FK__Order__Inventory__236943A5">
+            <End Role="Inventory" EntitySet="Inventory" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
           <AssociationSet Name="FK_Tracking_Monitor" Association="Self.FK_Tracking_Monitor">
@@ -353,6 +429,22 @@ warning 6002: The table/view 'trackerwebdb.dbo.LLInventoryView2' does not have a
             <End Role="Order" EntitySet="Orders" />
             <End Role="ItemOrder" EntitySet="ItemOrders" />
           </AssociationSet>
+          <AssociationSet Name="FK__Order__Inventory__208CD6FA" Association="trackerwebdbModel.FK__Order__Inventory__208CD6FA">
+            <End Role="Inventory" EntitySet="Inventories" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__Inventory__2180FB33" Association="trackerwebdbModel.FK__Order__Inventory__2180FB33">
+            <End Role="Inventory" EntitySet="Inventories" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__Inventory__22751F6C" Association="trackerwebdbModel.FK__Order__Inventory__22751F6C">
+            <End Role="Inventory" EntitySet="Inventories" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__Inventory__236943A5" Association="trackerwebdbModel.FK__Order__Inventory__236943A5">
+            <End Role="Inventory" EntitySet="Inventories" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="InventoryView">
           <Key>
@@ -396,6 +488,10 @@ warning 6002: The table/view 'trackerwebdb.dbo.LLInventoryView2' does not have a
           <Property Name="rfid_tag" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Product" Relationship="trackerwebdbModel.FK__Inventory__Produ__14270015" FromRole="Inventory" ToRole="Product" />
           <NavigationProperty Name="ItemOrders" Relationship="trackerwebdbModel.FK__ItemOrder__Inven__17036CC0" FromRole="Inventory" ToRole="ItemOrder" />
+          <NavigationProperty Name="Orders" Relationship="trackerwebdbModel.FK__Order__Inventory__208CD6FA" FromRole="Inventory" ToRole="Order" />
+          <NavigationProperty Name="Orders1" Relationship="trackerwebdbModel.FK__Order__Inventory__2180FB33" FromRole="Inventory" ToRole="Order" />
+          <NavigationProperty Name="Orders2" Relationship="trackerwebdbModel.FK__Order__Inventory__22751F6C" FromRole="Inventory" ToRole="Order" />
+          <NavigationProperty Name="Orders3" Relationship="trackerwebdbModel.FK__Order__Inventory__236943A5" FromRole="Inventory" ToRole="Order" />
         </EntityType>
         <EntityType Name="ItemOrder">
           <Key>
@@ -420,6 +516,14 @@ warning 6002: The table/view 'trackerwebdb.dbo.LLInventoryView2' does not have a
           <Property Name="RequestDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Client" Relationship="trackerwebdbModel.FK__Order__ClientId__151B244E" FromRole="Order" ToRole="Client" />
           <NavigationProperty Name="ItemOrders" Relationship="trackerwebdbModel.FK__ItemOrder__Order__160F4887" FromRole="Order" ToRole="ItemOrder" />
+          <Property Name="InventoryItem1" Type="Int32" />
+          <Property Name="InventoryItem2" Type="Int32" />
+          <Property Name="InventoryItem3" Type="Int32" />
+          <Property Name="InventoryItem4" Type="Int32" />
+          <NavigationProperty Name="Inventory" Relationship="trackerwebdbModel.FK__Order__Inventory__208CD6FA" FromRole="Order" ToRole="Inventory" />
+          <NavigationProperty Name="Inventory1" Relationship="trackerwebdbModel.FK__Order__Inventory__2180FB33" FromRole="Order" ToRole="Inventory" />
+          <NavigationProperty Name="Inventory2" Relationship="trackerwebdbModel.FK__Order__Inventory__22751F6C" FromRole="Order" ToRole="Inventory" />
+          <NavigationProperty Name="Inventory3" Relationship="trackerwebdbModel.FK__Order__Inventory__236943A5" FromRole="Order" ToRole="Inventory" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -440,6 +544,10 @@ warning 6002: The table/view 'trackerwebdb.dbo.LLInventoryView2' does not have a
           <Property Name="SKU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Size" Type="Int32" />
+          <Property Name="Color" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Extras" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK__Order__ClientId__151B244E">
           <End Type="trackerwebdbModel.Client" Role="Client" Multiplicity="0..1" />
@@ -486,6 +594,54 @@ warning 6002: The table/view 'trackerwebdb.dbo.LLInventoryView2' does not have a
             </Principal>
             <Dependent Role="ItemOrder">
               <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__Inventory__208CD6FA">
+          <End Type="trackerwebdbModel.Inventory" Role="Inventory" Multiplicity="0..1" />
+          <End Type="trackerwebdbModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="InventoryItem1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__Inventory__2180FB33">
+          <End Type="trackerwebdbModel.Inventory" Role="Inventory" Multiplicity="0..1" />
+          <End Type="trackerwebdbModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="InventoryItem2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__Inventory__22751F6C">
+          <End Type="trackerwebdbModel.Inventory" Role="Inventory" Multiplicity="0..1" />
+          <End Type="trackerwebdbModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="InventoryItem3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__Inventory__236943A5">
+          <End Type="trackerwebdbModel.Inventory" Role="Inventory" Multiplicity="0..1" />
+          <End Type="trackerwebdbModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="InventoryItem4" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -585,6 +741,10 @@ warning 6002: The table/view 'trackerwebdb.dbo.LLInventoryView2' does not have a
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="trackerwebdbModel.Order">
               <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="InventoryItem4" ColumnName="InventoryItem4" />
+                <ScalarProperty Name="InventoryItem3" ColumnName="InventoryItem3" />
+                <ScalarProperty Name="InventoryItem2" ColumnName="InventoryItem2" />
+                <ScalarProperty Name="InventoryItem1" ColumnName="InventoryItem1" />
                 <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
                 <ScalarProperty Name="RequestItems" ColumnName="RequestItems" />
                 <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
@@ -609,6 +769,10 @@ warning 6002: The table/view 'trackerwebdb.dbo.LLInventoryView2' does not have a
           <EntitySetMapping Name="LLInventoryView2">
             <EntityTypeMapping TypeName="trackerwebdbModel.LLInventoryView2">
               <MappingFragment StoreEntitySet="LLInventoryView2">
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Extras" ColumnName="Extras" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="SKU" ColumnName="SKU" />

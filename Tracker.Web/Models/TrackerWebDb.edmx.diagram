@@ -22,6 +22,10 @@
         <AssociationConnector Association="trackerwebdbModel.FK__Inventory__Produ__14270015" />
         <AssociationConnector Association="trackerwebdbModel.FK__ItemOrder__Inven__17036CC0" />
         <AssociationConnector Association="trackerwebdbModel.FK__ItemOrder__Order__160F4887" />
+        <AssociationConnector Association="trackerwebdbModel.FK__Order__Inventory__208CD6FA" />
+        <AssociationConnector Association="trackerwebdbModel.FK__Order__Inventory__2180FB33" />
+        <AssociationConnector Association="trackerwebdbModel.FK__Order__Inventory__22751F6C" />
+        <AssociationConnector Association="trackerwebdbModel.FK__Order__Inventory__236943A5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
