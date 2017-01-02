@@ -28,7 +28,7 @@ namespace Tracker.Web.Controllers
             {
                 DtResponse response  = new Editor(db, "LLInventoryView3", new []{"OrderId"})
                     .Model<LLInventoryView3>()
-                    .Process(Request.Form)
+                    .Process(formData)
                     .Data();
     
                 return Json(response);
