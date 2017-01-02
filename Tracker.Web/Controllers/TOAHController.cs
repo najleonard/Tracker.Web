@@ -27,7 +27,7 @@ namespace Tracker.Web.Controllers
             var request = HttpContext.Current.Request;
             var settings = Properties.Settings.Default;
 
-            return settings.DbConnection;
+            return "hi there";
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
                 var response = new Editor(db, "users")
