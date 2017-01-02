@@ -8,9 +8,10 @@ using DataTables;
 
 namespace Tracker.Web.Controllers
 {
-    
+ 
     public class TOAHController : Controller
     {
+        [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
         // GET: Inventory
         public ActionResult Index()
         {
@@ -18,7 +19,7 @@ namespace Tracker.Web.Controllers
             var model = repo.GetTOAHList();
             return View(model);
         }
-        [AcceptVerbs(HttpVerbs.Get|HttpVerbs.Post)]
+
         public ActionResult Table()
         {
             var settings = Properties.Settings.Default;
@@ -31,7 +32,7 @@ namespace Tracker.Web.Controllers
                     .Process(formData)
                     .Data();
     
-                return Json(response);
+                return Json(response,jsonrequestbehavior.allowget);
             }
         }
     }    
