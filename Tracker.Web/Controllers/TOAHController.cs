@@ -18,7 +18,7 @@ namespace Tracker.Web.Controllers
             return View(model);
         }
     
-     //   [AcceptVerbs(HttpVerbs.Get|HttpVerbs.Post)]
+        [AcceptVerbs(HttpVerbs.Get|HttpVerbs.Post)]
         public ActionResult Table()
         {
             var settings = Properties.Settings.Default;
@@ -28,10 +28,10 @@ namespace Tracker.Web.Controllers
             {
                 var response = new Editor(db, "ItemOrder")
                     .Model<ItemOrder>()
-                    .Process(Request.Form)
+                    .Process(formData)
                     .Data();
     
-                return Json(response);
+                return Json(response, JsonRequestBehavior.AllowGet);
             }
         }
     }
