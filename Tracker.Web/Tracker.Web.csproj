@@ -149,6 +149,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\LLInventoryController.cs" />
+    <Compile Include="Controllers\TOAHController.cs" />
     <Compile Include="Controllers\TrackerReadingController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -515,6 +516,7 @@
     <Content Include="Views\Tag\Edit.cshtml" />
     <Content Include="Views\Inventory\Index.cshtml" />
     <Content Include="Views\LLInventory\Index.cshtml" />
+    <Content Include="Views\TOAH\Index.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
