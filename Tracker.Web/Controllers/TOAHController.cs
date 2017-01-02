@@ -26,20 +26,12 @@ namespace Tracker.Web.Controllers
     
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
-                var response = new Editor(db, "LLInventoryView3", new []{"OrderId"})
+                var Dtresponse = new Editor(db, "LLInventoryView3", new []{"OrderId"})
                     .Model<LLInventoryView3>()
-                    .Field(new Field("OrderDate")
-                        .Validator(Validation.DateFormat(
-                            Format.DATE_ISO_8601,
-                            new ValidationOpts { Message = "Please enter a date in the format yyyy-mm-dd" }
-                        ))
-                        .GetFormatter(Format.DateSqlToFormat(Format.DATE_ISO_8601))
-                        .SetFormatter(Format.DateFormatToSql(Format.DATE_ISO_8601))
-                    )
-                    .Process(formData)
+                    .Process(Request.Form)
                     .Data();
     
-                return Json(response, JsonRequestBehavior.AllowGet);
+                return Json(response);
             }
         }
     }    
