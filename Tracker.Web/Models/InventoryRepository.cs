@@ -34,7 +34,7 @@ namespace Tracker.Web.Models
 
     public class LLInventoryRepository3
     {
-        public List<LLInventoryView3> GetCurrentLLInventory()
+        public List<LLInventoryView3> GetTOAHList()
         {
             List<LLInventoryView3> retvalue = null;
             using(var db = new trackerwebdbEntities())
