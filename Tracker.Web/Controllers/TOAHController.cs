@@ -22,11 +22,12 @@ namespace Tracker.Web.Controllers
     public class TOAHController : ApiController
    {
         [HttpGet, HttpPost, Route("api/upload")]
-        public IHttpActionResult Index()
+        public String Index()
         {
             var request = HttpContext.Current.Request;
             var settings = Properties.Settings.Default;
 
+            return settings.DbConnection;
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
                 var response = new Editor(db, "users")
