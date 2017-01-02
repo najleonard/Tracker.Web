@@ -1,13 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Tracker.Web.Models;
-using DataTables;
 using System.Data.Common;
 using System.Net.Http.Formatting;
+using System.Web;
 using System.Web.Http;
+using DataTables;
+using Tracker.Web.Models;
 
 namespace Tracker.Web.Controllers
 {
