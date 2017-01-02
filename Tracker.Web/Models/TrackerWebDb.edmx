@@ -129,6 +129,22 @@ warning 6002: The table/view 'trackerwebdb.dbo.LLInventoryView2' does not have a
           <Property Name="Extras" Type="varchar" MaxLength="50" />
           <Property Name="Location" Type="varchar" MaxLength="50" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'trackerwebdb.dbo.LLInventoryView3' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="LLInventoryView3">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="OrderDate" Type="date" />
+          <Property Name="RequestDate" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="60" />
+          <Property Name="RequestedItems" Type="varchar" MaxLength="200" />
+          <Property Name="Inventory1" Type="int" />
+          <Property Name="Inventory2" Type="int" />
+          <Property Name="Inventory3" Type="int" />
+          <Property Name="Inventory4" Type="int" />
+        </EntityType>
         <Association Name="FK__Inventory__Produ__14270015">
           <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
           <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
@@ -289,6 +305,19 @@ warning 6002: The table/view 'trackerwebdb.dbo.LLInventoryView2' does not have a
     [LLInventoryView2].[Location] AS [Location]
     FROM [dbo].[LLInventoryView2] AS [LLInventoryView2]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="LLInventoryView3" EntityType="Self.LLInventoryView3" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [LLInventoryView3].[OrderId] AS [OrderId], 
+    [LLInventoryView3].[OrderDate] AS [OrderDate], 
+    [LLInventoryView3].[RequestDate] AS [RequestDate], 
+    [LLInventoryView3].[Email] AS [Email], 
+    [LLInventoryView3].[RequestedItems] AS [RequestedItems], 
+    [LLInventoryView3].[Inventory1] AS [Inventory1], 
+    [LLInventoryView3].[Inventory2] AS [Inventory2], 
+    [LLInventoryView3].[Inventory3] AS [Inventory3], 
+    [LLInventoryView3].[Inventory4] AS [Inventory4]
+    FROM [dbo].[LLInventoryView3] AS [LLInventoryView3]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK__Inventory__Produ__14270015" Association="Self.FK__Inventory__Produ__14270015">
             <End Role="Products" EntitySet="Products" />
             <End Role="Inventory" EntitySet="Inventory" />
@@ -445,6 +474,7 @@ warning 6002: The table/view 'trackerwebdb.dbo.LLInventoryView2' does not have a
             <End Role="Inventory" EntitySet="Inventories" />
             <End Role="Order" EntitySet="Orders" />
           </AssociationSet>
+          <EntitySet Name="LLInventoryView3" EntityType="trackerwebdbModel.LLInventoryView3" />
         </EntityContainer>
         <EntityType Name="InventoryView">
           <Key>
@@ -645,6 +675,20 @@ warning 6002: The table/view 'trackerwebdb.dbo.LLInventoryView2' does not have a
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="LLInventoryView3">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="OrderDate" Type="DateTime" Precision="0" />
+          <Property Name="RequestDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="RequestedItems" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Inventory1" Type="Int32" />
+          <Property Name="Inventory2" Type="Int32" />
+          <Property Name="Inventory3" Type="Int32" />
+          <Property Name="Inventory4" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -777,6 +821,21 @@ warning 6002: The table/view 'trackerwebdb.dbo.LLInventoryView2' does not have a
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="SKU" ColumnName="SKU" />
                 <ScalarProperty Name="InventoryId" ColumnName="InventoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LLInventoryView3">
+            <EntityTypeMapping TypeName="trackerwebdbModel.LLInventoryView3">
+              <MappingFragment StoreEntitySet="LLInventoryView3">
+                <ScalarProperty Name="Inventory4" ColumnName="Inventory4" />
+                <ScalarProperty Name="Inventory3" ColumnName="Inventory3" />
+                <ScalarProperty Name="Inventory2" ColumnName="Inventory2" />
+                <ScalarProperty Name="Inventory1" ColumnName="Inventory1" />
+                <ScalarProperty Name="RequestedItems" ColumnName="RequestedItems" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

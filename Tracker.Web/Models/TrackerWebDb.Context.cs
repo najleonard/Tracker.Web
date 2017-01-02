@@ -54,6 +54,8 @@ public partial class trackerwebdbEntities : DbContext
 
     public virtual DbSet<LLInventoryView2> LLInventoryView2 { get; set; }
 
+    public virtual DbSet<LLInventoryView3> LLInventoryView3 { get; set; }
+
 }
 
 }
