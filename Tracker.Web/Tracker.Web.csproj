@@ -170,9 +170,6 @@
     <Compile Include="Models\ItemOrder.cs">
       <DependentUpon>TrackerWebDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\LLInventoryView3.cs">
-      <DependentUpon>TrackerWebDb.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Order.cs">
       <DependentUpon>TrackerWebDb.tt</DependentUpon>
     </Compile>
