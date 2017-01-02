@@ -28,7 +28,7 @@ namespace Tracker.Web.Controllers
             {
                 var response = new Editor(db, "ItemOrder")
                     .Model<ItemOrder>()
-                    .Process(formData)
+                    .Process(Request.Form)
                     .Data();
     
                 return Json(response);
