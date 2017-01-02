@@ -21,7 +21,7 @@ namespace Tracker.Web.Controllers
     // }
     public class TOAHController : ApiController
    {
-  //      [HttpGet, HttpPost, Route("api/upload")]
+        [HttpGet, HttpPost, Route("api/upload")]
         public IHttpActionResult Index()
         {
             var request = HttpContext.Current.Request;
@@ -29,7 +29,7 @@ namespace Tracker.Web.Controllers
 
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
-                DtResponse response = new Editor( db,"ItemOrder")
+                DtResponse response = new Editor(db,"ItemOrder")
                     .Model<ItemOrder>()
                     .Process( Request.Form )
                     .Data();
