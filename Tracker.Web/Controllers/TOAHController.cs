@@ -29,22 +29,7 @@ namespace Tracker.Web.Controllers
 
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
-                var response = new Editor(db, "ItemOrder")
-                    .Model<ItemOrder>()
-                    .Field(new Field("image")
-                        .SetFormatter(Format.IfEmpty(null))
-                        .Upload(new Upload(request.PhysicalApplicationPath + @"uploads\__ID____EXTN__")
-                            .Db("files", "id", new Dictionary<string, object>
-                            {
-                                {"web_path", Upload.DbType.WebPath},
-                                {"system_path", Upload.DbType.SystemPath},
-                                {"filename", Upload.DbType.FileName},
-                                {"filesize", Upload.DbType.FileSize}
-                            })
-                        )
-                    )
-                    .Process(request)
-                    .Data();
+                var response = new Editor(db, "ItemOrder");
 
                 return Json(response);
             }
