@@ -19,22 +19,16 @@
         var jquery = jQuery.noConflict();
         jquery(document).ready(function () {
         jquery('#toah').dataTable();
+        jquery('#example').dataTable( {
+            "ajax": {
+            "url": "/TOAH/table",
+            "type": "POST"
+            }
+        })
     });
-    $('#example').DataTable({
-    "serverSide": true,
-    "deferLoading": 10,
-    "processing": true,
-    "ajax": "/TOAH/table"
-});
+    
 </script>
-  <script type="text/javascript">
-  $('#example').dataTable( {
-  "ajax": {
-    "url": "/TOAH/table",
-    "type": "POST"
-  }
-} );
-    </script>
+
 </head>    
 <h2>LL Inventorys</h2>
 
