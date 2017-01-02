@@ -27,7 +27,7 @@ namespace Tracker.Web.Controllers
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
                 var response = new Editor(db, "Order")
-                    .Model<StaffModel>()
+                    .Model<Order>()
                     .Field(new Field("Date")
                         .Validator(Validation.DateFormat(
                             Format.DATE_ISO_8601,
