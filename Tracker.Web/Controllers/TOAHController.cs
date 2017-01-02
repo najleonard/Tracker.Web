@@ -32,7 +32,7 @@ namespace Tracker.Web.Controllers
                     .Process(formData)
                     .Data();
     
-                return Json(response,jsonrequestbehavior.allowget);
+                return Json(response,JsonRequestBehavior.AllowGet);
             }
         }
     }    
