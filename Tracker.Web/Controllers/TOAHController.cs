@@ -31,7 +31,6 @@ namespace Tracker.Web.Controllers
             {
                 DtResponse response = new Editor(db,"ItemOrder")
                     .Model<ItemOrder>()
-                    .Process( Request.Form )
                     .Data();
  
                 return Json(response);
