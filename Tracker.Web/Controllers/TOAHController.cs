@@ -22,7 +22,7 @@ namespace Tracker.Web.Controllers
     public class TOAHController : ApiController
    {
         [HttpGet, HttpPost, Route("api/upload")]
-        public IHttpActionResult Staff()
+        public IHttpActionResult Index()
         {
             var request = HttpContext.Current.Request;
             var settings = Properties.Settings.Default;
