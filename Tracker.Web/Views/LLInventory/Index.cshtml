@@ -4,9 +4,14 @@
     ViewBag.Title = "All Inventory";
 }
 
+
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
+  
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+
 <h2>LL Inventory</h2>
 
-<table class="table table-condensed table-hover table-striped">
+<table id="neil" class="table table-condensed table-hover table-striped">
     <tr>
         <th width="10%">
             @Html.DisplayNameFor(model => model.InventoryId)
@@ -40,3 +45,7 @@
 }
 
 </table>
+
+$(document).ready( function () {
+    $('#neil').DataTable();
+} );
