@@ -18,7 +18,7 @@
     <script type="text/javascript" charset="utf8">
         var jquery = jQuery.noConflict();
         jquery(document).ready(function () {
-        jquery('#toah').dataTable().makeEditable();
+        jquery('#toah').dataTable();
     });
     $('#example').DataTable({
     "serverSide": true,
@@ -27,6 +27,14 @@
     "ajax": "/TOAH/table"
 });
 </script>
+  <script type="text/javascript">
+  $('#example').dataTable( {
+  "ajax": {
+    "url": "/TOAH/table",
+    "type": "POST"
+  }
+} );
+    </script>
 </head>    
 <h2>LL Inventorys</h2>
 
