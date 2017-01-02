@@ -14,24 +14,10 @@ namespace Tracker.Web.Controllers
         // GET: Inventory
         public ActionResult Index()
         {
-<<<<<<< HEAD
+
             LLInventoryRepository3 repo = new LLInventoryRepository3();
             var model = repo.GetTOAHList();
             return View(model);
-=======
-            var request = HttpContext.Current.Request;
-            var settings = Properties.Settings.Default;
-
-            using (var db = new Database(settings.DbType, settings.DbConnection))
-            {
-                DtResponse response = new Editor(db,"ItemOrder")
-                    .Model<ItemOrder>()
-                    .Data();
- 
-                return Json(response);
-            }
->>>>>>> parent of 40ac4b4... added process(request) to toah
-        }
     }
     
 //    [AcceptVerbs(HttpVerbs.Get|HttpVerbs.Post)]
