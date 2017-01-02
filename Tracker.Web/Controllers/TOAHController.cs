@@ -18,8 +18,7 @@ namespace Tracker.Web.Controllers
             return View(model);
         }
     
-       // [AcceptVerbs(HttpVerbs.Get|HttpVerbs.Post)]
-
+        [AcceptVerbs(HttpVerbs.Get|HttpVerbs.Post)]
         public ActionResult Table()
         {
             var settings = Properties.Settings.Default;

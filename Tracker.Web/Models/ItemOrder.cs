@@ -15,7 +15,7 @@ namespace Tracker.Web.Models
 using System;
     using System.Collections.Generic;
     
-public partial class ItemOrder
+public  class ItemOrder
 {
 
     public int Id { get; set; }
@@ -25,10 +25,6 @@ public partial class ItemOrder
     public Nullable<int> InventoryId { get; set; }
 
 
-
-    public virtual Inventory Inventory { get; set; }
-
-    public virtual Order Order { get; set; }
 
 }
 
