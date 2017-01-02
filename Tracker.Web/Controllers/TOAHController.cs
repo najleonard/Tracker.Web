@@ -21,7 +21,7 @@ namespace Tracker.Web.Controllers
     // }
     public class TOAHController : ApiController
    {
-        [HttpGet, HttpPost, Route("api/upload")]
+  //      [HttpGet, HttpPost, Route("api/upload")]
         public IHttpActionResult Index()
         {
             var request = HttpContext.Current.Request;
