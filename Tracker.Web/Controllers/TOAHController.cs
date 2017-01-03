@@ -10,7 +10,7 @@ namespace Tracker.Web.Controllers
 {
     internal class JoinOrderClient
     {
-        public class myOrder
+        public class Order
         {
             public int Id { get; set; }
 
@@ -34,7 +34,7 @@ namespace Tracker.Web.Controllers
 
         }
 
-        public class myClient
+        public class Client
         {
             public int Id { get; set; }  //<-------JUST ADDED
             public string email { get; set; }
