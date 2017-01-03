@@ -62,6 +62,7 @@ namespace Tracker.Web.Controllers
                             .Value("Id")
                             .Label("email")
                         )
+                        .Set( false )
                         .Validator(Validation.DbValues(new ValidationOpts { Empty = false }))
                     )
                     .LeftJoin("Client", "Client.Id", "=", "Order.ClientId")
