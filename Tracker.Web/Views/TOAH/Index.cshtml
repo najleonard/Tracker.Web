@@ -14,41 +14,90 @@
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.js"></script>
  
 <script src="/Scripts/dataTables.editor.js"></script>
-    <script type="text/javascript" charset="utf8">
+<script type="text/javascript" charset="utf8">
+(function($){
 
-        var editor; // use a global for the submit and return data rendering in the examples
+$(document).ready(function() {
+	var editor = new $.fn.dataTable.Editor( {
+		ajax: '/TOAH/table',
+		table: '#example',
+		fields: [
+			{
+				"label": "OrderId:",
+				"name": "OrderId"
+			},
+			{
+				"label": "OrderDate:",
+				"name": "OrderDate"
+			},
+			{
+				"label": "RequestDate:",
+				"name": "RequestDate"
+			},
+			{
+				"label": "RequestedItems:",
+				"name": "RequestedItems"
+			},
+			{
+				"label": "Inventory1:",
+				"name": "Inventory1"
+			},
+			{
+				"label": "Inventory2:",
+				"name": "Inventory2"
+			},
+			{
+				"label": "Inventory3:",
+				"name": "Inventory3"
+			},
+			{
+				"label": "Inventory4:",
+				"name": "Inventory4"
+			}
+		]
+	} );
+
+	var table = $('#blahblah').DataTable( {
+		dom: 'Bfrtip',
+		ajax: '/api/blahblah',
+		columns: [
+			{
+				"data": "OrderId"
+			},
+			{
+				"data": "OrderDate"
+			},
+			{
+				"data": "RequestDate"
+			},
+			{
+				"data": "RequestedItems"
+			},
+			{
+				"data": "Inventory1"
+			},
+			{
+				"data": "Inventory2"
+			},
+			{
+				"data": "Inventory3"
+			},
+			{
+				"data": "Inventory4"
+			}
+		],
+		select: true,
+		lengthChange: false,
+		buttons: [
+			{ extend: 'create', editor: editor },
+			{ extend: 'edit',   editor: editor },
+			{ extend: 'remove', editor: editor }
+		]
+	} );
+} );
+
+}(jQuery));
         
-        var jquery = jQuery.noConflict();
-        jquery(document).ready(function () {
-
-        var editor = new jquery('#example').dataTable.Editor( {
-             "dom": "Bfrtip",
-             "select": true,
-            "processing": true,
-            "ajax": {
-            "url": "/TOAH/table",
-            "type": "POST"
-            },
-            "columns": [
-            { "data": "OrderId" },
-            { "data": "OrderDate" },
-            { "data": "RequestDate" },
-            { "data": "RequestedItems" },
-            { "data": "Inventory1" },
-            { "data": "Inventory2" },
-            { "data": "Inventory3" },
-            { "data": "Inventory4" }
-        ],
-            buttons: [
-            { extend: 'create', editor: editor },
-            { extend: 'edit',   editor: editor },
-            { extend: 'remove', editor: editor }
-        ]
-        });
-        jquery('#example').on( 'click', 'tbody td:not(:first-child)', function (e) {
-        editor.inline( this );
-    } );
-    });
 </script>
 </head>
 
