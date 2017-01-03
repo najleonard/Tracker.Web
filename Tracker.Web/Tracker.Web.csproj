@@ -439,6 +439,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\editor.dataTables.css" />
     <Content Include="Models\TrackerWebDb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TrackerWebDb.edmx</DependentUpon>
@@ -601,6 +602,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Scripts\dataTables.editor.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
