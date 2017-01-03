@@ -16,31 +16,31 @@ $(document).ready(function() {
 		table: '#example',
 		fields: [
 			{
-				"label": "myOrder.Id:",
-				"name": "myOrder.Id"
+				"label": "Order.Id:",
+				"name": "Order.Id"
 			},
 			{
-				"label": "client.email:",
-				"name": "client.email"
+				"label": "Order.RequestItems:",
+				"name": "Order.RequestItems"
 			},
 			{
-				"label": "myOrder.RequestItems:",
-				"name": "myOrder.RequestItems"
-			},
-			{
-				"label": "myOrder.InventoryItem1:",
-				"name": "myOrder.InventoryItem1"
+				"label": "Order.InventoryItem1:",
+				"name": "Order.InventoryItem1"
 			},{
-				"label": "myOrder.InventoryItem2:",
-				"name": "myOrder.InventoryItem2"
+				"label": "Order.InventoryItem2:",
+				"name": "Order.InventoryItem2"
 			},
 			{
-				"label": "myOrder.InventoryItem3:",
-				"name": "myOrder.InventoryItem3"
+				"label": "Order.InventoryItem3:",
+				"name": "Order.InventoryItem3"
 			},
 			{
-				"label": "myOrder.InventoryItem4:",
-				"name": "myOrder.InventoryItem4"
+				"label": "Order.InventoryItem4:",
+				"name": "Order.InventoryItem4"
+			},
+			{
+				"label": "Client.email:",
+				"name": "Client.email"
 			}
 		]
 	} );
@@ -50,25 +50,25 @@ $(document).ready(function() {
 		ajax: '/TOAH/table',
 		columns: [
 			{
-				"data": "myOrder.Id"
+				"data": "Order.Id"
 			},
 			{
-				"data": "email"
+				"data": "Order.RequestItems"
 			},
 			{
-				"data": "RequestedItems"
+				"data": "Order.Inventory1"
 			},
 			{
-				"data": "Inventory1"
+				"data": "Order.Inventory2"
 			},
 			{
-				"data": "Inventory2"
+				"data": "Order.Inventory3"
 			},
 			{
-				"data": "Inventory3"
+				"data": "Order.Inventory4"
 			},
 			{
-				"data": "Inventory4"
+				"data": "Client.email"
 			}
 		],
 		select: true,
@@ -92,24 +92,24 @@ $(document).ready(function() {
             <tr>
                 
                 <th>OrderId</th>
-				<th>email</th>
                 <th>RequestedItems</th>
                 <th>Inventory1</th>
                 <th>Inventory2</th>
                 <th>Inventory3</th>
                 <th>Inventory4</th>
+				<th>email</th>
             </tr>
         </thead>
         <tfoot>
             <tr>
                 
                 <th>OrderId</th>
-				<th>email</th>
                 <th>RequestedItems</th>
                 <th>Inventory1</th>
                 <th>Inventory2</th>
                 <th>Inventory3</th>
                 <th>Inventory4</th>
+				<th>email</th>
             </tr>
         </tfoot>
     </table>
