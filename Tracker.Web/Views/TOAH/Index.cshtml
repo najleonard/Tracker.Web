@@ -21,7 +21,7 @@
         var jquery = jQuery.noConflict();
         jquery(document).ready(function () {
 
-        jquery('#example').dataTable( {
+        var editor = new jquery('#example').dataTable.Editor( {
              "dom": "Bfrtip",
              "select": true,
             "processing": true,
