@@ -68,7 +68,7 @@ namespace Tracker.Web.Controllers
                     .Field(new Field("Order.InventoryItem2"))
                     .Field(new Field("Order.InventoryItem3"))
                     .Field(new Field("Order.InventoryItem4"))
-                    .Field(new Field("Order.Shipped")).Set( false )
+                    .Field(new Field("Order.Shipped").Set( false ))
                     .Field(new Field("Client.email"))
                     .LeftJoin("Client", "Client.Id", "=", "Order.ClientId")
                     .Process(formData)
