@@ -41,7 +41,7 @@ namespace Tracker.Web.Controllers
     }
 
     
-    public class TOAHController : ApiController
+    public class TOAHController : Controller
     {
         // GET: Monitor
         public string Index()
