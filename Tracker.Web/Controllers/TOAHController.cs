@@ -61,7 +61,7 @@ namespace Tracker.Web.Controllers
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
                 DtResponse response  = new Editor(db, "Order","Id"
-                     .Model<JoinOrderClient>())
+                    .Model<JoinOrderClient>()
                     .Field(new Field("Order.Id"))
                     .Field(new Field("Order.RequestItems"))
                     .Field(new Field("Order.InventoryItem1"))
