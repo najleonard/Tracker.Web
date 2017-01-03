@@ -60,9 +60,9 @@ namespace Tracker.Web.Controllers
     
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
-                DtResponse response  = new Editor(db, "Order", "Id")
+                DtResponse response  = new Editor(db, "Client", "Id")
                     .Model<JoinOrderClient>()
-                    .LeftJoin("Client", "Client.Id", "=", "myOrder.clientId")
+                    .LeftJoin("Order", "Order.ClientId", "=", "Order.clientId")
                     .Process(formData)
                     .Data();
     

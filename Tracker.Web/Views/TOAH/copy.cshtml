@@ -1,0 +1,127 @@
+<head>    <!-- DataTables CSS -->
+    
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.4/moment-2.13.0/dt-1.10.13/b-1.2.4/se-1.2.0/datatables.min.css">
+	<link rel="stylesheet" type="text/css" href="Content/editor.dataTables.min.css">
+
+	<script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/v/dt/jqc-1.12.4/moment-2.13.0/dt-1.10.13/b-1.2.4/se-1.2.0/datatables.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="Scripts/dataTables.editor.js"></script>
+	
+
+<script type="text/javascript" charset="utf8">
+(function($){
+
+$(document).ready(function() {
+	var editor = new $.fn.dataTable.Editor( {
+		ajax: '/TOAH/table',
+		table: '#example',
+		fields: [
+			{
+				"label": "OrderId:",
+				"name": "OrderId"
+			},
+			{
+				"label": "OrderDate:",
+				"name": "OrderDate"
+			},
+			{
+				"label": "RequestDate:",
+				"name": "RequestDate"
+			},
+			{
+				"label": "RequestedItems:",
+				"name": "RequestedItems"
+			},
+			{
+				"label": "Inventory1:",
+				"name": "Inventory1"
+			},
+			{
+				"label": "Inventory2:",
+				"name": "Inventory2"
+			},
+			{
+				"label": "Inventory3:",
+				"name": "Inventory3"
+			},
+			{
+				"label": "Inventory4:",
+				"name": "Inventory4"
+			}
+		]
+	} );
+
+	var table = $('#example').DataTable( {
+		dom: 'Bfrtip',
+		ajax: '/TOAH/table',
+		columns: [
+			{
+				"data": "OrderId"
+			},
+			{
+				"data": "OrderDate"
+			},
+			{
+				"data": "RequestDate"
+			},
+			{
+				"data": "RequestedItems"
+			},
+			{
+				"data": "Inventory1"
+			},
+			{
+				"data": "Inventory2"
+			},
+			{
+				"data": "Inventory3"
+			},
+			{
+				"data": "Inventory4"
+			}
+		],
+		select: true,
+		lengthChange: false,
+		buttons: [
+			{ extend: 'create', editor: editor },
+			{ extend: 'edit',   editor: editor },
+			{ extend: 'remove', editor: editor }
+		]
+	} );
+} );
+
+}(jQuery));
+        
+</script>
+</head>
+
+<h2>TOAH Orders</h2>
+<table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                
+                <th>OrderId</th>
+                <th>OrderDate</th>
+                <th>RequestDate</th>
+                <th>RequestedItems</th>
+                <th>Inventory1</th>
+                <th>Inventory2</th>
+                <th>Inventory3</th>
+                <th>Inventory4</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                
+                <th>OrderId</th>
+                <th>OrderDate</th>
+                <th>RequestDate</th>
+                <th>RequestedItems</th>
+                <th>Inventory1</th>
+                <th>Inventory2</th>
+                <th>Inventory3</th>
+                <th>Inventory4</th>
+            </tr>
+        </tfoot>
+    </table>
+
+
