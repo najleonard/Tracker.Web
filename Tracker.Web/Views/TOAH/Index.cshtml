@@ -49,6 +49,11 @@
             { "data": "Inventory2" },
             { "data": "Inventory3" },
             { "data": "Inventory4" }
+        ],
+            buttons: [
+            { extend: 'create', editor: editor },
+            { extend: 'edit',   editor: editor },
+            { extend: 'remove', editor: editor }
         ]
         });
         jquery('#example').on( 'click', 'tbody td:not(:first-child)', function (e) {
