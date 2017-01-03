@@ -44,11 +44,9 @@ namespace Tracker.Web.Controllers
     public class TOAHController : ApiController
     {
         // GET: Monitor
-        public ActionResult Index()
+        public string Index()
         {
-            MonitorRepository repo = new MonitorRepository();
-            List<Monitor> model = repo.GetAllMonitors();
-            return View(model);
+            return "hello";
         }
 
         
