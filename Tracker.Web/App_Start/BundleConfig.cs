@@ -22,12 +22,12 @@ namespace Tracker.Web
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js",
-                      "~/Scripts/dataTables.editor.min.js"));
+                      "~/Scripts/dataTables.editor.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
-                      "~/Content/editor.dataTables.min.css"
+                      "~/Content/editor.dataTables.css"
                       ));
 
         }
