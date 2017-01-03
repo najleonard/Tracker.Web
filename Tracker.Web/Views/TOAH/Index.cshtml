@@ -16,28 +16,12 @@ $(document).ready(function() {
 		table: '#example',
 		fields: [
 			{
-				"label": "myOrder.clientId:",
-				"name": "myOrder.clientId"
-			},
-			{
 				"label": "myOrder.Id:",
 				"name": "myOrder.Id"
 			},
 			{
-				"label": "myOrder.Shipped:",
-				"name": "myOrder.Shipped"
-			},
-			{
-				"label": "myOrder.ShippedDate:",
-				"name": "myOrder.ShippedDate"
-			},
-			{
 				"label": "myOrder.RequestItems:",
 				"name": "myOrder.RequestItems"
-			},
-			{
-				"label": "myOrder.RequestDate:",
-				"name": "myOrder.RequestDate"
 			},
 			{
 				"label": "myOrder.InventoryItem1:",
@@ -62,13 +46,7 @@ $(document).ready(function() {
 		ajax: '/TOAH/table',
 		columns: [
 			{
-				"data": "OrderId"
-			},
-			{
-				"data": "OrderDate"
-			},
-			{
-				"data": "RequestDate"
+				"data": "myOrder.Id"
 			},
 			{
 				"data": "RequestedItems"
@@ -107,8 +85,6 @@ $(document).ready(function() {
             <tr>
                 
                 <th>OrderId</th>
-                <th>OrderDate</th>
-                <th>RequestDate</th>
                 <th>RequestedItems</th>
                 <th>Inventory1</th>
                 <th>Inventory2</th>
@@ -120,8 +96,6 @@ $(document).ready(function() {
             <tr>
                 
                 <th>OrderId</th>
-                <th>OrderDate</th>
-                <th>RequestDate</th>
                 <th>RequestedItems</th>
                 <th>Inventory1</th>
                 <th>Inventory2</th>
