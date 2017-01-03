@@ -3,7 +3,9 @@
 @{
     ViewBag.Title = "All Inventory";
 }
-
+@section Styles {
+    <link href="@Url.Content("~/Content/editor.dataTables.min.css")" rel="stylesheet" type="text/css" />
+}
 <head>
 
     <!-- DataTables CSS -->
@@ -11,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/select/1.2.1/css/select.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="./editor.dataTables.min.css">
+    
     
     <!-- jQuery -->
     <script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -32,7 +34,7 @@
         
         var jquery = jQuery.noConflict();
         jquery(document).ready(function () {
-        jquery('#toah').dataTable();
+
         jquery('#example').dataTable( {
              "dom": "Bfrtip",
              "select": true,
@@ -67,7 +69,7 @@
 </script>
 
 </head>    
-<h2>LL Inventorys</h2>
+<h2>TOAH Orders</h2>
 <table id="example" class="display" cellspacing="0" width="100%">
         <thead>
             <tr>
@@ -98,71 +100,3 @@
     </table>
 
 
-<table id="toah" class="table table-condensed table-hover table-striped">
-    <thead>
-    <tr>
-        <th width="10%">
-            @Html.DisplayNameFor(model => model.OrderId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OrderDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RequestDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RequestedItems)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Inventory1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Inventory2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Inventory3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Inventory4)
-        </th>
-    </tr>
-</thead>
-<tbody>
-@foreach (var item in Model) {
-    <tr>
-        <td width="10%">
-            @Html.DisplayFor(modelItem => item.OrderId)
-        </td> 
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderDate)
-        </td> 
-        <td>
-            @Html.DisplayFor(modelItem => item.RequestDate)
-        </td> 
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td> 
-        <td>
-            @Html.DisplayFor(modelItem => item.RequestedItems)
-        </td> 
-        <td>
-            @Html.DisplayFor(modelItem => item.Inventory1)
-        </td> 
-        <td>
-            @Html.DisplayFor(modelItem => item.Inventory2)
-        </td> 
-        <td>
-            @Html.DisplayFor(modelItem => item.Inventory3)
-        </td> 
-        <td>
-            @Html.DisplayFor(modelItem => item.Inventory4)
-        </td> 
-    </tr>
-}
-</tbody>
-
-
-</table>
