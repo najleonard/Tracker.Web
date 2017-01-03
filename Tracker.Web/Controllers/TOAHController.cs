@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http.Formatting;
 using System.Web;
-using System.Web.Mvc;
-using Tracker.Web.Models;
+using System.Web.Http;
 using DataTables;
+using WebApiExamples.Models;
 
 
 namespace Tracker.Web.Controllers
@@ -43,10 +42,12 @@ namespace Tracker.Web.Controllers
     }
 
     
-    public class TOAHController : Controller
+    public class JoinController : ApiController
     {
-        [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
-        public ActionResult Table()
+        [Route("api/join")]
+        [HttpGet]
+        [HttpPost]
+        public IHttpActionResult Table()
         {
             var settings = Properties.Settings.Default;
             var formData = HttpContext.Request.Form;
@@ -67,7 +68,7 @@ namespace Tracker.Web.Controllers
                     .Process(formData)
                     .Data();
     
-                return Json(response,JsonRequestBehavior.AllowGet);
+                return Json(response);
             }
         }
     }   
