@@ -8,6 +8,39 @@ using DataTables;
 
 namespace Tracker.Web.Controllers
 {
+    internal class JoinOrderClient
+    {
+        public class myOrder
+        {
+            public int Id { get; set; }
+
+            public int ClientId { get; set; }
+
+            public int Shipped { get; set; }
+
+            public string ShippedDate { get; set; }
+
+            public string RequestItems { get; set; }
+
+            public string RequestDate { get; set; }
+
+            public int InventoryItem1 { get; set; }
+
+            public int InventoryItem2 { get; set; }
+
+            public int InventoryItem3 { get; set; }
+
+            public int InventoryItem4 { get; set; }
+
+        }
+
+        public class myClient
+        {
+            public int Id { get; set; }  //<-------JUST ADDED
+            public string email { get; set; }
+        }
+    }
+
  
     public class TOAHController : Controller
     {
@@ -35,38 +68,6 @@ namespace Tracker.Web.Controllers
                 return Json(response,JsonRequestBehavior.AllowGet);
             }
         }
-    }    
+    }   
+} 
 
-    public class JoinOrderClient
-    {
-        public class myOrder
-        {
-            public int Id { get; set; }
-    
-            public int ClientId { get; set; }
-
-            public int Shipped { get; set; }
-
-            public string ShippedDate { get; set; }
-
-            public string RequestItems { get; set; }
-
-            public string RequestDate { get; set; }
-
-            public int InventoryItem1 { get; set; }
-
-            public int InventoryItem2 { get; set; }
-
-            public int InventoryItem3 { get; set; }
-
-            public int InventoryItem4 { get; set; }
-    
-        }
-    
-        public class myClient
-        {
-            public int Id { get; set; }  //<-------JUST ADDED
-            public string email { get; set; }
-        }
-    }
-}
