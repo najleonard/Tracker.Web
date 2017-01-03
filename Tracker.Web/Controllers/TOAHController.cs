@@ -4,7 +4,6 @@ using System.Net.Http.Formatting;
 using System.Web;
 using System.Web.Http;
 using DataTables;
-using WebApiExamples.Models;
 
 
 namespace Tracker.Web.Controllers
