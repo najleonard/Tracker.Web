@@ -1,9 +1,5 @@
-@model IEnumerable<Tracker.Web.Models.LLInventoryView3>
 
-@{
-    ViewBag.Title = "All Inventory";
-}
-
+<html>
 
 
 <head>    <!-- DataTables CSS -->
@@ -11,9 +7,7 @@
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/select/1.2.1/css/select.dataTables.min.css">
-    
-    <link href="@Url.Content("~/Content/editor.dataTables.css")" 
-              rel="stylesheet" type="text/css" />
+
 
     <!-- jQuery -->
     <script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -23,12 +17,6 @@
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/select/1.2.1/js/dataTables.select.min.js"></script>
     <!-- DataTables -->
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.js"></script>
-    <script src="@Url.Content("~/Scripts/dataTables.editor.js")" 
-              type="text/javascript"></script>
-        @RenderSection("head", required: false);
-    </head>
-
-
 
     <script type="text/javascript" charset="utf8">
 
@@ -64,12 +52,9 @@
         jquery('#example').on( 'click', 'tbody td:not(:first-child)', function (e) {
         editor.inline( this );
     } );
- 
-   
     });
-    
 </script>
- 
+</head>
 <h2>TOAH Orders</h2>
 <table id="example" class="display" cellspacing="0" width="100%">
         <thead>
@@ -101,3 +86,4 @@
     </table>
 
 
+</html>
