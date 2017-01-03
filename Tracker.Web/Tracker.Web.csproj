@@ -439,7 +439,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Content\dataTables.editor.css" />
+    <Content Include="Content\editor.dataTables.css" />
     <Content Include="Models\TrackerWebDb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TrackerWebDb.edmx</DependentUpon>
