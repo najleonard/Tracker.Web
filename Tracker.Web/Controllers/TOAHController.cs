@@ -42,7 +42,7 @@ namespace Tracker.Web.Controllers
         }
     }
 
-    [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
+    
     public class TOAHController : Controller
     {
         // GET: Inventory
@@ -52,7 +52,7 @@ namespace Tracker.Web.Controllers
             var model = repo.GetTOAHList();
             return View(model);
         }
-
+        [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
         public ActionResult Table()
         {
             var settings = Properties.Settings.Default;
