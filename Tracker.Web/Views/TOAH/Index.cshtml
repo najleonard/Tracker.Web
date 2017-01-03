@@ -20,6 +20,10 @@ $(document).ready(function() {
 				"name": "myOrder.Id"
 			},
 			{
+				"label": "client.email:",
+				"name": "client.email"
+			},
+			{
 				"label": "myOrder.RequestItems:",
 				"name": "myOrder.RequestItems"
 			},
@@ -47,6 +51,9 @@ $(document).ready(function() {
 		columns: [
 			{
 				"data": "myOrder.Id"
+			},
+			{
+				"data": "email"
 			},
 			{
 				"data": "RequestedItems"
@@ -85,6 +92,7 @@ $(document).ready(function() {
             <tr>
                 
                 <th>OrderId</th>
+				<th>email</th>
                 <th>RequestedItems</th>
                 <th>Inventory1</th>
                 <th>Inventory2</th>
@@ -96,6 +104,7 @@ $(document).ready(function() {
             <tr>
                 
                 <th>OrderId</th>
+				<th>email</th>
                 <th>RequestedItems</th>
                 <th>Inventory1</th>
                 <th>Inventory2</th>

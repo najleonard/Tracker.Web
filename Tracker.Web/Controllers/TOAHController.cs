@@ -64,6 +64,10 @@ namespace Tracker.Web.Controllers
                     .Field(new Field("Order.Id"))
                     .Field(new Field("Client.email"))
                     .Field(new Field("Order.RequestItems"))
+                    .Field(new Field("Order.InventoryItem1"))
+                    .Field(new Field("Order.InventoryItem2"))
+                    .Field(new Field("Order.InventoryItem3"))
+                    .Field(new Field("Order.InventoryItem4"))
                     .LeftJoin("Client", "Client.Id", "=", "Order.ClientId")
                     .Process(formData)
                     .Data();
