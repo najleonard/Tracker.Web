@@ -161,6 +161,7 @@
     <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\LLInventoryController.cs" />
     <Compile Include="Controllers\TOAHController.cs" />
+    <Compile Include="Controllers\TableController.cs" />
     <Compile Include="Controllers\TrackerReadingController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
