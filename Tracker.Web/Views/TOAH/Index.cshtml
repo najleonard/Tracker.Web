@@ -38,12 +38,10 @@ $(document).ready(function() {
 			{
 				"label": "Order.InventoryItem1:",
 				"name": "Order.InventoryItem1",
-				 type:  "select"
 			},
 			{
 				"label": "Order.InventoryItem2:",
-				"name": "Order.InventoryItem2",
-				 type:  "select"
+				"name": "Order.InventoryItem2"
 			},
 			{
 				"label": "Order.InventoryItem3:",
@@ -68,7 +66,13 @@ $(document).ready(function() {
 		},
 		columns: [
 			{
+				"data": "Order.Shipped"
+			},
+			{
 				"data": "Order.Id"
+			},
+			{
+				"data": "Order.RequestDate"
 			},
 			{
 				"data": "Order.RequestItems"
