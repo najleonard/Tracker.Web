@@ -3,10 +3,10 @@
 @{
     ViewBag.Title = "All Inventory";
 }
-@section styles{
-    <link rel="Stylesheet" href="@Href("~/Content/editor.dataTables.min.css")" />
-}
 
+@section AddToHead{
+    <link href="@Url.Content("~/Content/editor.dataTables.min.css")" rel="stylesheet" type="text/css" />
+}
 
 <head>    <!-- DataTables CSS -->
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.5/css/jquery.dataTables.css">
