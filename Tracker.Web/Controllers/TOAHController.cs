@@ -49,7 +49,7 @@ namespace Tracker.Web.Controllers
         public IHttpActionResult TOAH()
         {
             var settings = Properties.Settings.Default;
-            var formData = HttpContext.Request.Form;
+            var request = HttpContext.Current.Request;
     
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
@@ -64,7 +64,7 @@ namespace Tracker.Web.Controllers
                         .Validator(Validation.DbValues(new ValidationOpts { Empty = false }))
                     )
                     .LeftJoin("Client", "Client.Id", "=", "Order.ClientId")
-                    .Process(formData)
+                    .Process(request)
                     .Data();
     
                 return Json(response);
