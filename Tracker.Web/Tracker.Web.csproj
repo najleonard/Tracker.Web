@@ -440,6 +440,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\editor.dataTables.css" />
+    <Content Include="Content\editor.dataTables.min.css" />
     <Content Include="Models\TrackerWebDb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TrackerWebDb.edmx</DependentUpon>
