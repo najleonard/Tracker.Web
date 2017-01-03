@@ -27,7 +27,7 @@ namespace Tracker.Web.Controllers
     
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
-                DtResponse response  = new Editor(db, "LLInventoryView3", new []{"OrderId"})
+                DtResponse response  = new Editor(db, "LLInventoryView3")
                     .Model<LLInventoryView3>()
                     .Process(formData)
                     .Data();
