@@ -50,10 +50,10 @@ namespace Tracker.Web.Controllers
         }
 
         
-        [Route("api/toah")]
+        [Route("api/table")]
         [HttpGet]
         [HttpPost]
-        public IHttpActionResult TOAH()
+        public IHttpActionResult table()
         {
             var settings = Properties.Settings.Default;
             var request = HttpContext.Current.Request;
