@@ -12,7 +12,7 @@
 
 $(document).ready(function() {
 	var editor = new $.fn.dataTable.Editor( {
-		ajax: '/api/toah',
+		ajax: '/api/table',
 		table: '#example',
 		fields: [
 			{
@@ -61,7 +61,7 @@ $(document).ready(function() {
 	var table = $('#example').DataTable( {
 		dom: 'Bfrtip',
 		ajax: {
-			url: "/api/toah",
+			url: "/api/table",
 			type: 'POST'
 		},
 		columns: [
