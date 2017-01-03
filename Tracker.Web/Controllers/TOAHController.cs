@@ -8,9 +8,9 @@ using DataTables;
 
 namespace Tracker.Web.Controllers
 {
-    internal class JoinOrderClient
+    internal class JoinOrderClient : EditorModel
     {
-        public class Order
+        public class Order : EditorModel
         {
             public int Id { get; set; }
 
@@ -34,7 +34,7 @@ namespace Tracker.Web.Controllers
 
         }
 
-        public class Client
+        public class Client : EditorModel
         {
             public int Id { get; set; }  //<-------JUST ADDED
             public string email { get; set; }
