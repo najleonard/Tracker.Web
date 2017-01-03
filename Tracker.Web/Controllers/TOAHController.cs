@@ -36,7 +36,6 @@ namespace Tracker.Web.Controllers
 
         public class Client : EditorModel
         {
-            public int Id { get; set; }  //<-------JUST ADDED
             public string email { get; set; }
         }
     }
