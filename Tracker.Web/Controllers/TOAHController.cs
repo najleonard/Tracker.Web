@@ -43,10 +43,9 @@ namespace Tracker.Web.Controllers
         }
     }
 
- 
+    [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
     public class TOAHController : Controller
     {
-        [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
         // GET: Inventory
         public ActionResult Index()
         {
@@ -55,7 +54,7 @@ namespace Tracker.Web.Controllers
             return View(model);
         }
 
-        public IHttpActionResult Table()
+        public ActionResult Table()
         {
             var settings = Properties.Settings.Default;
             var formData = HttpContext.Request.Form;
