@@ -45,13 +45,6 @@ namespace Tracker.Web.Controllers
     
     public class TOAHController : Controller
     {
-        // GET: Inventory
-        public ActionResult Index()
-        {
-            LLInventoryRepository3 repo = new LLInventoryRepository3();
-            var model = repo.GetTOAHList();
-            return View(model);
-        }
         [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
         public ActionResult Table()
         {
