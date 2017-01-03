@@ -61,7 +61,7 @@ namespace Tracker.Web.Controllers
             {
                 DtResponse response  = new Editor(db, "Order","Id")
                     .Model<JoinOrderClient>()
-                    .Field(new Field("Order.Client")
+                    .Field(new Field("Order.ClientId")
                         .Options(new Options()
                             .Table("Client")
                             .Value("Id")
