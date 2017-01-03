@@ -42,12 +42,12 @@ namespace Tracker.Web.Controllers
     }
 
     
-    public class JoinController : ApiController
+    public class TOAHController : ApiController
     {
-        [Route("api/join")]
+        [Route("api/toah")]
         [HttpGet]
         [HttpPost]
-        public IHttpActionResult Table()
+        public IHttpActionResult TOAH()
         {
             var settings = Properties.Settings.Default;
             var formData = HttpContext.Request.Form;
