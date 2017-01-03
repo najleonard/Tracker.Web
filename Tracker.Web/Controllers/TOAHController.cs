@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Formatting;
 using System.Web;
+using System.Web.Http;
 using System.Web.Mvc;
 using Tracker.Web.Models;
 using DataTables;
+
 
 namespace Tracker.Web.Controllers
 {
@@ -52,7 +55,7 @@ namespace Tracker.Web.Controllers
             return View(model);
         }
 
-        public ActionResult Table()
+        public IHttpActionResult Table()
         {
             var settings = Properties.Settings.Default;
             var formData = HttpContext.Request.Form;
