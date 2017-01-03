@@ -27,7 +27,7 @@ namespace Tracker.Web.Controllers
     
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
-                DtResponse response  = new Editor(db, "Order", pkey = "Id")
+                DtResponse response  = new Editor(db, "Order", "Id")
                     .Model<myOrder>()
                     .Process(formData)
                     .Data();
