@@ -3,9 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tracker.Web.Controllers;
 
 namespace Tracker.Web.Models
 {
+    public class ShippedModel
+    {
+        public int OrderId { get; set; }
+        public DateTime ShippedDate { get; set; }
+    }
+    
     public class OrderRepository
     {
         public int UpdateOrderShipped(ShippedModel myShippedOrder)
