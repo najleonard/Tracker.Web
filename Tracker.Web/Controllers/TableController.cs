@@ -40,13 +40,27 @@ namespace Tracker.Web.Controllers
         }
     }
 
-    
+    [RoutePrefix("api/table")]
     public class TableController : ApiController
     {
+        [HttpPost]
+        [Route("updatedShipped")]
+        public ActionResult Create(int OrderId)
+        {
+            OrderRepository repo = new OrderRepository();
+            bool ok = repo.updateOrderShipped(OrderId);
+            if(ok)
+                return Request.CreateResponse(HttpStatusCode.OK);
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+            }
+        }
+
         
-        [Route("api/table")]
         [HttpGet]
         [HttpPost]
+        [Route("getdata")]
         public IHttpActionResult Table()
         {
             var settings = Properties.Settings.Default;
