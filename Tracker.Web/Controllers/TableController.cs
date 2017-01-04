@@ -49,7 +49,7 @@ namespace Tracker.Web.Controllers
     public class TableController : ApiController
     {
         [HttpPost]
-        [Route("updatedShipped")]
+        [Route("updateshipped")]
         public HttpResponseMessage Create(int OrderId)
         {
             OrderRepository repo = new OrderRepository();
