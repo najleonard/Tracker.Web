@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using DataTables;
 using System.Net.Http;
+using Tracker.Web.Models;
 
 namespace Tracker.Web.Controllers
 {
