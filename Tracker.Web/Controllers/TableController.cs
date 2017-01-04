@@ -46,35 +46,15 @@ namespace Tracker.Web.Controllers
         
     }
 
-    public class ShippedModel
-        {
-            public int OrderId { get; set; }
-            public DateTime ShippedDate { get; set; }
-        }
-
     [RoutePrefix("api/table")]
     public class TableController : ApiController
     {
-        [Route("updateshipping/{OrderId}")]
-        [HttpGet, HttpPost]
-        public HttpResponseMessage Create(int OrderId)
-        {
-            OrderRepository repo = new OrderRepository();
-            int ok = repo.UpdateOrderShipped(OrderId);
-            if(ok>0)
-                return Request.CreateResponse(HttpStatusCode.OK);
-            else
-            {
-                return Request.CreateResponse(HttpStatusCode.BadRequest);
-            }
-        }
-
-        [Route("updatetest")]
+        [Route("updateshipping")]
         [HttpGet, HttpPost]
         public HttpResponseMessage Shipped(ShippedModel myShippedOrder)
         {
             OrderRepository repo = new OrderRepository();
-            int ok = repo.UpdateOrderShipped(myShippedOrder.OrderId);
+            int ok = repo.UpdateOrderShipped(myShippedOrder);
             if(ok>0)
                 return Request.CreateResponse(HttpStatusCode.OK);
             else
