@@ -45,7 +45,7 @@ namespace Tracker.Web.Controllers
     {
         [HttpPost]
         [Route("updatedShipped")]
-        public ActionResult Create(int OrderId)
+        public HttpResponseMessage Create(int OrderId)
         {
             OrderRepository repo = new OrderRepository();
             bool ok = repo.updateOrderShipped(OrderId);
