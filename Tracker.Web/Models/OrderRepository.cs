@@ -9,7 +9,7 @@ namespace Tracker.Web.Models
     public class ShippedModel
     {
         public int OrderId { get; set; }
-        public Date ShippedDate { get; set; }
+        public DateTime ShippedDate { get; set; }
     }
     
     public class OrderRepository
