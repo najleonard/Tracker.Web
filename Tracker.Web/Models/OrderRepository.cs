@@ -20,7 +20,7 @@ namespace Tracker.Web.Models
             using (var db = new trackerwebdbEntities())
             {
                 //update tagid, friendly name, description and (future) image blob
-                var model = db.Orders.Where(x => x.Id == OrderId).First();
+                var model = db.Orders.Where(x => x.Id == myShippedOrder.OrderId).First();
                 model.Shipped = myShippedOrder.OrderId;
                 model.ShippedDate = myShippedOrder.ShippedDate;
                 
