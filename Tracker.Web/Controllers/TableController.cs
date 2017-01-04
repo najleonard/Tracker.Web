@@ -43,7 +43,7 @@ namespace Tracker.Web.Controllers
         {
             public string email { get; set; }
         }
-        public class ShippingModel
+        public class ShippedModel
         {
             public int OrderId { get; set; }
             public DateTime ShippedDate { get; set; }
