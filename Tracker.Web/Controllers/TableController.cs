@@ -46,7 +46,7 @@ namespace Tracker.Web.Controllers
         
     }
 
-    internal class ShippedModel
+    public class ShippedModel
         {
             public int OrderId { get; set; }
             public DateTime ShippedDate { get; set; }
