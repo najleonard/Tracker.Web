@@ -43,12 +43,14 @@ namespace Tracker.Web.Controllers
         {
             public string email { get; set; }
         }
-        public class ShippedModel
+        
+    }
+
+    internal class ShippedModel
         {
             public int OrderId { get; set; }
             public DateTime ShippedDate { get; set; }
         }
-    }
 
     [RoutePrefix("api/table")]
     public class TableController : ApiController
