@@ -186,6 +186,7 @@
     </Compile>
     <Compile Include="Models\UploadModel.cs" />
     <Compile Include="Models\InventoryRepository.cs" />
+    <Compile Include="Models\OrderRepository.cs" />
     <Compile Include="Models\InventoryView.cs">
       <DependentUpon>TrackerWebDb.tt</DependentUpon>
     </Compile>
