@@ -8,7 +8,7 @@ namespace Tracker.Web.Models
 {
     public class OrderRepository
     {
-        public bool UpdateOrderShipped(int OrderId)
+        public int UpdateOrderShipped(int OrderId)
         {
             int affectedRows = 0;
             using (var db = new trackerwebdbEntities())
@@ -18,7 +18,7 @@ namespace Tracker.Web.Models
                 model.Shipped = 1;
                 affectedRows = db.SaveChanges();
             }
-            return affectedRows > 0;
+            return affectedRows;
         }
     }
 }
