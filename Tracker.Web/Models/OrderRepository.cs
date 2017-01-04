@@ -21,7 +21,7 @@ namespace Tracker.Web.Models
             {
                 //update tagid, friendly name, description and (future) image blob
                 var model = db.Orders.Where(x => x.Id == myShippedOrder.OrderId).First();
-                model.Shipped = myShippedOrder.OrderId;
+                model.Shipped = 1;
                 model.ShippedDate = myShippedOrder.ShippedDate;
                 
                 affectedRows = db.SaveChanges();
