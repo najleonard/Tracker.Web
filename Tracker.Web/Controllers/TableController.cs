@@ -71,7 +71,7 @@ namespace Tracker.Web.Controllers
 
         [Route("updatetest")]
         [HttpGet, HttpPost]
-        public HttpResponseMessage Shipped(ShippingModel myShippedOrder)
+        public HttpResponseMessage Shipped(ShippedModel myShippedOrder)
         {
             OrderRepository repo = new OrderRepository();
             int ok = repo.UpdateOrderShipped(myShippedOrder.OrderId);
