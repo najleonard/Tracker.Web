@@ -48,9 +48,9 @@ namespace Tracker.Web.Controllers
     [RoutePrefix("api/table")]
     public class TableController : ApiController
     {
-        [HttpPost]
-        [Route("updateshipped")]
-        public HttpResponseMessage Create(int OrderId)
+        [Route("updateshipping/{OrderId}")]
+        [HttpGet, HttpPost]
+        public HttpResponseMessage Create(string OrderId)
         {
             OrderRepository repo = new OrderRepository();
             int ok = repo.UpdateOrderShipped(OrderId);
