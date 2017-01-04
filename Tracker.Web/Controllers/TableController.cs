@@ -43,6 +43,11 @@ namespace Tracker.Web.Controllers
         {
             public string email { get; set; }
         }
+        public class ShippingModel
+        {
+            public int OrderId { get; set; }
+            public DateTime ShippedDate { get; set; }
+        }
     }
 
     [RoutePrefix("api/table")]
@@ -54,6 +59,20 @@ namespace Tracker.Web.Controllers
         {
             OrderRepository repo = new OrderRepository();
             int ok = repo.UpdateOrderShipped(OrderId);
+            if(ok>0)
+                return Request.CreateResponse(HttpStatusCode.OK);
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+            }
+        }
+
+        [Route("updatetest")]
+        [HttpGet, HttpPost]
+        public HttpResponseMessage Shipped(ShippingModel myShippedOrder)
+        {
+            OrderRepository repo = new OrderRepository();
+            int ok = repo.UpdateOrderShipped(myShippedOrder.OrderId);
             if(ok>0)
                 return Request.CreateResponse(HttpStatusCode.OK);
             else
