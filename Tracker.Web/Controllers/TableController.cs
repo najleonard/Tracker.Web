@@ -49,8 +49,8 @@ namespace Tracker.Web.Controllers
         public HttpResponseMessage Create(int OrderId)
         {
             OrderRepository repo = new OrderRepository();
-            bool ok = repo.updateOrderShipped(OrderId);
-            if(ok)
+            int ok = repo.updateOrderShipped(OrderId);
+            if(ok>0)
                 return Request.CreateResponse(HttpStatusCode.OK);
             else
             {
