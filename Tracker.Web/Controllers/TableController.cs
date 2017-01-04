@@ -50,7 +50,7 @@ namespace Tracker.Web.Controllers
     {
         [Route("updateshipping/{OrderId}")]
         [HttpGet, HttpPost]
-        public HttpResponseMessage Create(string OrderId)
+        public HttpResponseMessage Create(int OrderId)
         {
             OrderRepository repo = new OrderRepository();
             int ok = repo.UpdateOrderShipped(OrderId);
