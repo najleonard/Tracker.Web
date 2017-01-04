@@ -185,8 +185,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\UploadModel.cs" />
-    <Compile Include="Models\InventoryRepository.cs" />
-    <Compile Include="Models\OrderRepository.cs" />
     <Compile Include="Models\InventoryView.cs">
       <DependentUpon>TrackerWebDb.tt</DependentUpon>
     </Compile>
@@ -221,6 +219,8 @@
     <Compile Include="Models\Tag.cs">
       <DependentUpon>TrackerWebDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\InventoryRepository.cs" />
+    <Compile Include="Models\OrderRepository.cs" />
     <Compile Include="Models\TagRepository.cs" />
     <Compile Include="Models\TrackerReadingModel.cs" />
     <Compile Include="Models\TrackerReadingRepository.cs" />
