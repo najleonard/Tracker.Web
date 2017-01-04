@@ -50,7 +50,7 @@ namespace Tracker.Web.Controllers
         public HttpResponseMessage Create(int OrderId)
         {
             OrderRepository repo = new OrderRepository();
-            int ok = repo.updateOrderShipped(OrderId);
+            int ok = repo.UpdateOrderShipped(OrderId);
             if(ok>0)
                 return Request.CreateResponse(HttpStatusCode.OK);
             else
