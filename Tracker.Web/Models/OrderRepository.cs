@@ -26,7 +26,7 @@ namespace Tracker.Web.Models
                 affectedRows = db.SaveChanges();
 
                 var model2 = db.Inventories.Where(x => x.Id == model.InventoryItem1).First();
-                model2.Location = myShippedOrder.OrderId
+                model2.Location = myShippedOrder.OrderId;
                 db.SaveChanges();
 
             }
