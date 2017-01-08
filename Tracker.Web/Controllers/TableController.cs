@@ -29,6 +29,8 @@ namespace Tracker.Web.Controllers
 
             public string RequestDate { get; set; }
 
+            public int StreetSize { get; set; }
+
             public int InventoryItem1 { get; set; }
 
             public int InventoryItem2 { get; set; }
