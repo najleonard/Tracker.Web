@@ -28,6 +28,8 @@ public partial class LLInventoryView3
 
     public string RequestedItems { get; set; }
 
+    public Nullable<int> StreetSize { get; set; }
+
     public Nullable<int> Inventory1 { get; set; }
 
     public Nullable<int> Inventory2 { get; set; }
