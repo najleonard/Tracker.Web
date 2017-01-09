@@ -39,7 +39,6 @@ namespace Tracker.Web.Controllers
 
             public int InventoryItem4 { get; set; }
             
-
         }
 
         public class Client : EditorModel
