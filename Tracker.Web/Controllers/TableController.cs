@@ -97,11 +97,19 @@ namespace Tracker.Web.Controllers
                         .Validator(Validation.DbValues(new ValidationOpts { Empty = false }))
                     )
                     .LeftJoin("Client", "Client.Id", "=", "Order.ClientId")
-                    .LeftJoin("Inventory", "Inventory.Id", "=", "Order.InventoryItem1")
-                    .LeftJoin("Inventory2", "Inventory.Id", "=", "Order.InventoryItem2")
-                    .Process(request)
+                    .MJoin(new MJoin("Inventory")
+                        .Link("Order.InventoryItem1", "Inventory.Id")
+                        .Link("Order.InventoryItem2", "Inventory.Id")
+                        .Field(new Field("Size1")
+                            .Options("Inventory", "Id", "Size")
+                        )
+                        .Field(new Field("Size2")
+                            .Options("Inventory", "Id", "Size")
+                        )
+                    )
+                    .Process(formData)
                     .Data();
-    
+                    
                 return Json(response);
             }
         }
