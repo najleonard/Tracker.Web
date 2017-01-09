@@ -100,13 +100,13 @@ namespace Tracker.Web.Controllers
                         .Options(new Options()
                             .Table("Inventory")
                             .Value("Id")
-                            .Label("Size1")
+                            .Label("size")
                         )
                         .Set( false )
                         .Validator(Validation.DbValues(new ValidationOpts { Empty = false }))
                     )
                     .LeftJoin("Client", "Client.Id", "=", "Order.ClientId")
-                    .LeftJoin("Inventory", "Inventory.Id", "=", "Order.Size1")
+                    .LeftJoin("Inventory", "Inventory.Id", "=", "Order.InventoryItem1")
                     .Process(request)
                     .Data();
     
