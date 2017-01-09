@@ -89,16 +89,14 @@ namespace Tracker.Web.Controllers
                     .Field(new Field("Order.InventoryItem4").SetFormatter( Format.IfEmpty( null ) ))
                     .Field(new Field("Order.ClientId")
                         .Options(new Options()
-                            .Table("Client")
+                            .Table("myClient")
                             .Value("Id")
                             .Label("email")
                         )
                         .Set( false )
                         .Validator(Validation.DbValues(new ValidationOpts { Empty = false }))
                     )
-                    .LeftJoin("Client", "Client.Id", "=", "Order.ClientId")
-                    .LeftJoin("Inventory as Inv1","Inv1.Id","=","Order.InventoryItem1")
-                    .LeftJoin("Inventory as Inv2","Inv2.Id","=","Order.InventoryItem2")
+                    .LeftJoin("Client as myClient", "myClient.Id", "=", "Order.ClientId")
                     .Process(request)
                     .Data();
                     
