@@ -48,7 +48,7 @@ namespace Tracker.Web.Controllers
 
         public class Inventory : EditorModel
         {
-            public int size1 { get; set; }
+            public int Size { get; set; }
         }
         
     }
@@ -96,11 +96,11 @@ namespace Tracker.Web.Controllers
                         .Set( false )
                         .Validator(Validation.DbValues(new ValidationOpts { Empty = false }))
                     )
-                     .Field(new Field("Order.size1")
+                     .Field(new Field("Order.Size")
                         .Options(new Options()
                             .Table("Inventory")
                             .Value("Id")
-                            .Label("size")
+                            .Label("Size")
                         )
                         .Set( false )
                         .Validator(Validation.DbValues(new ValidationOpts { Empty = false }))
