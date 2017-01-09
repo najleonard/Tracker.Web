@@ -38,6 +38,14 @@ public partial class LLInventoryView3
 
     public Nullable<int> Inventory4 { get; set; }
 
+    public Nullable<int> Size1 { get; set; }
+
+    public Nullable<int> Size2 { get; set; }
+
+    public Nullable<int> Size3 { get; set; }
+
+    public Nullable<int> Size4 { get; set; }
+
 }
 
 }

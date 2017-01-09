@@ -39,6 +39,15 @@ namespace Tracker.Web.Controllers
 
             public int InventoryItem4 { get; set; }
 
+            public int Size1 { get; set; }
+
+            public int Size2 { get; set; }
+
+            public int Size3 { get; set; }
+
+            public int Size4 { get; set; }
+            
+
         }
 
         public class Client : EditorModel
