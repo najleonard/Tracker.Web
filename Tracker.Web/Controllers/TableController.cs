@@ -107,7 +107,7 @@ namespace Tracker.Web.Controllers
                             .Options("Inventory", "Id", "Size")
                         )
                     )
-                    .Process(formData)
+                    .Process(request)
                     .Data();
                     
                 return Json(response);
