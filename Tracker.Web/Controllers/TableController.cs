@@ -89,7 +89,7 @@ namespace Tracker.Web.Controllers
                     .Field(new Field("Order.InventoryItem4").SetFormatter( Format.IfEmpty( null ) ))
                     .Field(new Field("Order.ClientId")
                         .Options(new Options()
-                            .Table("myClient")
+                            .Table("Client")
                             .Value("Id")
                             .Label("email")
                         )
