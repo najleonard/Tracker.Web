@@ -144,6 +144,10 @@ warning 6002: The table/view 'trackerwebdb.dbo.LLInventoryView3' does not have a
           <Property Name="Inventory2" Type="int" />
           <Property Name="Inventory3" Type="int" />
           <Property Name="Inventory4" Type="int" />
+          <Property Name="Size1" Type="int" />
+          <Property Name="Size2" Type="int" />
+          <Property Name="Size3" Type="int" />
+          <Property Name="Size4" Type="int" />
         </EntityType>
         <Association Name="FK__Inventory__Produ__14270015">
           <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
