@@ -96,7 +96,7 @@ namespace Tracker.Web.Controllers
                         .Set( false )
                         .Validator(Validation.DbValues(new ValidationOpts { Empty = false }))
                     )
-                     .Field(new Field("Order.Size1")
+                     .Field(new Field("Order.size1")
                         .Options(new Options()
                             .Table("Inventory")
                             .Value("Id")
