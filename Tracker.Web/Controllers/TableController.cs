@@ -48,7 +48,6 @@ namespace Tracker.Web.Controllers
 
         public class Inventory : EditorModel
         {
-            public int Id { get; set; }
             public int Size { get; set; }
         }
         
