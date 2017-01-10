@@ -48,6 +48,7 @@ namespace Tracker.Web.Controllers
 
         public class Inventory : EditorModel
         {
+            public int Id { get; set; }
             public int Size { get; set; }
         }
         
@@ -97,8 +98,9 @@ namespace Tracker.Web.Controllers
                         .Validator(Validation.DbValues(new ValidationOpts { Empty = false }))
                     )
                     .Field(new Field("Order.Size"))
-                    .LeftJoin("Client as myClient", "myClient.Id", "=", "Order.ClientId")
-                    .LeftJoin("Inventory","Inventory.Id","=","Order.InventoryItem1")
+                    .Filed(new Field('test.Id').Set( false ))
+                    .LeftJoin("Client", "Client.Id", "=", "Order.ClientId")
+                    .LeftJoin("Inventory as test","test.Id","=","Order.InventoryItem1")
                     .Process(request)
                     .Data();
                     
