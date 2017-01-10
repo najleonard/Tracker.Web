@@ -103,7 +103,7 @@ namespace Tracker.Web.Controllers
                     )
                     .Field(new Field("Inventory.Size"))
                     .LeftJoin("Client", "Client.Id", "=", "Order.ClientId")
-                    .LeftJoin("Inventory","Inventory.Id","=","Order.InventoryItem1")
+                    .LeftJoin("Inventory test","test.Id","=","Order.InventoryItem1")
                     .Process(request)
                     .Data();
                     
