@@ -48,7 +48,12 @@ namespace Tracker.Web.Controllers
 
         public class Inventory : EditorModel
         {
+            public string Product_sku { get; set; }
             public int Size { get; set; }
+            public string Color { get; set; }
+            public string Extras { get; set; }
+            public string Location { get; set; }
+            public string rfid_tag { get; set; }
         }
         
     }
@@ -97,7 +102,7 @@ namespace Tracker.Web.Controllers
                         .Validator(Validation.DbValues(new ValidationOpts { Empty = false }))
                     )
                     .Field(new Field("Inventory.Size"))
-                    .LeftJoin("Client myClient", "myClient.Id", "=", "Order.ClientId")
+                    .LeftJoin("Client", "Client.Id", "=", "Order.ClientId")
                     .LeftJoin("Inventory","Inventory.Id","=","Order.InventoryItem1")
                     .Process(request)
                     .Data();
