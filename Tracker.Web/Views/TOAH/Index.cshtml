@@ -58,7 +58,12 @@ $(document).ready(function() {
 			}
 		]
 	} );
-
+	
+	   // Activate an inline edit on click of a table cell
+    $('#example').on( 'click', 'tbody td:not(:first-child)', function (e) {
+        editor.inline( this );
+    } );
+	
 	var table = $('#example').DataTable( {
 		pageLength: 50,
 		dom: 'Bfrtip',
