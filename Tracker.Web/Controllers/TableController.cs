@@ -61,8 +61,8 @@ namespace Tracker.Web.Controllers
         public HttpResponseMessage Shipped(ShippedModel myShippedOrder)
         {
             OrderRepository repo = new OrderRepository();
-            int ok = repo.UpdateOrderShipped(myShippedOrder);
-            if(ok>0)
+            bool ok = repo.UpdateOrderShipped(myShippedOrder);
+            if(ok)
                 return Request.CreateResponse(HttpStatusCode.OK);
             else
             {

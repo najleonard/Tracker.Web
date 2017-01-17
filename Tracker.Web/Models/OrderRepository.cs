@@ -23,7 +23,7 @@ namespace Tracker.Web.Models
                 var model = db.Orders.Where(x => x.Id == myShippedOrder.OrderId).First();
                 model.Shipped = 1;
                 model.ShippedDate = myShippedOrder.ShippedDate;
-                affectedRows = db.SaveChanges();
+                db.SaveChanges();
 
                 var model2 = db.Inventories.Where(x => x.Id == model.InventoryItem1).First();
                 model2.Location = myShippedOrder.OrderId.ToString();
@@ -42,7 +42,7 @@ namespace Tracker.Web.Models
                 db.SaveChanges();
                 
             }
-            return affectedRows;
+            return true;
         }
     }
 }
