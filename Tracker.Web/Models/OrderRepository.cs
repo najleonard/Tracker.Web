@@ -29,17 +29,17 @@ namespace Tracker.Web.Models
                 model2.Location = myShippedOrder.OrderId.ToString();
                 db.SaveChanges();
                 
-                var model3 = db.Inventories.Where(x => x.Id == model.InventoryItem2).First();
-                model3.Location = myShippedOrder.OrderId.ToString();
-                db.SaveChanges();
+                // var model3 = db.Inventories.Where(x => x.Id == model.InventoryItem2).First();
+                // model3.Location = myShippedOrder.OrderId.ToString();
+                // db.SaveChanges();
                 
-                var model4 = db.Inventories.Where(x => x.Id == model.InventoryItem3).First();
-                model4.Location = myShippedOrder.OrderId.ToString();
-                db.SaveChanges();
+                // var model4 = db.Inventories.Where(x => x.Id == model.InventoryItem3).First();
+                // model4.Location = myShippedOrder.OrderId.ToString();
+                // db.SaveChanges();
                 
-                var model5 = db.Inventories.Where(x => x.Id == model.InventoryItem4).First();
-                model5.Location = myShippedOrder.OrderId.ToString();
-                db.SaveChanges();
+                // var model5 = db.Inventories.Where(x => x.Id == model.InventoryItem4).First();
+                // model5.Location = myShippedOrder.OrderId.ToString();
+                // db.SaveChanges();
                 
             }
             return affectedRows;
