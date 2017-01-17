@@ -14,7 +14,7 @@ namespace Tracker.Web.Models
     
     public class OrderRepository
     {
-        public int UpdateOrderShipped(ShippedModel myShippedOrder)
+        public bool UpdateOrderShipped(ShippedModel myShippedOrder)
         {
             int affectedRows = 0;
             using (var db = new trackerwebdbEntities())
