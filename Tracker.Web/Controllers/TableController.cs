@@ -46,11 +46,7 @@ namespace Tracker.Web.Controllers
             public string email { get; set; }
         }
 
-        public class test1 : EditorModel
-        {
-            public int Size { get; set; }
-        }
-        public class test2 : EditorModel
+        public class Inventory : EditorModel
         {
             public int Size { get; set; }
         }
@@ -87,6 +83,10 @@ namespace Tracker.Web.Controllers
             {
                 DtResponse response  = new Editor(db, "Order","Id")
                     .Model<JoinOrderClient>()
+                    .Field(new Field("Order.InventoryItem1").SetFormatter( Format.IfEmpty( null ) ))
+                    .Field(new Field("Order.InventoryItem2").SetFormatter( Format.IfEmpty( null ) ))
+                    .Field(new Field("Order.InventoryItem3").SetFormatter( Format.IfEmpty( null ) ))
+                    .Field(new Field("Order.InventoryItem4").SetFormatter( Format.IfEmpty( null ) ))
                     .Field(new Field("Order.ClientId")
                         .Options(new Options()
                             .Table("Client")
@@ -96,9 +96,21 @@ namespace Tracker.Web.Controllers
                         .Set( false )
                         .Validator(Validation.DbValues(new ValidationOpts { Empty = false }))
                     )
+                    .Field(new Field("test")
+                        .Options(new Options()
+                            .Table("Inventory")
+                            .Value("Id")
+                            .Label("Size")
+                        )
+                        .Set( false )
+                        .Validator(Validation.DbValues(new ValidationOpts { Empty = false }))
+                    )
                     .LeftJoin("Client", "Client.Id", "=", "Order.ClientId")
-                    .LeftJoin("Inventory as test1", "test1.Id", "=", "Order.InventoryItem1")
-                    .LeftJoin("Inventory as test2", "test2.Id", "=", "Order.InventoryItem2")
+                    .LeftJoin("Inventory as Inventory1", "Inventory1.Id", "=", "Order.InventoryItem1")
+                    .LeftJoin("Inventory as Inventory2", "Inventory2.Id", "=", "Order.InventoryItem1")
+                    .LeftJoin("Inventory as Inventory3", "Inventory3.Id", "=", "Order.InventoryItem1")
+                    .LeftJoin("Inventory as Inventory4", "Inventory4.Id", "=", "Order.InventoryItem1")
+
                     .Process(request)
                     .Data();
                     
