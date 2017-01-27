@@ -97,8 +97,14 @@ namespace Tracker.Web.Controllers
                         .Validator(Validation.DbValues(new ValidationOpts { Empty = false }))
                     )
                     .Field(new Field("test.Size").SetFormatter( Format.IfEmpty( null ) ))
+                    .Field(new Field("test2.Size").SetFormatter( Format.IfEmpty( null ) ))
+                    .Field(new Field("test3.Size").SetFormatter( Format.IfEmpty( null ) ))
+                    .Field(new Field("test4.Size").SetFormatter( Format.IfEmpty( null ) ))
                     .LeftJoin("Client", "Client.Id", "=", "Order.ClientId")
                     .LeftJoin("Inventory as test","Inventory.Id","=","Order.InventoryItem1")
+                    .LeftJoin("Inventory as test2","Inventory.Id","=","Order.InventoryItem2")
+                    .LeftJoin("Inventory as test3","Inventory.Id","=","Order.InventoryItem3")
+                    .LeftJoin("Inventory as test4","Inventory.Id","=","Order.InventoryItem4")
                     .Process(request)
                     .Data();
                     
