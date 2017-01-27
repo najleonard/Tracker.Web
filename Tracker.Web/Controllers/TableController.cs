@@ -93,7 +93,7 @@ namespace Tracker.Web.Controllers
                         .Validator(Validation.DbValues(new ValidationOpts { Empty = false }))
                     )
                     .LeftJoin("Client", "Client.Id", "=", "Order.ClientId")
-                    .LeftJoin("Inventory as test", "test.Id", "=", "Order.InventoryItem1")
+                    .LeftJoin("Inventory", "Inventory.Id", "=", "Order.InventoryItem1")
                     .Process(request)
                     .Data();
                     
