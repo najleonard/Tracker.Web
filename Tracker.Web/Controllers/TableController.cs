@@ -81,7 +81,7 @@ namespace Tracker.Web.Controllers
     
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
-                DtResponse response  = new Editor(db, "Order")
+                DtResponse response  = new Editor(db, "Order","Id")
                     .Model<JoinOrderClient>()
                     .Field(new Field("Order.InventoryItem1").SetFormatter( Format.IfEmpty( null ) ))
                     .Field(new Field("Order.InventoryItem2").SetFormatter( Format.IfEmpty( null ) ))
@@ -96,7 +96,7 @@ namespace Tracker.Web.Controllers
                         .Set( false )
                         .Validator(Validation.DbValues(new ValidationOpts { Empty = false }))
                     )
-                    .Field(new Field("test.Size"))
+                    .Field(new Field("test.Size").SetFormatter( Format.IfEmpty( null ) ))
                     .LeftJoin("Client", "Client.Id", "=", "Order.ClientId")
                     .LeftJoin("Inventory as test","test.Id","=","Order.InventoryItem1")
                     .Process(request)
