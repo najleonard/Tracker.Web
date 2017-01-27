@@ -46,14 +46,21 @@ namespace Tracker.Web.Controllers
             public string email { get; set; }
         }
 
+        public class Inventory1 : EditorModel
+        {
+            public int Size { get; set; }
+        }
+        
         public class Inventory2 : EditorModel
         {
             public int Size { get; set; }
         }
+        
         public class Inventory3 : EditorModel
         {
             public int Size { get; set; }
         }
+        
         public class Inventory4 : EditorModel
         {
             public int Size { get; set; }
