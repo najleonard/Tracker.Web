@@ -94,7 +94,6 @@ namespace Tracker.Web.Controllers
                     )
                     .LeftJoin("Client", "Client.Id", "=", "Order.ClientId")
                     .LeftJoin("Inventory as test", "test.Id", "=", "Order.InventoryItem1")
-                    .LeftJoin("Inventory as test2", "test2.Id", "=", "Order.InventoryItem2")
                     .Process(request)
                     .Data();
                     
