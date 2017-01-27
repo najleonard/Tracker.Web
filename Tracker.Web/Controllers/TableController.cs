@@ -83,10 +83,6 @@ namespace Tracker.Web.Controllers
             {
                 DtResponse response  = new Editor(db, "Order","Id")
                     .Model<JoinOrderClient>()
-                    .Field(new Field("Order.InventoryItem1").SetFormatter( Format.IfEmpty( null ) ))
-                    .Field(new Field("Order.InventoryItem2").SetFormatter( Format.IfEmpty( null ) ))
-                    .Field(new Field("Order.InventoryItem3").SetFormatter( Format.IfEmpty( null ) ))
-                    .Field(new Field("Order.InventoryItem4").SetFormatter( Format.IfEmpty( null ) ))
                     .Field(new Field("Order.ClientId")
                         .Options(new Options()
                             .Table("Client")
@@ -96,17 +92,7 @@ namespace Tracker.Web.Controllers
                         .Set( false )
                         .Validator(Validation.DbValues(new ValidationOpts { Empty = false }))
                     )
-                    .Field(new Field("test")
-                        .Options(new Options()
-                            .Table("Inventory")
-                            .Value("Id")
-                            .Label("Size")
-                        )
-                        .Set( false )
-                        .Validator(Validation.DbValues(new ValidationOpts { Empty = false }))
-                    )
                     .LeftJoin("Client", "Client.Id", "=", "Order.ClientId")
-                    .LeftJoin("Inventory as test","test.Id","=","Order.InventoryItem1")
                     .Process(request)
                     .Data();
                     
