@@ -40,6 +40,14 @@ namespace Tracker.Web.Controllers
             public int InventoryItem3 { get; set; }
 
             public int InventoryItem4 { get; set; }
+
+            public int InventoryItem5 { get; set; }
+
+            public int InventoryItem6 { get; set; }
+
+            public int InventoryItem7 { get; set; }
+
+            public int InventoryItem8 { get; set; }
             
         }
 
@@ -65,6 +73,26 @@ namespace Tracker.Web.Controllers
         }
         
         public class Inventory4 : EditorModel
+        {
+            public int Size { get; set; }
+        }
+        
+        public class Inventory5 : EditorModel
+        {
+            public int Size { get; set; }
+        }
+        
+        public class Inventory6 : EditorModel
+        {
+            public int Size { get; set; }
+        }
+        
+        public class Inventory7 : EditorModel
+        {
+            public int Size { get; set; }
+        }
+        
+        public class Inventory8 : EditorModel
         {
             public int Size { get; set; }
         }
@@ -105,6 +133,10 @@ namespace Tracker.Web.Controllers
                     .Field(new Field("Order.InventoryItem2").SetFormatter( Format.IfEmpty( null ) ))
                     .Field(new Field("Order.InventoryItem3").SetFormatter( Format.IfEmpty( null ) ))
                     .Field(new Field("Order.InventoryItem4").SetFormatter( Format.IfEmpty( null ) ))
+                    .Field(new Field("Order.InventoryItem5").SetFormatter( Format.IfEmpty( null ) ))
+                    .Field(new Field("Order.InventoryItem6").SetFormatter( Format.IfEmpty( null ) ))
+                    .Field(new Field("Order.InventoryItem7").SetFormatter( Format.IfEmpty( null ) ))
+                    .Field(new Field("Order.InventoryItem8").SetFormatter( Format.IfEmpty( null ) ))
                     .Field(new Field("Order.ClientId")
                         .Options(new Options()
                             .Table("Client")
@@ -119,6 +151,10 @@ namespace Tracker.Web.Controllers
                     .LeftJoin("Inventory as Inventory2", "Inventory2.Id", "=", "Order.InventoryItem2")
                     .LeftJoin("Inventory as Inventory3", "Inventory3.Id", "=", "Order.InventoryItem3")
                     .LeftJoin("Inventory as Inventory4", "Inventory4.Id", "=", "Order.InventoryItem4")
+                    .LeftJoin("Inventory as Inventory5", "Inventory1.Id", "=", "Order.InventoryItem5")
+                    .LeftJoin("Inventory as Inventory6", "Inventory2.Id", "=", "Order.InventoryItem6")
+                    .LeftJoin("Inventory as Inventory7", "Inventory3.Id", "=", "Order.InventoryItem7")
+                    .LeftJoin("Inventory as Inventory8", "Inventory4.Id", "=", "Order.InventoryItem8")
 
                     .Process(request)
                     .Data();
