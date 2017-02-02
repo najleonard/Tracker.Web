@@ -137,7 +137,7 @@ namespace Tracker.Web.Controllers
                     .Field(new Field("Order.InventoryItem6").SetFormatter( Format.IfEmpty( null ) ))
                     .Field(new Field("Order.InventoryItem7").SetFormatter( Format.IfEmpty( null ) ))
                     .Field(new Field("Order.InventoryItem8").SetFormatter( Format.IfEmpty( null ) ))
-                    .Field(new Field("Order.Date").GetFormatter(Format.DateSqlToFormat(Format.DATE_ISO_1036))
+                    .Field(new Field("Order.Date").GetFormatter(Format.DateSqlToFormat(Format.DATE_ISO_1036)))
                     .Field(new Field("Order.ClientId")
                         .Options(new Options()
                             .Table("Client")
