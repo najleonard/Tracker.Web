@@ -190,9 +190,6 @@ optgroup {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  table-layout: fixed; 
-  word-wrap:break-word; 
-
 }
 td,
 th {
