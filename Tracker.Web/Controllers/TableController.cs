@@ -21,7 +21,7 @@ namespace Tracker.Web.Controllers
 
             public int ClientId { get; set; }
 
-            public int Date { get; set; }
+            public string Date { get; set; }
 
             public int Shipped { get; set; }
 
