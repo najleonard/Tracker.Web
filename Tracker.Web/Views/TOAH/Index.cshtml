@@ -5,6 +5,7 @@
 
 	<script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/v/dt/jqc-1.12.4/moment-2.13.0/dt-1.10.13/b-1.2.4/se-1.2.0/datatables.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="Scripts/dataTables.editor.js"></script>
+	<script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/fixedcolumns/3.2.2/js/dataTables.fixedColumns.min.js"></script>
 	
 
 <script type="text/javascript" charset="utf8">
@@ -80,13 +81,8 @@ $(document).ready(function() {
 			type: 'POST'
 		},
 		columnDefs: [
-      { "width": "10px", "targets": 0 },
-      { "width": "40px", "targets": 1 },
-      { "width": "100px", "targets": 2 },
-      { "width": "70px", "targets": 3 },
-      { "width": "70px", "targets": 4 },
-      { "width": "70px", "targets": 5 }
-    ],
+            { width: 200, targets: 0 }
+        ],
 		columns: [
 			{
 				"data": "Order.Shipped"
