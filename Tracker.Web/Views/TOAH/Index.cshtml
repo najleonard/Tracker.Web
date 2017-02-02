@@ -74,7 +74,7 @@ $(document).ready(function() {
         editor.inline( this );
     } );
 	
-	var table = $('#example').DataTable( {
+	var table = $('#example').removeAttr('width').DataTable( {
 		pageLength: 50,
 		dom: 'Bfrtip',
 		ajax: {
