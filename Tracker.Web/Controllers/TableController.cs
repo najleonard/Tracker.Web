@@ -46,6 +46,7 @@ namespace Tracker.Web.Controllers
         public class Client : EditorModel
         {
             public string email { get; set; }
+            public string customer_name { get; set; }
         }
 
         public class Inventory1 : EditorModel
@@ -108,7 +109,7 @@ namespace Tracker.Web.Controllers
                         .Options(new Options()
                             .Table("Client")
                             .Value("Id")
-                            .Label("email")
+                            .Label("email","customer_name")
                         )
                         .Set( false )
                         .Validator(Validation.DbValues(new ValidationOpts { Empty = false }))
