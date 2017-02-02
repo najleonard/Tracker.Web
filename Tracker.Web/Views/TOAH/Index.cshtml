@@ -73,6 +73,7 @@ $(document).ready(function() {
 		},
 		columns: [
 			{
+				"width":"50%",
 				"data": "Order.Shipped"
 			},
 			{
@@ -124,8 +125,6 @@ $(document).ready(function() {
 			{ extend: 'remove', editor: editor }
 		]
 	} );
-	$('#container').css( 'display', 'block' );
-table.columns.adjust().draw();
 } );
 
 }(jQuery));
