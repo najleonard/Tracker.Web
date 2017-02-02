@@ -109,7 +109,7 @@ namespace Tracker.Web.Controllers
                         .Options(new Options()
                             .Table("Client")
                             .Value("Id")
-                            .Label("email","customer_name")
+                            .Label(new []{"email", "customer_name"})
                         )
                         .Set( false )
                         .Validator(Validation.DbValues(new ValidationOpts { Empty = false }))
