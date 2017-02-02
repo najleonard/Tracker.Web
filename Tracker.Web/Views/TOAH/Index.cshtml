@@ -81,12 +81,14 @@ $(document).ready(function() {
 			url: "/api/table/getdata",
 			type: 'POST'
 		},
-		scrollY:        "300px",
-        scrollX:        true,
+		scrollY:        "600px",
+        scrollX:        false,
         scrollCollapse: true,
         paging:         false,
         columnDefs: [
-            { width: 200, targets: 0 }
+            { width: 50, targets: 0 },
+			{ width: 50, targets: 1 },
+			{ width: 50, targets: 2 }
         ],
         fixedColumns: true,
 		columns: [
