@@ -64,7 +64,11 @@ $(document).ready(function() {
         editor.inline( this );
     } );
 	
-	var table = $('#example').DataTable( {
+	var table = $('#example').removeAttr('width').DataTable( {
+		columnDefs: [
+            { width: 200, targets: 0 }
+        ],
+        fixedColumns: true,
 		pageLength: 50,
 		dom: 'Bfrtip',
 		ajax: {
