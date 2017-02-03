@@ -25,7 +25,7 @@ namespace Tracker.Web.Models
                 model.ShippedDate = myShippedOrder.ShippedDate;
                // db.SaveChanges();
 
-                var model2 = db.Inventories.Where(x => x.Id == model.InventoryItem1).First();
+               /* var model2 = db.Inventories.Where(x => x.Id == model.InventoryItem1).First();
                 model2.Location = myShippedOrder.OrderId.ToString();
                 //db.SaveChanges();
                 
@@ -51,6 +51,7 @@ namespace Tracker.Web.Models
 
                 var model9 = db.Inventories.Where(x => x.Id == model.InventoryItem8).First();
                 model9.Location = myShippedOrder.OrderId.ToString();
+                */
                 db.SaveChanges();
                 
             }

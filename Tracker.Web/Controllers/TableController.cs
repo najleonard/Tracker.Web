@@ -108,7 +108,7 @@ namespace Tracker.Web.Controllers
         {
             OrderRepository repo = new OrderRepository();
             bool ok = repo.UpdateOrderShipped(myShippedOrder);
-            return Request.CreateResponse(HttpStatusCode.OK);
+            
             if(ok)
                 return Request.CreateResponse(HttpStatusCode.OK);
             else
