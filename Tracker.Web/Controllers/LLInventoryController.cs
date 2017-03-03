@@ -12,6 +12,33 @@ using System.Net;
 
 namespace Tracker.Web.Controllers
 {
+    internal class JoinInventoryProducts : EditorModel
+    {
+        public class Inventory : EditorModel
+        {
+            public int Id { get; set; }
+
+            public string Product_sku { get; set; }
+
+            public int Size { get; set; }
+
+            public string Color { get; set; }
+
+            public string Extra { get; set; }
+
+            public string Location { get; set; }
+
+            public string rfid_tag { get; set; }
+        }
+
+        public class Products : EditorModel
+        {
+            public string name { get; set; }
+            public string sku { get; set; }
+            public string type { get; set; }
+        }
+        
+    }
     // public class LLInventoryController : Controller
     // {
     //     // GET: Inventory
@@ -37,8 +64,9 @@ namespace Tracker.Web.Controllers
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
                 DtResponse response  = new Editor(db, "Inventory")
-                    .Model<LLInventoryView2>()
-                                        .Process(request)
+                    .Model<JoinInventoryProducts>()
+                    .LeftJoin("Products", "Inventory.Product_sku", "=", "Products.sku")
+                    .Process(request)
                     .Data();
                     
                 return Json(response);
