@@ -9,6 +9,8 @@ using System.Net.Http;
 using Tracker.Web.Models;
 using System.Linq;
 using System.Net;
+using System.Web.Mvc;
+
 
 namespace Tracker.Web.Controllers
 {
@@ -41,7 +43,7 @@ namespace Tracker.Web.Controllers
     }
     public class LLInventoryController : Controller
     {
-         [HttpGet]
+        [HttpGet]
         // GET: Inventory
         public ActionResult Index(string sortOrder)
         {
@@ -49,7 +51,29 @@ namespace Tracker.Web.Controllers
             var model = repo.GetCurrentLLInventory(sortOrder);
             return View(model);
         }
-    }
 
-   
+        [RoutePrefix("api/inventory")]
+        public class LLInventoryController : ApiController
+        {   
+            [HttpGet]
+            [HttpPost]
+            [Route("getdata")]
+            public IHttpActionResult Table()
+            {
+                var settings = Properties.Settings.Default;
+                var request = HttpContext.Current.Request;
+        
+                using (var db = new Database(settings.DbType, settings.DbConnection))
+                {
+                    DtResponse response  = new Editor(db, "Inventory","Id")
+                        .Model<JoinInventoryProducts>()
+                        .LeftJoin("Products", "Products.sku", "=", "Inventory.Product_sku")
+                        .Process(request)
+                        .Data();
+                        
+                    return Json(response);
+                }
+            }
+        }    
+    }
 }
