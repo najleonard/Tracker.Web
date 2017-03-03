@@ -38,13 +38,14 @@ namespace Tracker.Web.Controllers
             {
                 DtResponse response  = new Editor(db, "Inventory","Id")
                     .Model<LLInventoryView2>()
-                    .Field(new Field("Inventory.Id").SetFormatter( Format.IfEmpty( null ) ))
-                    .Field(new Field("Inventory.Product_sku").SetFormatter( Format.IfEmpty( null ) ))
-                    .Field(new Field("Inventory.Size").SetFormatter( Format.IfEmpty( null ) ))
-                    .Field(new Field("Inventory.Color").SetFormatter( Format.IfEmpty( null ) ))
-                    .Field(new Field("Inventory.Extras").SetFormatter( Format.IfEmpty( null ) ))
-                    .Field(new Field("Inventory.Location").SetFormatter( Format.IfEmpty( null ) ))
-                    .Field(new Field("Inventory.rfid_tag").SetFormatter( Format.IfEmpty( null ) ))
+                    .Field(new Field("InventoryId").SetFormatter( Format.IfEmpty( null ) ))
+                    .Field(new Field("SKU").SetFormatter( Format.IfEmpty( null ) ))
+                    .Field(new Field("Name").SetFormatter( Format.IfEmpty( null ) ))
+                    .Field(new Field("Type").SetFormatter( Format.IfEmpty( null ) ))
+                    .Field(new Field("Size").SetFormatter( Format.IfEmpty( null ) ))
+                    .Field(new Field("Color").SetFormatter( Format.IfEmpty( null ) ))
+                    .Field(new Field("Extras").SetFormatter( Format.IfEmpty( null ) ))
+                    .Field(new Field("Location").SetFormatter( Format.IfEmpty( null ) ))
                     .Process(request)
                     .Data();
                     
