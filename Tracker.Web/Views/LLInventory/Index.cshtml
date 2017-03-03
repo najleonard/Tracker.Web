@@ -69,6 +69,7 @@ $(document).ready(function() {
 	var table = $('#example').removeAttr('width').DataTable( {
 		pageLength: 50,
 		dom: 'Bfrtip',
+		colReorder: true,
 		ajax: {
 			url: "/api/table/getInventory",
 			type: 'POST'
