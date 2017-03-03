@@ -65,7 +65,7 @@ namespace Tracker.Web.Controllers
             {
                 DtResponse response  = new Editor(db, "Inventory")
                     .Model<JoinInventoryProducts>()
-                    .LeftJoin("Products", "Inventory.Product_sku", "=", "Products.sku")
+                    .LeftJoin("Products", "Products.sku", "=", "Inventory.Product_sku")
                     .Process(request)
                     .Data();
                     
