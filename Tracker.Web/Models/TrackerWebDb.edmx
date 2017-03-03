@@ -309,23 +309,7 @@ warning 6002: The table/view 'trackerwebdb.dbo.LLInventoryView3' does not have a
     [LLInventoryView2].[Location] AS [Location]
     FROM [dbo].[LLInventoryView2] AS [LLInventoryView2]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="LLInventoryView3" EntityType="Self.LLInventoryView3" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [LLInventoryView3].[OrderId] AS [OrderId], 
-    [LLInventoryView3].[OrderDate] AS [OrderDate], 
-    [LLInventoryView3].[RequestDate] AS [RequestDate], 
-    [LLInventoryView3].[Email] AS [Email], 
-    [LLInventoryView3].[RequestedItems] AS [RequestedItems], 
-    [LLInventoryView3].[Inventory1] AS [Inventory1], 
-    [LLInventoryView3].[Inventory2] AS [Inventory2], 
-    [LLInventoryView3].[Inventory3] AS [Inventory3], 
-    [LLInventoryView3].[Inventory4] AS [Inventory4],
-    [LLInventoryView3].[Size1] AS [Size1],
-    [LLInventoryView3].[Size2] AS [Size2],
-    [LLInventoryView3].[Size3] AS [Size3],
-    [LLInventoryView3].[Size4] AS [Size4],
-    FROM [dbo].[LLInventoryView3] AS [LLInventoryView3]</DefiningQuery>
-          </EntitySet>
+          
           <AssociationSet Name="FK__Inventory__Produ__14270015" Association="Self.FK__Inventory__Produ__14270015">
             <End Role="Products" EntitySet="Products" />
             <End Role="Inventory" EntitySet="Inventory" />
