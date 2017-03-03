@@ -41,6 +41,7 @@ namespace Tracker.Web.Controllers
     }
     public class LLInventoryController : Controller
     {
+         [HttpGet]
         // GET: Inventory
         public ActionResult Index(string sortOrder)
         {
