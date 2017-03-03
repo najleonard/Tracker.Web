@@ -19,7 +19,7 @@ namespace Tracker.Web.Controllers
         // GET: Monitor
         public ActionResult Index()
         {
-        return Content("string value");
+            return View();
         }
     }
 }

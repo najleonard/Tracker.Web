@@ -9,10 +9,8 @@ namespace Tracker.Web.Controllers
 {
     public class TOAHController : Controller
     {
-        // GET: Monitor
         public ActionResult Index()
         {
-            
             return View();
         }
     }
