@@ -73,13 +73,6 @@ $(document).ready(function() {
 			url: "/api/table/getInventory",
 			type: 'POST'
 		},
-        columnDefs: [
-            { width: 30, targets: 0 },
-			{ width: 100, targets: 1 },
-			{ width: 50, targets: 2 }
-			{ visible: false, targets: 9 }
-        ],
-        fixedColumns: true,
 		columns: [
 			{
 				"data": "Inventory.Id"
