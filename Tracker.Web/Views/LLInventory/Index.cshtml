@@ -1,101 +1,162 @@
-@model IEnumerable<Tracker.Web.Models.LLInventoryView2>
-
-@{
-    ViewBag.Title = "All Inventory";
-}
-
 <head>    <!-- DataTables CSS -->
     
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.4/moment-2.13.0/dt-1.10.13/b-1.2.4/se-1.2.0/datatables.min.css">
+	<link rel="stylesheet" type="text/css" href="Content/editor.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedcolumns/3.2.2/css/fixedColumns.dataTables.min.css">
 
-<script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-1.12.4.js"></script>
-<script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/v/dt/jqc-1.12.4/moment-2.13.0/dt-1.10.13/b-1.2.4/se-1.2.0/datatables.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="Scripts/dataTables.editor.js"></script>
+	<script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/fixedcolumns/3.2.2/js/dataTables.fixedColumns.min.js"></script>
+	
+
 <script type="text/javascript" charset="utf8">
 (function($){
 
 $(document).ready(function() {
-    $('#neil').DataTable({
-        "scrollY":        "600px",
-        "scrollCollapse": true,
-        "paging":         false
-    });
+	var editor = new $.fn.dataTable.Editor( {
+		ajax: '/api/inventory/getdata',
+		table: '#example',
+		fields: [
+			{
+				"label": "Inventory.Id:",
+				"name": "Inventory.Id"
+			},
+			{
+				"label": "Inventory.Product_sku:",
+				"name": "Inventory.Product_sku"
+			},
+			{
+
+				"label": "Inventory.Size:",
+				"name": "Inventory.Size"
+			},
+			{
+				"label": "Inventory.Color:",
+				"name": "Inventory.Color"
+			},
+			{
+				"label": "Inventory.Extras:",
+				"name": "Inventory.Extras",
+			},
+			{
+				"label": "Inventory.Location:",
+				"name": "Inventory.Location"
+			},
+			{
+				"label": "Inventory.rfid_tag:",
+				"name": "Inventory.rfid_tag"
+			},
+			{
+				"label": "Products.name:",
+				"name": "Products.name"
+			},
+			{
+				"label": "Products.sku:",
+				"name": "Products.sku"
+			},
+			{
+				"label": "Products.type:",
+				"name": "Products.type"
+			}
+		]
+	} );
+	
+	   // Activate an inline edit on click of a table cell
+    $('#example').on( 'click', 'tbody td:not(:first-child)', function (e) {
+        editor.inline( this );
+    } );
+	
+	var table = $('#example').removeAttr('width').DataTable( {
+		pageLength: 50,
+		dom: 'Bfrtip',
+		ajax: {
+			url: "/api/table/getdata",
+			type: 'POST'
+		},
+        columnDefs: [
+            { width: 200, targets: 0 },
+			{ width: 100, targets: 1 },
+			{ width: 50, targets: 2 }
+        ],
+        fixedColumns: true,
+		columns: [
+			{
+				"data": "Inventory.Id"
+			},
+			{
+				"data": "Inventory.Product_sku"
+			},
+			{
+				"data": "Inventory.Size"
+			},
+			{
+				"data": "Inventory.Color"
+			},
+			{
+				"data": "Inventory.Extras"
+			},
+			{
+				"data": "Inventory.Location"
+			},
+			{
+				"data": "Inventory.rfid_tag"
+			},
+			{
+				"data": "Products.name",
+			},
+			{
+				"data": "Products.sku",
+			},
+			{
+				"data": "Products.type",
+			}
+
+		],
+		select: true,
+		lengthChange: false,
+		buttons: [
+			{ extend: 'create', editor: editor },
+			{ extend: 'edit',   editor: editor },
+			{ extend: 'remove', editor: editor }
+		]
+	} );
 } );
+
 }(jQuery));
+        
 </script>
 </head>
 
+<h2>TOAH Orders</h2>
+<table id="example" class="display"cellspacing="0" style="font-family:arial;font-size:10px">
+        <thead>
+            <tr>
+                <th cellpadding="5px" >Id</th>
+                <th>SKU</th>
+				<th>Size</th>
+				<th>Color</th>
+				<th>Extras</th>
+                <th>Location</th>
+				<th>rfig_tag</th>
+                <th>Name</th>
+                <th>Sku</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th cellpadding="5px" >Id</th>
+                <th>SKU</th>
+				<th>Size</th>
+				<th>Color</th>
+				<th>Extras</th>
+                <th>Location</th>
+				<th>rfig_tag</th>
+                <th>Name</th>
+                <th>Sku</th>
+                <th>Type</th>
+            </tr>
+        </tfoot>
+    </table>
 
-<h2>LL Inventory</h2>
-
-<table id="neil" class="display">
-    <thead>
-    <tr>
-        <th width="10%">
-            @Html.DisplayNameFor(model => model.InventoryId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SKU)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Size)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Color)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Extras)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Location)
-        </th>
-    </tr>
-</thead>
-<tbody>
-@foreach (var item in Model) {
-    <tr>
-        <td width="10%">
-            @Html.DisplayFor(modelItem => item.InventoryId)
-        </td> 
-        <td>
-            @Html.DisplayFor(modelItem => item.SKU)
-        </td> 
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td> 
-        <td>
-            @Html.DisplayFor(modelItem => item.Type)
-        </td> 
-        <td>
-            @Html.DisplayFor(modelItem => item.Size)
-        </td> 
-        <td>
-            @Html.DisplayFor(modelItem => item.Color)
-        </td> 
-        <td>
-            @Html.DisplayFor(modelItem => item.Extras)
-        </td> 
-        <td>
-            @Html.DisplayFor(modelItem => item.Location)
-        </td> 
-    </tr>
-}
-</tbody>
-
-</table>
-
-<!-- DataTables CSS -->
-<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.5/css/jquery.dataTables.css">
-
-<!-- jQuery -->
-<script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-
-<!-- DataTables -->
-<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.js">
-</script>
 
