@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using System;
 using System.Collections.Generic;
 using System.Net.Http.Formatting;
@@ -39,7 +40,7 @@ namespace Tracker.Web.Controllers
         }
         
     }
-    // public class LLInventoryController : Controller
+    /// public class LLInventoryController : Controller
     // {
     //     // GET: Inventory
     //     public ActionResult Index(string sortOrder)
@@ -74,3 +75,5 @@ namespace Tracker.Web.Controllers
         }
     }    
 }
+=======
+>>>>>>> 2099a361fc977840163c163dab270016208ee13a
