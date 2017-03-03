@@ -41,23 +41,22 @@ namespace Tracker.Web.Controllers
         }
         
     }
-    // public class LLInventoryController : Controller
-    // {
-    //     [HttpGet]
-    //     // GET: Inventory
-    //     public ActionResult Index(string sortOrder)
-    //     {
-    //         LLInventoryRepository repo = new LLInventoryRepository();
-    //         var model = repo.GetCurrentLLInventory(sortOrder);
-    //         return View(model);
-    //     }
-    // }
+    public class LLInventoryController : Controller
+    {
+        // GET: Inventory
+        public ActionResult Index(string sortOrder)
+        {
+            LLInventoryRepository repo = new LLInventoryRepository();
+            var model = repo.GetCurrentLLInventory(sortOrder);
+            return View(model);
+        }
+    }
 
     [RoutePrefix("api/inventory")]
     public class LLInventoryController : ApiController
     {   
-        [HttpGet]
-        [HttpPost]
+        //[HttpGet]
+        //[HttpPost]
         [Route("getdata")]
         public IHttpActionResult Table()
         {
