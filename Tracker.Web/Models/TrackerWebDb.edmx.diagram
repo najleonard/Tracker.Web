@@ -26,7 +26,6 @@
         <AssociationConnector Association="trackerwebdbModel.FK__Order__Inventory__2180FB33" />
         <AssociationConnector Association="trackerwebdbModel.FK__Order__Inventory__22751F6C" />
         <AssociationConnector Association="trackerwebdbModel.FK__Order__Inventory__236943A5" />
-        <EntityTypeShape EntityType="trackerwebdbModel.LLInventoryView3" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
