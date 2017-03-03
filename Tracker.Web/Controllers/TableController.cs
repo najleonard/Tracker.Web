@@ -133,7 +133,7 @@ namespace Tracker.Web.Controllers
 
         [Route("getInventory")]
         [HttpGet, HttpPost]
-        public IHttpActionResult Table()
+        public IHttpActionResult InventoryTable()
         {
             var settings = Properties.Settings.Default;
             var request = HttpContext.Current.Request;
