@@ -75,5 +75,3 @@ namespace Tracker.Web.Controllers
         }
     }    
 }
-=======
->>>>>>> 2099a361fc977840163c163dab270016208ee13a
