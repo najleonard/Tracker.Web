@@ -12,10 +12,8 @@ namespace Tracker.Web.Controllers
         // GET: Monitor
         public ActionResult Index()
         {
-            return new EmptyResult();
-            MonitorRepository repo = new MonitorRepository();
-            List<Monitor> model = repo.GetAllMonitors();
-            return View(model);
+            
+            return View();
         }
     }
 }
