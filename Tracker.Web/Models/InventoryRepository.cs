@@ -31,17 +31,4 @@ namespace Tracker.Web.Models
             return retvalue;
         }
     }
-
-    public class LLInventoryRepository3
-    {
-        public List<LLInventoryView3> GetTOAHList()
-        {
-            List<LLInventoryView3> retvalue = null;
-            using(var db = new trackerwebdbEntities())
-            {
-                  retvalue = db.LLInventoryView3.ToList();
-            }
-            return retvalue;
-        }
-    }
 }

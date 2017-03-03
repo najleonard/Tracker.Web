@@ -37,7 +37,7 @@ namespace Tracker.Web.Controllers
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
                 DtResponse response  = new Editor(db, "Inventory","Id")
-                    .Model<JoinOrderClient>()
+                    .Model<LLInventoryView2>()
                     .Field(new Field("Inventory.Id").SetFormatter( Format.IfEmpty( null ) ))
                     .Field(new Field("Inventory.Product_sku").SetFormatter( Format.IfEmpty( null ) ))
                     .Field(new Field("Inventory.Size").SetFormatter( Format.IfEmpty( null ) ))
