@@ -36,17 +36,9 @@ namespace Tracker.Web.Controllers
     
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
-                DtResponse response  = new Editor(db, "Inventory","Id")
+                DtResponse response  = new Editor(db, "Inventory")
                     .Model<LLInventoryView2>()
-                    .Field(new Field("InventoryId").SetFormatter( Format.IfEmpty( null ) ))
-                    .Field(new Field("SKU").SetFormatter( Format.IfEmpty( null ) ))
-                    .Field(new Field("Name").SetFormatter( Format.IfEmpty( null ) ))
-                    .Field(new Field("Type").SetFormatter( Format.IfEmpty( null ) ))
-                    .Field(new Field("Size").SetFormatter( Format.IfEmpty( null ) ))
-                    .Field(new Field("Color").SetFormatter( Format.IfEmpty( null ) ))
-                    .Field(new Field("Extras").SetFormatter( Format.IfEmpty( null ) ))
-                    .Field(new Field("Location").SetFormatter( Format.IfEmpty( null ) ))
-                    .Process(request)
+                                        .Process(request)
                     .Data();
                     
                 return Json(response);
