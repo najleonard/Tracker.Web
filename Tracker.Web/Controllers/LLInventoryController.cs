@@ -24,7 +24,7 @@ namespace Tracker.Web.Controllers
 
             public string Color { get; set; }
 
-            public string Extra { get; set; }
+            public string Extras { get; set; }
 
             public string Location { get; set; }
 
