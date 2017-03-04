@@ -145,7 +145,7 @@ namespace Tracker.Web.Controllers
                     .LeftJoin("Products", "Products.sku", "=", "Inventory.Product_sku")
                     .Process(request)
                     .Data();
-                response.Columns["Name"].SetOrdinal(3);    
+                response.Columns["Products.Name"].SetOrdinal(3);    
                 return Json(response);
             }
         }
