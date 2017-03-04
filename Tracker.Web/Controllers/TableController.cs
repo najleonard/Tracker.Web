@@ -11,20 +11,9 @@ using System.Linq;
 using System.Net;
 
 
+
 namespace Tracker.Web.Controllers
 {
-    public static class DataTableExtensions
-    {
-        public static void SetColumnsOrder(this DataTable table, params String[] columnNames)
-        {
-            int columnIndex = 0;
-            foreach(var columnName in columnNames)
-            {
-                table.Columns[columnName].SetOrdinal(columnIndex);
-                columnIndex++;
-            }
-        }
-    }
 
     internal class JoinInventoryProducts : EditorModel
     {
@@ -158,7 +147,6 @@ namespace Tracker.Web.Controllers
                     .LeftJoin("Products", "Products.sku", "=", "Inventory.Product_sku")
                     .Process(request)
                     .Data();
-                response.SetColumnsOrder("Products.Name");
                 return Json(response);
             }
         }
