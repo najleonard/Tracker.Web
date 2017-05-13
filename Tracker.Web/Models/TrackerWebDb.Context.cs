@@ -36,6 +36,6 @@ namespace Tracker.Web.Models
         public virtual DbSet<InventoryView> InventoryViews { get; set; }
         public virtual DbSet<LLInventoryView> LLInventoryViews { get; set; }
         public virtual DbSet<LLInventoryView2> LLInventoryView2 { get; set; }
-        public virtual DbSet<LLInventoryView3> LLInventoryView3 { get; set; }
+      //  public virtual DbSet<LLInventoryView3> LLInventoryView3 { get; set; }
     }
 }
