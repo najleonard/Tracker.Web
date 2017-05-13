@@ -16,13 +16,13 @@ namespace Tracker.Web.Models
     {
         public bool UpdateOrderShipped(ShippedModel myShippedOrder)
         {
-            int affectedRows = 0;
+            //int affectedRows = 0;
             using (var db = new trackerwebdbEntities())
             {
                 //update tagid, friendly name, description and (future) image blob
                 var model = db.Orders.Where(x => x.Id == myShippedOrder.OrderId).First();
                 model.Shipped = 1;
-                model.ShippedDate = myShippedOrder.ShippedDate;
+               // model.ShippedDate = myShippedOrder.ShippedDate;
                // db.SaveChanges();
 
                /* var model2 = db.Inventories.Where(x => x.Id == model.InventoryItem1).First();
