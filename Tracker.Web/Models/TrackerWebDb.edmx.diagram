@@ -4,28 +4,32 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1634ce2c8d0e4ed5964be2436f3aadf0" Name="Diagram1">
-        <EntityTypeShape EntityType="trackerwebdbModel.Monitor" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="trackerwebdbModel.Tag" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="trackerwebdbModel.Tracking" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+      <Diagram DiagramId="a35e3d4db44349f2941ee95f30ad99bf" Name="Diagram1">
+        <EntityTypeShape EntityType="trackerwebdbModel.Client" Width="1.5" PointX="6" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="trackerwebdbModel.dept" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="trackerwebdbModel.file" Width="1.5" PointX="5.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="trackerwebdbModel.Inventory" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="trackerwebdbModel.ItemOrder" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="trackerwebdbModel.Monitor" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="trackerwebdbModel.Order" Width="1.5" PointX="8.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="trackerwebdbModel.permission" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="trackerwebdbModel.Product" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="trackerwebdbModel.site" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="trackerwebdbModel.Tag" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="trackerwebdbModel.todo" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="trackerwebdbModel.Tracking" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="trackerwebdbModel.InventoryView" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="trackerwebdbModel.LLInventoryView" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="trackerwebdbModel.LLInventoryView2" Width="1.5" PointX="2.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="trackerwebdbModel.LLInventoryView3" Width="1.5" PointX="4.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="trackerwebdbModel.database_firewall_rules" Width="1.5" PointX="6.75" PointY="11.75" IsExpanded="true" />
+        <AssociationConnector Association="trackerwebdbModel.FK__Order__ClientId__151B244E" ManuallyRouted="false" />
+        <AssociationConnector Association="trackerwebdbModel.FK__Inventory__Produ__14270015" ManuallyRouted="false" />
+        <AssociationConnector Association="trackerwebdbModel.FK__ItemOrder__Inven__17036CC0" ManuallyRouted="false" />
+        <AssociationConnector Association="trackerwebdbModel.Order_Inventory_Id_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="trackerwebdbModel.FK__ItemOrder__Order__160F4887" ManuallyRouted="false" />
         <AssociationConnector Association="trackerwebdbModel.FK_Tracking_Monitor" ManuallyRouted="false" />
         <AssociationConnector Association="trackerwebdbModel.FK_Tracking_Tag" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="trackerwebdbModel.InventoryView" Width="1.5" PointX="3.375" PointY="4.75" />
-        <EntityTypeShape EntityType="trackerwebdbModel.LLInventoryView" Width="1.5" PointX="5.375" PointY="0.75" />
-        <EntityTypeShape EntityType="trackerwebdbModel.Client" Width="1.5" PointX="5.75" PointY="5.5" />
-        <EntityTypeShape EntityType="trackerwebdbModel.Inventory" Width="1.5" PointX="8" PointY="9" />
-        <EntityTypeShape EntityType="trackerwebdbModel.ItemOrder" Width="1.5" PointX="10.25" PointY="5.375" />
-        <EntityTypeShape EntityType="trackerwebdbModel.Order" Width="1.5" PointX="8" PointY="5" />
-        <EntityTypeShape EntityType="trackerwebdbModel.Product" Width="1.5" PointX="5.75" PointY="9.25" />
-        <EntityTypeShape EntityType="trackerwebdbModel.LLInventoryView2" Width="1.5" PointX="0.75" PointY="6.75" />
-        <AssociationConnector Association="trackerwebdbModel.FK__Order__ClientId__151B244E" />
-        <AssociationConnector Association="trackerwebdbModel.FK__Inventory__Produ__14270015" />
-        <AssociationConnector Association="trackerwebdbModel.FK__ItemOrder__Inven__17036CC0" />
-        <AssociationConnector Association="trackerwebdbModel.FK__ItemOrder__Order__160F4887" />
-        <AssociationConnector Association="trackerwebdbModel.FK__Order__Inventory__208CD6FA" />
-        <AssociationConnector Association="trackerwebdbModel.FK__Order__Inventory__2180FB33" />
-        <AssociationConnector Association="trackerwebdbModel.FK__Order__Inventory__22751F6C" />
-        <AssociationConnector Association="trackerwebdbModel.FK__Order__Inventory__236943A5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
