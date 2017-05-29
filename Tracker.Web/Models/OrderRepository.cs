@@ -21,8 +21,8 @@ namespace Tracker.Web.Models
             {
                 //return true;
                 //update tagid, friendly name, description and (future) image blob
-                var model = db.s.Where(x => x.Id == myShippedOrder.OrderId).First();
-                //return true;
+                var model = db.Orders.Where(x => x.Id == myShippedOrder.OrderId).First();
+               // return true;
                 model.Shipped = 1;
                // model.ShippedDate = myShippedOrder.ShippedDate;
                // db.SaveChanges();
