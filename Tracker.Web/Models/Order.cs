@@ -18,8 +18,7 @@ namespace Tracker.Web.Models
     public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Order()
-      
+
     
         public int Id { get; set; }
         public Nullable<int> ClientId { get; set; }
