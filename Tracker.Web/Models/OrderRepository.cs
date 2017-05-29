@@ -22,6 +22,7 @@ namespace Tracker.Web.Models
                 System.Diagnostics.Debug.WriteLine(myShippedOrder.OrderId);
                 //return true;
                 //update tagid, friendly name, description and (future) image blob
+               var test = db.Orders.Where(x => x.Id == myShippedOrder.OrderId).First();
                // var model = db.Orders.Where(x => x.Id == myShippedOrder.OrderId).First();
                // return true;
                // model.Shipped = 1;
