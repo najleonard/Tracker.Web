@@ -19,9 +19,7 @@ namespace Tracker.Web.Models
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Order()
-        {
-            this.ItemOrders = new HashSet<ItemOrder>();
-        }
+      
     
         public int Id { get; set; }
         public Nullable<int> ClientId { get; set; }
@@ -43,6 +41,5 @@ namespace Tracker.Web.Models
         public virtual Client Client { get; set; }
         public virtual Inventory Inventory { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ItemOrder> ItemOrders { get; set; }
     }
 }
