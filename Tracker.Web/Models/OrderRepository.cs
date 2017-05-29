@@ -22,16 +22,17 @@ namespace Tracker.Web.Models
                 System.Diagnostics.Debug.WriteLine(myShippedOrder.OrderId)
                 //return true;
                 //update tagid, friendly name, description and (future) image blob
-                var model = db.Orders.Where(x => x.Id == myShippedOrder.OrderId).First();
+               // var model = db.Orders.Where(x => x.Id == myShippedOrder.OrderId).First();
                // return true;
-                model.Shipped = 1;
+               // model.Shipped = 1;
                // model.ShippedDate = myShippedOrder.ShippedDate;
                // db.SaveChanges();
 
-               /* var model2 = db.Inventories.Where(x => x.Id == model.InventoryItem1).First();
+                var model2 = db.Inventories.Where(x => x.Id == model.InventoryItem1).First();
                 model2.Location = myShippedOrder.OrderId.ToString();
-                //db.SaveChanges();
+                db.SaveChanges();
                 
+                /*
                 var model3 = db.Inventories.Where(x => x.Id == model.InventoryItem2).First();
                 model3.Location = myShippedOrder.OrderId.ToString();
                 //db.SaveChanges();
