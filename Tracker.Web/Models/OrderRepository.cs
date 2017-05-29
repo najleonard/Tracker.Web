@@ -19,7 +19,7 @@ namespace Tracker.Web.Models
             //int affectedRows = 0;
             using (var db = new trackerwebdbEntities())
             {
-                System.Diagnostics.Debug.WriteLine(myShippedOrder.OrderId)
+                System.Diagnostics.Debug.WriteLine(myShippedOrder.OrderId);
                 //return true;
                 //update tagid, friendly name, description and (future) image blob
                // var model = db.Orders.Where(x => x.Id == myShippedOrder.OrderId).First();
@@ -28,11 +28,10 @@ namespace Tracker.Web.Models
                // model.ShippedDate = myShippedOrder.ShippedDate;
                // db.SaveChanges();
 
-                var model2 = db.Inventories.Where(x => x.Id == model.InventoryItem1).First();
+               /* var model2 = db.Inventories.Where(x => x.Id == model.InventoryItem1).First();
                 model2.Location = myShippedOrder.OrderId.ToString();
-                db.SaveChanges();
+                //db.SaveChanges();
                 
-                /*
                 var model3 = db.Inventories.Where(x => x.Id == model.InventoryItem2).First();
                 model3.Location = myShippedOrder.OrderId.ToString();
                 //db.SaveChanges();
