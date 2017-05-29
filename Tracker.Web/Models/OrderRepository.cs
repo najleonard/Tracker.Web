@@ -19,6 +19,7 @@ namespace Tracker.Web.Models
             //int affectedRows = 0;
             using (var db = new trackerwebdbEntities())
             {
+                System.Diagnostics.Debug.WriteLine(myShippedOrder.OrderId)
                 //return true;
                 //update tagid, friendly name, description and (future) image blob
                 var model = db.Orders.Where(x => x.Id == myShippedOrder.OrderId).First();
