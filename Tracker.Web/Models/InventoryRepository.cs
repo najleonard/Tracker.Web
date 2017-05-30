@@ -8,12 +8,12 @@ namespace Tracker.Web.Models
 {
     public class InventoryRepository
     {
-        public List<InventoryView> GetCurrentInventory()
+        public List<FullInventoryView> GetCurrentInventory()
         {
-            List<InventoryView> retvalue = null;
-            using(var db = new trackerwebdbEntities())
+            List<FullInventoryView> retvalue = null;
+            using(var db = new trackerwebdbEntities2())
             {
-                retvalue = db.InventoryViews.ToList();
+                retvalue = db.FullInventoryViews.ToList();
             }
             return retvalue;
         }
@@ -21,12 +21,12 @@ namespace Tracker.Web.Models
 
     public class LLInventoryRepository
     {
-        public List<LLInventoryView2> GetCurrentLLInventory(string sortOrder)
+        public List<TryOnAtHomeView> GetCurrentLLInventory(string sortOrder)
         {
-            List<LLInventoryView2> retvalue = null;
-            using(var db = new trackerwebdbEntities())
+            List<TryOnAtHomeView> retvalue = null;
+            using(var db = new trackerwebdbEntities2())
             {
-                  retvalue = db.LLInventoryView2.ToList();
+                  retvalue = db.TryOnAtHomeViews.ToList();
             }
             return retvalue;
         }

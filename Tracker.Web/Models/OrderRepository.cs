@@ -17,17 +17,17 @@ namespace Tracker.Web.Models
         public bool UpdateOrderShipped(ShippedModel myShippedOrder)
         {
             //int affectedRows = 0;
-            using (var db = new trackerwebdbEntities())
+            using (var db = new trackerwebdbEntities2())
             {
                 System.Diagnostics.Debug.WriteLine(myShippedOrder.OrderId);
                 //return true;
                 //update tagid, friendly name, description and (future) image blob
-               var test = db.Orders.Where(x => x.Id == myShippedOrder.OrderId).First();
-               // var model = db.Orders.Where(x => x.Id == myShippedOrder.OrderId).First();
-               // return true;
-               // model.Shipped = 1;
-               // model.ShippedDate = myShippedOrder.ShippedDate;
-               // db.SaveChanges();
+               
+                var model = db.Orders.Where(x => x.Id == myShippedOrder.OrderId).First();
+               
+                model.Shipped = 1;
+                model.ShippedDate = Convert.ToDateTime(myShippedOrder.ShippedDate);
+                db.SaveChanges();
 
                /* var model2 = db.Inventories.Where(x => x.Id == model.InventoryItem1).First();
                 model2.Location = myShippedOrder.OrderId.ToString();

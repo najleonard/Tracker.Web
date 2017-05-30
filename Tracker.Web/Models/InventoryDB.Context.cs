@@ -13,10 +13,10 @@ namespace Tracker.Web.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class trackerwebdbEntities : DbContext
+    public partial class trackerwebdbEntities2 : DbContext
     {
-        public trackerwebdbEntities()
-            : base("name=trackerwebdbEntities")
+        public trackerwebdbEntities2()
+            : base("name=trackerwebdbEntities2")
         {
         }
     
@@ -27,15 +27,11 @@ namespace Tracker.Web.Models
     
         public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<Inventory> Inventories { get; set; }
-        public virtual DbSet<ItemOrder> ItemOrders { get; set; }
-        public virtual DbSet<Monitor> Monitors { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<Tag> Tags { get; set; }
-        public virtual DbSet<Tracking> Trackings { get; set; }
-        public virtual DbSet<InventoryView> InventoryViews { get; set; }
-        public virtual DbSet<LLInventoryView> LLInventoryViews { get; set; }
-        public virtual DbSet<LLInventoryView2> LLInventoryView2 { get; set; }
-      //  public virtual DbSet<LLInventoryView3> LLInventoryView3 { get; set; }
+        public virtual DbSet<FullInventoryView> FullInventoryViews { get; set; }
+        public virtual DbSet<SemiInventoryView> SemiInventoryViews { get; set; }
+        public virtual DbSet<TryOnAtHomeView> TryOnAtHomeViews { get; set; }
+        public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
     }
 }

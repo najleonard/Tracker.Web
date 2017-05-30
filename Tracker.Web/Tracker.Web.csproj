@@ -74,6 +74,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -176,71 +177,55 @@
     <Compile Include="Controllers\LLInventoryController.cs" />
     <Compile Include="Controllers\TOAHController.cs" />
     <Compile Include="Controllers\TableController.cs" />
-    <Compile Include="Controllers\TrackerReadingController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MonitorController.cs" />
-    <Compile Include="Controllers\TagController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\UploadModel.cs" />
-    <Compile Include="Models\InventoryView.cs">
-      <DependentUpon>TrackerWebDb.tt</DependentUpon>
+    <Compile Include="Models\Client.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\database_firewall_rules.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FullInventoryView.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Inventory.cs">
-      <DependentUpon>TrackerWebDb.tt</DependentUpon>
+      <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ItemOrder.cs">
-      <DependentUpon>TrackerWebDb.tt</DependentUpon>
+    <Compile Include="Models\InventoryDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventoryDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InventoryDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InventoryDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventoryDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Order.cs">
-      <DependentUpon>TrackerWebDb.tt</DependentUpon>
+      <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs">
-      <DependentUpon>TrackerWebDb.tt</DependentUpon>
+      <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Client.cs">
-      <DependentUpon>TrackerWebDb.tt</DependentUpon>
+    <Compile Include="Models\SemiInventoryView.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\LLInventoryView.cs">
-      <DependentUpon>TrackerWebDb.tt</DependentUpon>
+    <Compile Include="Models\TryOnAtHomeView.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\LLInventoryView2.cs">
-      <DependentUpon>TrackerWebDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Monitor.cs">
-      <DependentUpon>TrackerWebDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\MonitorRepository.cs" />
-    <Compile Include="Models\Tag.cs">
-      <DependentUpon>TrackerWebDb.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\UploadModel.cs" />
     <Compile Include="Models\InventoryRepository.cs" />
     <Compile Include="Models\OrderRepository.cs" />
-    <Compile Include="Models\TagRepository.cs" />
-    <Compile Include="Models\TrackerReadingModel.cs" />
-    <Compile Include="Models\TrackerReadingRepository.cs" />
-    <Compile Include="Models\TrackerWebDb.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TrackerWebDb.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TrackerWebDb.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TrackerWebDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TrackerWebDb.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TrackerWebDb.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Tracking.cs">
-      <DependentUpon>TrackerWebDb.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -259,23 +244,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\editor.dataTables.css" />
     <Content Include="Content\editor.dataTables.min.css" />
-    <Content Include="Models\TrackerWebDb.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TrackerWebDb.edmx</DependentUpon>
-      <LastGenOutput>TrackerWebDb.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\TrackerWebDb.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TrackerWebDb.edmx</DependentUpon>
-      <LastGenOutput>TrackerWebDb.cs</LastGenOutput>
-    </Content>
-    <EntityDeploy Include="Models\TrackerWebDb.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TrackerWebDb.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\TrackerWebDb.edmx.diagram">
-      <DependentUpon>TrackerWebDb.edmx</DependentUpon>
-    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -284,6 +252,13 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <EntityDeploy Include="Models\InventoryDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>InventoryDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\InventoryDB.edmx.diagram">
+      <DependentUpon>InventoryDB.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\TrackerWeb.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -291,6 +266,16 @@
     </None>
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Models\InventoryDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>InventoryDB.edmx</DependentUpon>
+      <LastGenOutput>InventoryDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\InventoryDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>InventoryDB.edmx</DependentUpon>
+      <LastGenOutput>InventoryDB.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
