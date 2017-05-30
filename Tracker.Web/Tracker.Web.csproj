@@ -308,9 +308,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Monitor\Index.cshtml" />
-    <Content Include="Views\Monitor\Create.cshtml" />
-    <Content Include="Views\Monitor\Edit.cshtml" />
     <Content Include="Views\LLInventory\Index.cshtml" />
     <Content Include="Views\TOAH\Index.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
