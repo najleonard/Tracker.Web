@@ -29,49 +29,49 @@ namespace Tracker.Web.Models
                 model.ShippedDate = Convert.ToDateTime(myShippedOrder.ShippedDate);
                 db.SaveChanges();
 
-                if(model.InventoryItem1)
+                if(model.InventoryItem1 != null)
                 {
                     var model2 = db.Inventories.Where(x => x.Id == model.InventoryItem1).First();
                     model2.Location = myShippedOrder.OrderId.ToString();
                     db.SaveChanges();
                 }
-                if(model.InventoryItem2)
+                if(model.InventoryItem2 != null)
                 {
                 var model3 = db.Inventories.Where(x => x.Id == model.InventoryItem2).First();
                 model3.Location = myShippedOrder.OrderId.ToString();
                 db.SaveChanges();
                 }
-                if(model.InventoryItem3)
+                if(model.InventoryItem3 != null)
                 {
                 var model4 = db.Inventories.Where(x => x.Id == model.InventoryItem3).First();
                 model4.Location = myShippedOrder.OrderId.ToString();
                 db.SaveChanges();
                 }
-                if(model.InventoryItem4)
+                if(model.InventoryItem4 != null)
                 {
                 var model5 = db.Inventories.Where(x => x.Id == model.InventoryItem4).First();
                 model5.Location = myShippedOrder.OrderId.ToString();
                 db.SaveChanges();
                 }
-                if(model.InventoryItem5)
+                if(model.InventoryItem5 != null)
                 {
                 var model6 = db.Inventories.Where(x => x.Id == model.InventoryItem5).First();
                 model6.Location = myShippedOrder.OrderId.ToString();
                 db.SaveChanges();
                 }
-                if(model.InventoryItem6)
+                if(model.InventoryItem6 != null)
                 {
                 var model7 = db.Inventories.Where(x => x.Id == model.InventoryItem6).First();
                 model7.Location = myShippedOrder.OrderId.ToString();
                 db.SaveChanges();
                 }
-                if(model.InventoryItem7)
+                if(model.InventoryItem7 != null)
                 {
                 var model8 = db.Inventories.Where(x => x.Id == model.InventoryItem7).First();
                 model8.Location = myShippedOrder.OrderId.ToString();
                 db.SaveChanges();
                 }
-                if(model.InventoryItem8)
+                if(model.InventoryItem8 != null)
                 {
                 var model9 = db.Inventories.Where(x => x.Id == model.InventoryItem8).First();
                 model9.Location = myShippedOrder.OrderId.ToString();
