@@ -147,11 +147,16 @@ $(document).ready(function() {
 		]
 	} );
 
-	$('ul').on('click', 'a', function() {
-
+	$('ul').on('click', 'a.shipped', function() {
       table
         .columns(0)
-        .search($(this).text())
+        .search('1')
+        .draw();
+    });
+	$('ul').on('click', 'a.notShipped', function() {
+      table
+        .columns(0)
+        .search('0')
         .draw();
     });
 
@@ -173,8 +178,8 @@ $(document).ready(function() {
 <h2>TOAH Orders</h2>
 <ul>
     <li class="btn"><a href="#" class="all">All</a></li>
-    <li class="btn"><a href="#">1</a></li>
-    <li class="btn"><a href="#">0</a></li>
+    <li class="btn"><a href="#" class="shipped">Shipped</a></li>
+    <li class="btn"><a href="#" class="notShipped">NotShipped</a></li>
   </ul>
 
 <table id="example" class="display"cellspacing="0" style="font-family:arial;font-size:10px">
