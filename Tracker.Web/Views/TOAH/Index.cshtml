@@ -147,6 +147,12 @@ $(document).ready(function() {
 		]
 	} );
 
+	$('ul').on( 'click', '1', function () {
+	table
+		.columns( 1 )
+		.search(  $(this).text() )
+		.draw();
+	});
 } );
 
 }(jQuery));
