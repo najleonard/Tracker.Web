@@ -152,12 +152,22 @@ $(document).ready(function() {
 		]
 	} );
 
-	$('ul').on( 'click', '1', function () {
-	table
-		.columns( 1 )
-		.search(  $(this).text() )
-		.draw();
-	});
+	$('ul').on('click', 'a', function() {
+
+      table
+        .columns(1)
+        .search($(this).text())
+        .draw();
+    });
+
+    $('ul').on('click', 'a.all', function() {
+
+      table
+        .search('')
+        .columns(1)
+        .search('')
+        .draw();
+    });
 } );
 
 }(jQuery));
