@@ -8,11 +8,6 @@
 	<script type="text/javascript" charset="utf-8" src="Scripts/dataTables.editor.js"></script>
 	<script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/fixedcolumns/3.2.2/js/dataTables.fixedColumns.min.js"></script>
 	
-<ul>
-    <li class="btn"><a href="#" class="all">All</a></li>
-    <li class="btn"><a href="#">1</a></li>
-    <li class="btn"><a href="#">0</a></li>
-  </ul>
 
 <script type="text/javascript" charset="utf8">
 (function($){
@@ -155,7 +150,7 @@ $(document).ready(function() {
 	$('ul').on('click', 'a', function() {
 
       table
-        .columns(1)
+        .columns(0)
         .search($(this).text())
         .draw();
     });
@@ -164,7 +159,7 @@ $(document).ready(function() {
 
       table
         .search('')
-        .columns(1)
+        .columns(0)
         .search('')
         .draw();
     });
@@ -176,6 +171,12 @@ $(document).ready(function() {
 </head>
 
 <h2>TOAH Orders</h2>
+<ul>
+    <li class="btn"><a href="#" class="all">All</a></li>
+    <li class="btn"><a href="#">1</a></li>
+    <li class="btn"><a href="#">0</a></li>
+  </ul>
+
 <table id="example" class="display"cellspacing="0" style="font-family:arial;font-size:10px">
         <thead>
             <tr>
