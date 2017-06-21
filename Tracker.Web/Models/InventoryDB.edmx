@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="trackerwebdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="trackerwebdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Client">
           <Key>
             <PropertyRef Name="Id" />
@@ -25,27 +25,6 @@
           <Property Name="Location" Type="varchar" MaxLength="50" />
           <Property Name="rfid_tag" Type="varchar" MaxLength="40" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'trackerwebdb.dbo.Measurements' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Measurements">
-          <Property Name="name" Type="varchar" MaxLength="60" />
-          <Property Name="email" Type="varchar" MaxLength="60" />
-          <Property Name="bust" Type="int" />
-          <Property Name="heel_height" Type="int" />
-          <Property Name="height" Type="int" />
-          <Property Name="hips" Type="int" />
-          <Property Name="length_of_train" Type="int" />
-          <Property Name="lower_waist" Type="int" />
-          <Property Name="natural_waist" Type="int" />
-          <Property Name="neck_to_chest" Type="int" />
-          <Property Name="neck_to_dress" Type="int" />
-          <Property Name="neck_to_hipbone" Type="int" />
-          <Property Name="neck_to_waist" Type="int" />
-          <Property Name="street_sizing" Type="int" />
-          <Property Name="upper_chest_circumference" Type="int" />
-          <Property Name="upper_chest_width" Type="int" />
-          <Property Name="waist_to_floor" Type="int" />
-        </EntityType>-->
         <EntityType Name="Order">
           <Key>
             <PropertyRef Name="Id" />
@@ -73,9 +52,25 @@ warning 6013: The table/view 'trackerwebdb.dbo.Measurements' does not have a pri
           </Key>
           <Property Name="sku" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="type" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="description" Type="varchar" MaxLength="100" />
           <Property Name="image" Type="varchar" MaxLength="50" />
+          <Property Name="toah_name" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'trackerwebdb.dbo.Shipping' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Shipping">
+          <Property Name="orderNumber" Type="varchar" MaxLength="50" />
+          <Property Name="isReturnLabel" Type="bit" />
+          <Property Name="trackingNumber" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <EntityType Name="Tracking">
+          <Key>
+            <PropertyRef Name="trackingNumber" />
+          </Key>
+          <Property Name="trackingNumber" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="100" />
+          <Property Name="estDeliveryDate" Type="varchar" MaxLength="100" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'trackerwebdb.dbo.FullInventoryView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -91,6 +86,25 @@ warning 6002: The table/view 'trackerwebdb.dbo.FullInventoryView' does not have 
           <Property Name="Color" Type="varchar" MaxLength="20" />
           <Property Name="Extras" Type="varchar" MaxLength="50" />
           <Property Name="Location" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'trackerwebdb.dbo.FullInventoryView2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="FullInventoryView2">
+          <Key>
+            <PropertyRef Name="InventoryId" />
+          </Key>
+          <Property Name="InventoryId" Type="int" Nullable="false" />
+          <Property Name="SKU" Type="varchar" MaxLength="10" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="Type" Type="varchar" MaxLength="20" />
+          <Property Name="Size" Type="int" />
+          <Property Name="Color" Type="varchar" MaxLength="20" />
+          <Property Name="Extras" Type="varchar" MaxLength="50" />
+          <Property Name="Location" Type="varchar" MaxLength="50" />
+          <Property Name="status" Type="varchar" MaxLength="100" />
+          <Property Name="estDeliveryDate" Type="varchar" MaxLength="100" />
+          <Property Name="trackingNumber" Type="varchar" MaxLength="50" />
+          <Property Name="isReturnLabel" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'trackerwebdb.dbo.SemiInventoryView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -126,6 +140,25 @@ warning 6002: The table/view 'trackerwebdb.dbo.TryOnAtHomeView' does not have a 
           <Property Name="Size2" Type="int" />
           <Property Name="Size3" Type="int" />
           <Property Name="Size4" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'trackerwebdb.dbo.UpdateInventoryLocation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UpdateInventoryLocation">
+          <Key>
+            <PropertyRef Name="InventoryId" />
+          </Key>
+          <Property Name="InventoryId" Type="int" Nullable="false" />
+          <Property Name="SKU" Type="varchar" MaxLength="10" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="Type" Type="varchar" MaxLength="20" />
+          <Property Name="Size" Type="int" />
+          <Property Name="Color" Type="varchar" MaxLength="20" />
+          <Property Name="Extras" Type="varchar" MaxLength="50" />
+          <Property Name="Location" Type="varchar" MaxLength="50" />
+          <Property Name="status" Type="varchar" MaxLength="100" />
+          <Property Name="estDeliveryDate" Type="varchar" MaxLength="100" />
+          <Property Name="trackingNumber" Type="varchar" MaxLength="50" />
+          <Property Name="isReturnLabel" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -193,11 +226,84 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="Order_Inventory3_Id_fk">
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="InventoryItem3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Order_Inventory4_Id_fk">
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="InventoryItem4" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Order_Inventory5_Id_fk">
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="InventoryItem5" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Order_Inventory6_Id_fk">
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="InventoryItem6" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Order_Inventory7_Id_fk">
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="InventoryItem7" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Order_Inventory8_Id_fk">
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="InventoryItem8" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="trackerwebdbModelStoreContainer">
           <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tracking" EntityType="Self.Tracking" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FullInventoryView" EntityType="Self.FullInventoryView" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [FullInventoryView].[InventoryId] AS [InventoryId], 
@@ -209,6 +315,22 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
     [FullInventoryView].[Extras] AS [Extras], 
     [FullInventoryView].[Location] AS [Location]
     FROM [dbo].[FullInventoryView] AS [FullInventoryView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="FullInventoryView2" EntityType="Self.FullInventoryView2" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [FullInventoryView2].[InventoryId] AS [InventoryId], 
+    [FullInventoryView2].[SKU] AS [SKU], 
+    [FullInventoryView2].[Name] AS [Name], 
+    [FullInventoryView2].[Type] AS [Type], 
+    [FullInventoryView2].[Size] AS [Size], 
+    [FullInventoryView2].[Color] AS [Color], 
+    [FullInventoryView2].[Extras] AS [Extras], 
+    [FullInventoryView2].[Location] AS [Location], 
+    [FullInventoryView2].[status] AS [status], 
+    [FullInventoryView2].[estDeliveryDate] AS [estDeliveryDate], 
+    [FullInventoryView2].[trackingNumber] AS [trackingNumber], 
+    [FullInventoryView2].[isReturnLabel] AS [isReturnLabel]
+    FROM [dbo].[FullInventoryView2] AS [FullInventoryView2]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="SemiInventoryView" EntityType="Self.SemiInventoryView" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -239,6 +361,22 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
     [TryOnAtHomeView].[Size4] AS [Size4]
     FROM [dbo].[TryOnAtHomeView] AS [TryOnAtHomeView]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="UpdateInventoryLocation" EntityType="Self.UpdateInventoryLocation" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UpdateInventoryLocation].[InventoryId] AS [InventoryId], 
+    [UpdateInventoryLocation].[SKU] AS [SKU], 
+    [UpdateInventoryLocation].[Name] AS [Name], 
+    [UpdateInventoryLocation].[Type] AS [Type], 
+    [UpdateInventoryLocation].[Size] AS [Size], 
+    [UpdateInventoryLocation].[Color] AS [Color], 
+    [UpdateInventoryLocation].[Extras] AS [Extras], 
+    [UpdateInventoryLocation].[Location] AS [Location], 
+    [UpdateInventoryLocation].[status] AS [status], 
+    [UpdateInventoryLocation].[estDeliveryDate] AS [estDeliveryDate], 
+    [UpdateInventoryLocation].[trackingNumber] AS [trackingNumber], 
+    [UpdateInventoryLocation].[isReturnLabel] AS [isReturnLabel]
+    FROM [dbo].[UpdateInventoryLocation] AS [UpdateInventoryLocation]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
             <DefiningQuery>SELECT 
     [database_firewall_rules].[id] AS [id], 
@@ -265,9 +403,32 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
             <End Role="Inventory" EntitySet="Inventory" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
+          <AssociationSet Name="Order_Inventory3_Id_fk" Association="Self.Order_Inventory3_Id_fk">
+            <End Role="Inventory" EntitySet="Inventory" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="Order_Inventory4_Id_fk" Association="Self.Order_Inventory4_Id_fk">
+            <End Role="Inventory" EntitySet="Inventory" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="Order_Inventory5_Id_fk" Association="Self.Order_Inventory5_Id_fk">
+            <End Role="Inventory" EntitySet="Inventory" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="Order_Inventory6_Id_fk" Association="Self.Order_Inventory6_Id_fk">
+            <End Role="Inventory" EntitySet="Inventory" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="Order_Inventory7_Id_fk" Association="Self.Order_Inventory7_Id_fk">
+            <End Role="Inventory" EntitySet="Inventory" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="Order_Inventory8_Id_fk" Association="Self.Order_Inventory8_Id_fk">
+            <End Role="Inventory" EntitySet="Inventory" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="trackerwebdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -294,6 +455,12 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
           <NavigationProperty Name="Product" Relationship="Self.FK__Inventory__Produ__14270015" FromRole="Inventory" ToRole="Products" />
           <NavigationProperty Name="Orders" Relationship="Self.Order_Inventory_Id_fk" FromRole="Inventory" ToRole="Order" />
           <NavigationProperty Name="Orders1" Relationship="Self.Order_Inventory2_Id_fk" FromRole="Inventory" ToRole="Order" />
+          <NavigationProperty Name="Orders2" Relationship="trackerwebdbModel.Order_Inventory3_Id_fk" FromRole="Inventory" ToRole="Order" />
+          <NavigationProperty Name="Orders3" Relationship="trackerwebdbModel.Order_Inventory4_Id_fk" FromRole="Inventory" ToRole="Order" />
+          <NavigationProperty Name="Orders4" Relationship="trackerwebdbModel.Order_Inventory5_Id_fk" FromRole="Inventory" ToRole="Order" />
+          <NavigationProperty Name="Orders5" Relationship="trackerwebdbModel.Order_Inventory6_Id_fk" FromRole="Inventory" ToRole="Order" />
+          <NavigationProperty Name="Orders6" Relationship="trackerwebdbModel.Order_Inventory7_Id_fk" FromRole="Inventory" ToRole="Order" />
+          <NavigationProperty Name="Orders7" Relationship="trackerwebdbModel.Order_Inventory8_Id_fk" FromRole="Inventory" ToRole="Order" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -318,6 +485,12 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
           <NavigationProperty Name="Client" Relationship="Self.FK__Order__ClientId__151B244E" FromRole="Order" ToRole="Client" />
           <NavigationProperty Name="Inventory" Relationship="Self.Order_Inventory_Id_fk" FromRole="Order" ToRole="Inventory" />
           <NavigationProperty Name="Inventory1" Relationship="Self.Order_Inventory2_Id_fk" FromRole="Order" ToRole="Inventory" />
+          <NavigationProperty Name="Inventory2" Relationship="trackerwebdbModel.Order_Inventory3_Id_fk" FromRole="Order" ToRole="Inventory" />
+          <NavigationProperty Name="Inventory3" Relationship="trackerwebdbModel.Order_Inventory4_Id_fk" FromRole="Order" ToRole="Inventory" />
+          <NavigationProperty Name="Inventory4" Relationship="trackerwebdbModel.Order_Inventory5_Id_fk" FromRole="Order" ToRole="Inventory" />
+          <NavigationProperty Name="Inventory5" Relationship="trackerwebdbModel.Order_Inventory6_Id_fk" FromRole="Order" ToRole="Inventory" />
+          <NavigationProperty Name="Inventory6" Relationship="trackerwebdbModel.Order_Inventory7_Id_fk" FromRole="Order" ToRole="Inventory" />
+          <NavigationProperty Name="Inventory7" Relationship="trackerwebdbModel.Order_Inventory8_Id_fk" FromRole="Order" ToRole="Inventory" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -325,10 +498,11 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
           </Key>
           <Property Name="sku" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Inventories" Relationship="Self.FK__Inventory__Produ__14270015" FromRole="Products" ToRole="Inventory" />
+          <Property Name="toah_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="FullInventoryView">
           <Key>
@@ -463,7 +637,148 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
             <End Role="Inventory" EntitySet="Inventories" />
             <End Role="Order" EntitySet="Orders" />
           </AssociationSet>
+          <EntitySet Name="Trackings" EntityType="trackerwebdbModel.Tracking" />
+          <EntitySet Name="FullInventoryView2" EntityType="trackerwebdbModel.FullInventoryView2" />
+          <EntitySet Name="UpdateInventoryLocations" EntityType="trackerwebdbModel.UpdateInventoryLocation" />
+          <AssociationSet Name="Order_Inventory3_Id_fk" Association="trackerwebdbModel.Order_Inventory3_Id_fk">
+            <End Role="Inventory" EntitySet="Inventories" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="Order_Inventory4_Id_fk" Association="trackerwebdbModel.Order_Inventory4_Id_fk">
+            <End Role="Inventory" EntitySet="Inventories" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="Order_Inventory5_Id_fk" Association="trackerwebdbModel.Order_Inventory5_Id_fk">
+            <End Role="Inventory" EntitySet="Inventories" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="Order_Inventory6_Id_fk" Association="trackerwebdbModel.Order_Inventory6_Id_fk">
+            <End Role="Inventory" EntitySet="Inventories" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="Order_Inventory7_Id_fk" Association="trackerwebdbModel.Order_Inventory7_Id_fk">
+            <End Role="Inventory" EntitySet="Inventories" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="Order_Inventory8_Id_fk" Association="trackerwebdbModel.Order_Inventory8_Id_fk">
+            <End Role="Inventory" EntitySet="Inventories" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Tracking">
+          <Key>
+            <PropertyRef Name="trackingNumber" />
+          </Key>
+          <Property Name="trackingNumber" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="estDeliveryDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FullInventoryView2">
+          <Key>
+            <PropertyRef Name="InventoryId" />
+          </Key>
+          <Property Name="InventoryId" Type="Int32" Nullable="false" />
+          <Property Name="SKU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Size" Type="Int32" />
+          <Property Name="Color" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Extras" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="estDeliveryDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="trackingNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isReturnLabel" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="UpdateInventoryLocation">
+          <Key>
+            <PropertyRef Name="InventoryId" />
+          </Key>
+          <Property Name="InventoryId" Type="Int32" Nullable="false" />
+          <Property Name="SKU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Size" Type="Int32" />
+          <Property Name="Color" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Extras" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="estDeliveryDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="trackingNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isReturnLabel" Type="Boolean" />
+        </EntityType>
+        <Association Name="Order_Inventory3_Id_fk">
+          <End Type="trackerwebdbModel.Inventory" Role="Inventory" Multiplicity="0..1" />
+          <End Type="trackerwebdbModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="InventoryItem3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Order_Inventory4_Id_fk">
+          <End Type="trackerwebdbModel.Inventory" Role="Inventory" Multiplicity="0..1" />
+          <End Type="trackerwebdbModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="InventoryItem4" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Order_Inventory5_Id_fk">
+          <End Type="trackerwebdbModel.Inventory" Role="Inventory" Multiplicity="0..1" />
+          <End Type="trackerwebdbModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="InventoryItem5" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Order_Inventory6_Id_fk">
+          <End Type="trackerwebdbModel.Inventory" Role="Inventory" Multiplicity="0..1" />
+          <End Type="trackerwebdbModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="InventoryItem6" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Order_Inventory7_Id_fk">
+          <End Type="trackerwebdbModel.Inventory" Role="Inventory" Multiplicity="0..1" />
+          <End Type="trackerwebdbModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="InventoryItem7" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Order_Inventory8_Id_fk">
+          <End Type="trackerwebdbModel.Inventory" Role="Inventory" Multiplicity="0..1" />
+          <End Type="trackerwebdbModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="InventoryItem8" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -517,6 +832,7 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="trackerwebdbModel.Product">
               <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="toah_name" ColumnName="toah_name" />
                 <ScalarProperty Name="sku" ColumnName="sku" />
                 <ScalarProperty Name="type" ColumnName="type" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -581,6 +897,51 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
                 <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
                 <ScalarProperty Name="create_date" ColumnName="create_date" />
                 <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trackings">
+            <EntityTypeMapping TypeName="trackerwebdbModel.Tracking">
+              <MappingFragment StoreEntitySet="Tracking">
+                <ScalarProperty Name="estDeliveryDate" ColumnName="estDeliveryDate" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="trackingNumber" ColumnName="trackingNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FullInventoryView2">
+            <EntityTypeMapping TypeName="trackerwebdbModel.FullInventoryView2">
+              <MappingFragment StoreEntitySet="FullInventoryView2">
+                <ScalarProperty Name="isReturnLabel" ColumnName="isReturnLabel" />
+                <ScalarProperty Name="trackingNumber" ColumnName="trackingNumber" />
+                <ScalarProperty Name="estDeliveryDate" ColumnName="estDeliveryDate" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Extras" ColumnName="Extras" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="InventoryId" ColumnName="InventoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UpdateInventoryLocations">
+            <EntityTypeMapping TypeName="trackerwebdbModel.UpdateInventoryLocation">
+              <MappingFragment StoreEntitySet="UpdateInventoryLocation">
+                <ScalarProperty Name="isReturnLabel" ColumnName="isReturnLabel" />
+                <ScalarProperty Name="trackingNumber" ColumnName="trackingNumber" />
+                <ScalarProperty Name="estDeliveryDate" ColumnName="estDeliveryDate" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Extras" ColumnName="Extras" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="InventoryId" ColumnName="InventoryId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
