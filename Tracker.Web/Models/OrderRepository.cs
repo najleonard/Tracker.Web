@@ -14,8 +14,9 @@ namespace Tracker.Web.Models
 
     public class TrackingModel
     {
-        public int trackingNumber { get; set; }
-        public string Status { get; set; }
+        public string trackingNumber { get; set; }
+        public string status { get; set; }
+        public string estDeliveryDate { get; set; }
     }
     
     public class OrderRepository
@@ -23,11 +24,14 @@ namespace Tracker.Web.Models
         public bool UpsertTracking(TrackingModel myTracking)
         {
             //int affectedRows = 0;
-       //     var trackingNumber = new SqlParameter("@trackingNumber", trackingNumber);
+            var trackingNumber = new SqlParameter("@trackingNumber", myTracking.trackingNumber);
+            var status = new SqlParameter("@status", myTracking.status);
+            var estDeliveryDate = new SqlParameter("@status", myTracking.estDeliveryDate);
+
 
             using (var db = new trackerwebdbEntities2())
             {
-                db.Database.ExecuteSqlCommand("InsertOrUpdateTracking  999 , test , test2");
+                db.Database.ExecuteSqlCommand("InsertOrUpdateTracking  @trackingNumber @status @estDeliveryDate",trackingNumber,status,estDeliveryDate);
             }
             return true;
 
