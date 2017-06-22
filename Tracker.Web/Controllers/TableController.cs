@@ -153,10 +153,10 @@ namespace Tracker.Web.Controllers
          
         [Route("updatetracking")]
         [HttpGet, HttpPost]
-        public HttpResponseMessage test(int myTrackingNumber)
+        public HttpResponseMessage Tracking(TrackingModel myTracking)
         {
             OrderRepository repo = new OrderRepository();
-            bool ok = repo.UpsertTracking(myTrackingNumber);
+            bool ok = repo.UpsertTracking(myTracking);
             
             if(ok)
                 return Request.CreateResponse(HttpStatusCode.OK);

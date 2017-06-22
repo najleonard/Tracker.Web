@@ -25,11 +25,12 @@ namespace Tracker.Web.Models
             //int affectedRows = 0;
        //     var trackingNumber = new SqlParameter("@trackingNumber", trackingNumber);
 
-
             using (var db = new trackerwebdbEntities2())
             {
-                db.Database.ExecuteSqlCommand("InsertOrUpdateTracking  9405511899223292142109 , 'test' , 'test2");
+                db.Database.ExecuteSqlCommand("InsertOrUpdateTracking  999 , test , test2");
             }
+            return true
+
         }
 
         public bool UpdateOrderShipped(ShippedModel myShippedOrder)
