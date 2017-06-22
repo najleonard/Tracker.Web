@@ -11,13 +11,19 @@ namespace Tracker.Web.Models
         public int OrderId { get; set; }
         public string ShippedDate { get; set; }
     }
+
+    public class TrackingModel
+    {
+        public int trackingNumber { get; set; }
+        public string Status { get; set; }
+    }
     
     public class OrderRepository
     {
-        public bool UpsertTracking(int trackingNumber)
+        public bool UpsertTracking(TrackingModel myTracking)
         {
             //int affectedRows = 0;
-            var trackingNumber = new SqlParameter("@trackingNumber", trackingNumber);
+       //     var trackingNumber = new SqlParameter("@trackingNumber", trackingNumber);
 
 
             using (var db = new trackerwebdbEntities2())
