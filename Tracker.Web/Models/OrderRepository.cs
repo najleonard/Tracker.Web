@@ -30,7 +30,7 @@ namespace Tracker.Web.Models
             var status = new SqlParameter("@status", myTracking.status);
             var estDeliveryDate = new SqlParameter("@estDeliveryDate", myTracking.estDeliveryDate);
 
-            var sql = @"InsertOrUpdateTracking '@trackingNumber','@status','@estDeliveryDate'";
+            var sql = @"InsertOrUpdateTracking @trackingNumber,@status,@estDeliveryDate";
 
             using (var db = new trackerwebdbEntities2())
             {
