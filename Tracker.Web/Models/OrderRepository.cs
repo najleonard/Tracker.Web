@@ -14,12 +14,24 @@ namespace Tracker.Web.Models
     
     public class OrderRepository
     {
+        public bool UpsertTracking(int trackingNumber)
+        {
+            //int affectedRows = 0;
+            var trackingNumber = new SqlParameter("@trackingNumber", trackingNumber);
+
+
+            using (var db = new trackerwebdbEntities2())
+            {
+                db.Database.ExecuteSqlCommand("InsertOrUpdateTracking  9405511899223292142109 , 'test' , 'test2");
+            }
+        }
+
         public bool UpdateOrderShipped(ShippedModel myShippedOrder)
         {
             //int affectedRows = 0;
             using (var db = new trackerwebdbEntities2())
             {
-                System.Diagnostics.Debug.WriteLine(myShippedOrder.OrderId);
+                //System.Diagnostics.Debug.WriteLine(myShippedOrder.OrderId);
                 //return true;
                 //update tagid, friendly name, description and (future) image blob
                

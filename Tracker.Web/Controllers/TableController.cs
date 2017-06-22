@@ -151,7 +151,20 @@ namespace Tracker.Web.Controllers
             }
         }
          
-
+        [Route("updatetracking")]
+        [HttpGet, HttpPost]
+        public HttpResponseMessage test(int myTrackingNumber)
+        {
+            OrderRepository repo = new OrderRepository();
+            bool ok = repo.UpsertTracking(myTrackingNumber);
+            
+            if(ok)
+                return Request.CreateResponse(HttpStatusCode.OK);
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+            }
+        }
 
         [Route("updateshipping")]
         [HttpGet, HttpPost]
