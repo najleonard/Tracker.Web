@@ -29,7 +29,7 @@ namespace Tracker.Web.Models
             {
                 db.Database.ExecuteSqlCommand("InsertOrUpdateTracking  999 , test , test2");
             }
-            return true
+            return true;
 
         }
 
