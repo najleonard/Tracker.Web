@@ -151,8 +151,9 @@ namespace Tracker.Web.Controllers
                 return Json(response);
             }
         }
-         [AllowAnonymous]
+         
         [Route("updatetracking")]
+        [AllowAnonymous]
         [HttpGet, HttpPost]
         public HttpResponseMessage Tracking(TrackingModel myTracking)
         {
@@ -166,8 +167,9 @@ namespace Tracker.Web.Controllers
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             }
         }
-        [AllowAnonymous]
+        
         [Route("updateshipping")]
+        [AllowAnonymous]
         [HttpGet, HttpPost]
         public HttpResponseMessage Shipped(ShippedModel myShippedOrder)
         {
