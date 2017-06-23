@@ -130,7 +130,6 @@ namespace Tracker.Web.Controllers
 
 
     [RoutePrefix("api/table")]
-    [AllowAnonymous]
     public class TableController : ApiController
     {
 
@@ -153,8 +152,8 @@ namespace Tracker.Web.Controllers
         }
          
         [Route("updatetracking")]
-        [HttpGet, HttpPost]
         [AllowAnonymous]
+        [HttpGet, HttpPost]
         public HttpResponseMessage Tracking(TrackingModel myTracking)
         {
             OrderRepository repo = new OrderRepository();
@@ -169,8 +168,8 @@ namespace Tracker.Web.Controllers
         }
         
         [Route("updateshipping")]
-        [HttpGet, HttpPost]
         [AllowAnonymous]
+        [HttpGet, HttpPost]
         public HttpResponseMessage Shipped(ShippedModel myShippedOrder)
         {
             OrderRepository repo = new OrderRepository();
