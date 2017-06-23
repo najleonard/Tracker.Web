@@ -29,26 +29,19 @@ namespace Tracker.Web.Models
             //int affectedRows = 0;
             var trackingNumber = new SqlParameter("@trackingNumber", myTracking.trackingNumber);
             var status = new SqlParameter("@status", myTracking.status);
+            using (var db = new trackerwebdbEntities2())
+            {
             if(!String.IsNullOrEmpty(myTracking.estDeliveryDate))
             {
                 var estDeliveryDate = new SqlParameter("@estDeliveryDate", myTracking.estDeliveryDate);
+                var sql = @"InsertOrUpdateTracking @trackingNumber,@status,@estDeliveryDate";
+                db.Database.ExecuteSqlCommand(sql,trackingNumber,status,estDeliveryDate);
             }
             else
             {
-                var estDeliveryDate = new SqlParameter("@estDeliveryDate", null);
-            }
-            var sql = @"InsertOrUpdateTracking @trackingNumber,@status,@estDeliveryDate";
-
-            using (var db = new trackerwebdbEntities2())
-            {
-                if(!String.IsNullOrEmpty(myTracking.estDeliveryDate))
-                {
-                    db.Database.ExecuteSqlCommand(sql,trackingNumber,status,estDeliveryDate);
-                }
-                else
-                {
-                    db.Database.ExecuteSqlCommand(sql,trackingNumber,status,null);
-                }
+                var sql = @"InsertOrUpdateTracking @trackingNumber,@status";
+                db.Database.ExecuteSqlCommand(sql,trackingNumber,status);
+            }   
             }
             return true;
 
