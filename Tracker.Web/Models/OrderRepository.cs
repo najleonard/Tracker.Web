@@ -42,9 +42,13 @@ namespace Tracker.Web.Models
             using (var db = new trackerwebdbEntities2())
             {
                 if(!String.IsNullOrEmpty(myTracking.estDeliveryDate))
+                {
                     db.Database.ExecuteSqlCommand(sql,trackingNumber,status,estDeliveryDate);
+                }
                 else
+                {
                     db.Database.ExecuteSqlCommand(sql,trackingNumber,status,null);
+                }
             }
             return true;
 
