@@ -222,10 +222,10 @@ namespace Tracker.Web.Controllers
                     .LeftJoin("Inventory as Inventory2", "Inventory2.Id", "=", "Order.InventoryItem2")
                     .LeftJoin("Inventory as Inventory3", "Inventory3.Id", "=", "Order.InventoryItem3")
                     .LeftJoin("Inventory as Inventory4", "Inventory4.Id", "=", "Order.InventoryItem4")
-                    .LeftJoin("Inventory as Inventory5", "Inventory1.Id", "=", "Order.InventoryItem5")
-                    .LeftJoin("Inventory as Inventory6", "Inventory2.Id", "=", "Order.InventoryItem6")
-                    .LeftJoin("Inventory as Inventory7", "Inventory3.Id", "=", "Order.InventoryItem7")
-                    .LeftJoin("Inventory as Inventory8", "Inventory4.Id", "=", "Order.InventoryItem8")
+                    .LeftJoin("Inventory as Inventory5", "Inventory5.Id", "=", "Order.InventoryItem5")
+                    .LeftJoin("Inventory as Inventory6", "Inventory7.Id", "=", "Order.InventoryItem6")
+                    .LeftJoin("Inventory as Inventory7", "Inventory7.Id", "=", "Order.InventoryItem7")
+                    .LeftJoin("Inventory as Inventory8", "Inventory8.Id", "=", "Order.InventoryItem8")
 
                     .Process(request)
                     .Data();
