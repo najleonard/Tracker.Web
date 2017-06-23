@@ -9,7 +9,7 @@ using System.Net.Http;
 using Tracker.Web.Models;
 using System.Linq;
 using System.Net;
-
+using System.Web.Mvc;
 
 
 namespace Tracker.Web.Controllers
@@ -129,6 +129,7 @@ namespace Tracker.Web.Controllers
         
     }
 
+
     [RoutePrefix("api/table")]
     public class TableController : ApiController
     {
@@ -150,7 +151,7 @@ namespace Tracker.Web.Controllers
                 return Json(response);
             }
         }
-         
+         [AllowAnonymous]
         [Route("updatetracking")]
         [HttpGet, HttpPost]
         public HttpResponseMessage Tracking(TrackingModel myTracking)
@@ -165,7 +166,7 @@ namespace Tracker.Web.Controllers
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             }
         }
-
+        [AllowAnonymous]
         [Route("updateshipping")]
         [HttpGet, HttpPost]
         public HttpResponseMessage Shipped(ShippedModel myShippedOrder)

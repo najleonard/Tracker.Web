@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using System.Web.Mvc;
+
 
 namespace Tracker.Web.Models
 {
@@ -24,7 +24,6 @@ namespace Tracker.Web.Models
     
     public class OrderRepository
     {
-        [AllowAnonymous]
         public bool UpsertTracking(TrackingModel myTracking)
         {
             //int affectedRows = 0;
@@ -41,7 +40,7 @@ namespace Tracker.Web.Models
             return true;
 
         }
-        [AllowAnonymous]
+        
         public bool UpdateOrderShipped(ShippedModel myShippedOrder)
         {
             //int affectedRows = 0;
