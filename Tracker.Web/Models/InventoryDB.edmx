@@ -70,6 +70,7 @@ warning 6013: The table/view 'trackerwebdb.dbo.Shipping' does not have a primary
           </Key>
           <Property Name="trackingNumber" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="status" Type="varchar" MaxLength="100" />
+          <Property Name="updateDate" Type="varchar" MaxLength="100" />
           <Property Name="estDeliveryDate" Type="varchar" MaxLength="100" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -672,6 +673,7 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
           <Property Name="trackingNumber" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="estDeliveryDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="updateDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="FullInventoryView2">
           <Key>
@@ -903,6 +905,7 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
           <EntitySetMapping Name="Trackings">
             <EntityTypeMapping TypeName="trackerwebdbModel.Tracking">
               <MappingFragment StoreEntitySet="Tracking">
+                <ScalarProperty Name="updateDate" ColumnName="updateDate" />
                 <ScalarProperty Name="estDeliveryDate" ColumnName="estDeliveryDate" />
                 <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="trackingNumber" ColumnName="trackingNumber" />
