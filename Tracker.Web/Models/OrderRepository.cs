@@ -29,7 +29,7 @@ namespace Tracker.Web.Models
             //int affectedRows = 0;
             var trackingNumber = new SqlParameter("@trackingNumber", myTracking.trackingNumber);
             var status = new SqlParameter("@status", myTracking.status);
-            if(myTracking.estDeliveryDate)
+            if(!IsNullOrEmpty(myTracking.estDeliveryDate))
             {
                 var estDeliveryDate = new SqlParameter("@estDeliveryDate", myTracking.estDeliveryDate);
             }
