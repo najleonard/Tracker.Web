@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using System.Web.Mvc;
+using System.Web.Mvc.AuthorizeAttribute;
 
 namespace Tracker.Web.Models
 {
