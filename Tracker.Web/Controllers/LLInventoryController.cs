@@ -14,6 +14,7 @@ using System.Web.Mvc;
 
 namespace Tracker.Web.Controllers
 {  
+    [Authorize]
     public class LLInventoryController : Controller
     {
         // GET: Monitor

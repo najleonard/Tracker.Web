@@ -7,6 +7,7 @@ using Tracker.Web.Models;
 
 namespace Tracker.Web.Controllers
 {
+    [Authorize]
     public class InventoryController : Controller
     {
         // GET: Inventory
