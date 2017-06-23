@@ -130,7 +130,6 @@ namespace Tracker.Web.Controllers
 
 
     [RoutePrefix("api/table")]
-    [Authorize]
     public class TableController : ApiController
     {
 
