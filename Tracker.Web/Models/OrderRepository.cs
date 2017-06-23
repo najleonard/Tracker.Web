@@ -23,6 +23,7 @@ namespace Tracker.Web.Models
     
     public class OrderRepository
     {
+        [AllowAnonymous]
         public bool UpsertTracking(TrackingModel myTracking)
         {
             //int affectedRows = 0;
