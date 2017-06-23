@@ -10,6 +10,7 @@ namespace Tracker.Web.Controllers
     [Authorize]
     public class TOAHController : Controller
     {
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();

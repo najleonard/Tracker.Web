@@ -11,6 +11,7 @@ namespace Tracker.Web.Controllers
     public class InventoryController : Controller
     {
         // GET: Inventory
+        [AllowAnonymous]
         public ActionResult Index()
         {
             InventoryRepository repo = new InventoryRepository();
