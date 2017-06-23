@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using System.Web.Mvc;
+using System.Web.Mvc.AuthorizeAttribute;
 
 namespace Tracker.Web.Models
 {
@@ -41,7 +41,7 @@ namespace Tracker.Web.Models
             return true;
 
         }
-        [AllowAnonymous]
+
         public bool UpdateOrderShipped(ShippedModel myShippedOrder)
         {
             //int affectedRows = 0;
