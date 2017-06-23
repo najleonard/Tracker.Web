@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using System.String;
 
 
 namespace Tracker.Web.Models
@@ -30,7 +29,7 @@ namespace Tracker.Web.Models
             //int affectedRows = 0;
             var trackingNumber = new SqlParameter("@trackingNumber", myTracking.trackingNumber);
             var status = new SqlParameter("@status", myTracking.status);
-            if(!IsNullOrEmpty(myTracking.estDeliveryDate))
+            if(!String.IsNullOrEmpty(myTracking.estDeliveryDate))
             {
                 var estDeliveryDate = new SqlParameter("@estDeliveryDate", myTracking.estDeliveryDate);
             }
