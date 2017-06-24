@@ -36,5 +36,9 @@ namespace Tracker.Web.Models
         public virtual DbSet<Tracking> Trackings { get; set; }
         public virtual DbSet<FullInventoryView2> FullInventoryView2 { get; set; }
         public virtual DbSet<UpdateInventoryLocation> UpdateInventoryLocations { get; set; }
+        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
     }
 }

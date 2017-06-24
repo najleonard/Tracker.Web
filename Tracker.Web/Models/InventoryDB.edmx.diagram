@@ -26,6 +26,13 @@
         <AssociationConnector Association="trackerwebdbModel.Order_Inventory6_Id_fk" />
         <AssociationConnector Association="trackerwebdbModel.Order_Inventory7_Id_fk" />
         <AssociationConnector Association="trackerwebdbModel.Order_Inventory8_Id_fk" />
+        <EntityTypeShape EntityType="trackerwebdbModel.AspNetRole" Width="1.5" PointX="10.375" PointY="5.5" />
+        <EntityTypeShape EntityType="trackerwebdbModel.AspNetUserClaim" Width="1.5" PointX="14.875" PointY="4" />
+        <EntityTypeShape EntityType="trackerwebdbModel.AspNetUserLogin" Width="1.5" PointX="14.875" PointY="6.75" />
+        <EntityTypeShape EntityType="trackerwebdbModel.AspNetUser" Width="1.5" PointX="12.625" PointY="4.375" />
+        <AssociationConnector Association="trackerwebdbModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="trackerwebdbModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="trackerwebdbModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
