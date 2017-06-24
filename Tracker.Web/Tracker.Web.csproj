@@ -152,7 +152,7 @@
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.4\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
-     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
@@ -194,6 +194,9 @@
     <Compile Include="Models\FullInventoryView.cs">
       <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\FullInventoryView2.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Inventory.cs">
       <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
@@ -221,7 +224,13 @@
     <Compile Include="Models\SemiInventoryView.cs">
       <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Tracking.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\TryOnAtHomeView.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UpdateInventoryLocation.cs">
       <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UploadModel.cs" />

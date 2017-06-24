@@ -30,5 +30,15 @@ namespace Tracker.Web.Models
         public Nullable<int> InventoryItem6 { get; set; }
         public Nullable<int> InventoryItem7 { get; set; }
         public Nullable<int> InventoryItem8 { get; set; }
+    
+        public virtual Client Client { get; set; }
+        public virtual Inventory Inventory { get; set; }
+        public virtual Inventory Inventory1 { get; set; }
+        public virtual Inventory Inventory2 { get; set; }
+        public virtual Inventory Inventory3 { get; set; }
+        public virtual Inventory Inventory4 { get; set; }
+        public virtual Inventory Inventory5 { get; set; }
+        public virtual Inventory Inventory6 { get; set; }
+        public virtual Inventory Inventory7 { get; set; }
     }
 }

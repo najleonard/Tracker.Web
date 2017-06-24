@@ -33,5 +33,8 @@ namespace Tracker.Web.Models
         public virtual DbSet<SemiInventoryView> SemiInventoryViews { get; set; }
         public virtual DbSet<TryOnAtHomeView> TryOnAtHomeViews { get; set; }
         public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
+        public virtual DbSet<Tracking> Trackings { get; set; }
+        public virtual DbSet<FullInventoryView2> FullInventoryView2 { get; set; }
+        public virtual DbSet<UpdateInventoryLocation> UpdateInventoryLocations { get; set; }
     }
 }
