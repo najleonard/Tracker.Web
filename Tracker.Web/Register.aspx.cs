@@ -3,7 +3,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Linq;
 
-namespace WebFormsIdentity
+namespace Tracker.Web
 {
     public partial class Register : System.Web.UI.Page
     {
