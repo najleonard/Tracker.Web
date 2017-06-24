@@ -57,21 +57,14 @@
           <Property Name="image" Type="varchar" MaxLength="50" />
           <Property Name="toah_name" Type="varchar" MaxLength="100" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'trackerwebdb.dbo.Shipping' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Shipping">
-          <Property Name="orderNumber" Type="varchar" MaxLength="50" />
-          <Property Name="isReturnLabel" Type="bit" />
-          <Property Name="trackingNumber" Type="varchar" MaxLength="50" />
-        </EntityType>-->
         <EntityType Name="Tracking">
           <Key>
             <PropertyRef Name="trackingNumber" />
           </Key>
           <Property Name="trackingNumber" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="status" Type="varchar" MaxLength="100" />
-          <Property Name="updateDate" Type="varchar" MaxLength="100" />
           <Property Name="estDeliveryDate" Type="varchar" MaxLength="100" />
+          <Property Name="updateDate" Type="varchar" MaxLength="100" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'trackerwebdb.dbo.FullInventoryView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
