@@ -24,6 +24,7 @@ namespace Tracker.Web
         {
             filters.Add(new HandleErrorAttribute());
             filters.Add(new System.Web.Mvc.AuthorizeAttribute());
+            filters.Add(new RequireHttpsAttribute());
         }
     }
     
