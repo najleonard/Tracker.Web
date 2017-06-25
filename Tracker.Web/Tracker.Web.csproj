@@ -207,7 +207,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\UpdateInventoryController.cs" />
+    <Compile Include="Controllers\UpdateInventoryLocationsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -623,6 +623,11 @@
     <Content Include="Content\DataTables\css\buttons.bootstrap.css" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\UpdateInventory\Index.cshtml" />
+    <Content Include="Views\UpdateInventoryLocations\Create.cshtml" />
+    <Content Include="Views\UpdateInventoryLocations\Delete.cshtml" />
+    <Content Include="Views\UpdateInventoryLocations\Details.cshtml" />
+    <Content Include="Views\UpdateInventoryLocations\Edit.cshtml" />
+    <Content Include="Views\UpdateInventoryLocations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
