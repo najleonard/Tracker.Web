@@ -6,12 +6,14 @@ using System.Web.Mvc;
 
 namespace Tracker.Web.Controllers
 {
+     [Authorize]
     public class HomeController : Controller
     {
         public RedirectResult RedirectToAspx()
         {
             return Redirect("/Login.aspx");
         }
+        [AllowAnonymous]
         public ActionResult Index()
         {
             if (User == null || User.Identity == null || !User.Identity.IsAuthenticated)
