@@ -136,7 +136,6 @@ namespace Tracker.Web.Controllers
 
         [Route("getInventory")]
         [HttpGet, HttpPost]
-        [AllowAnonymous]
         public IHttpActionResult InventoryTable()
         {
             var settings = Properties.Settings.Default;
@@ -189,7 +188,6 @@ namespace Tracker.Web.Controllers
         [HttpGet]
         [HttpPost]
         [Route("getdata")]
-        [AllowAnonymous]
         public IHttpActionResult Table()
         {
             var settings = Properties.Settings.Default;
