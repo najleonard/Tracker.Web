@@ -623,10 +623,6 @@
     <Content Include="Content\DataTables\css\buttons.bootstrap.css" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\UpdateInventory\Index.cshtml" />
-    <Content Include="Views\UpdateInventoryLocations\Create.cshtml" />
-    <Content Include="Views\UpdateInventoryLocations\Delete.cshtml" />
-    <Content Include="Views\UpdateInventoryLocations\Details.cshtml" />
-    <Content Include="Views\UpdateInventoryLocations\Edit.cshtml" />
     <Content Include="Views\UpdateInventoryLocations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
