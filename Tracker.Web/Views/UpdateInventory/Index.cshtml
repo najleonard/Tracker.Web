@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Tracker.Web.Models.UpdateInventoryLocation>
+
+@{
+    ViewBag.Title = "IncorrectLabel";
+}
+
+<h2>IncorrectLabel</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SKU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Extras)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estDeliveryDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.trackingNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isReturnLabel)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SKU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Size)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Color)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Extras)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estDeliveryDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.trackingNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isReturnLabel)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.InventoryId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.InventoryId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.InventoryId })
+        </td>
+    </tr>
+}
+
+</table>

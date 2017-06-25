@@ -30,5 +30,14 @@ namespace Tracker.Web.Models
             }
             return retvalue;
         }
+        public List<UpdateInventoryLocation> GetUpdateList()
+        {
+            List<UpdateInventoryLocation> retvalue = null;
+            using (var db = new trackerwebdbEntities2())
+            {
+                retvalue = db.UpdateInventoryLocations.ToList();
+            }
+            return retvalue;
+        }
     }
 }
