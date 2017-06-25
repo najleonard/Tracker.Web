@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Tracker.Web.Controllers
 {
-     [Authorize]
+    [Authorize]
     public class HomeController : Controller
     {
         public RedirectResult RedirectToAspx()

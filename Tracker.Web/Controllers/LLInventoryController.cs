@@ -17,7 +17,6 @@ namespace Tracker.Web.Controllers
     public class LLInventoryController : Controller
     {
         // GET: Monitor
-        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();
