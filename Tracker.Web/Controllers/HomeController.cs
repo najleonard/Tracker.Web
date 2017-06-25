@@ -8,9 +8,18 @@ namespace Tracker.Web.Controllers
 {
     public class HomeController : Controller
     {
+        public RedirectResult RedirectToAspx()
+        {
+            return Redirect("/Login.aspx");
+        }
         public ActionResult Index()
         {
-            return View();
+            if (User == null || User.Identity == null || !User.Identity.IsAuthenticated)
+            {
+                return RedirectToAspx();
+            }
+            else
+                return View();
         }
 
         public ActionResult About()
