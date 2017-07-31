@@ -26,8 +26,8 @@ namespace Tracker.Web.Controllers
 
 
             //forward to L&L staff numbers
-			var accountSid = WebConfigurationManager.AppSettings["TwilioAccountSid"];
-			var authToken = WebConfigurationManager.AppSettings["TwilioAuthToken"];
+			var accountSid = ConfigurationManager.AppSettings["TwilioAccountSid"];
+			var authToken = ConfigurationManager.AppSettings["TwilioAuthToken"];
 			TwilioClient.Init(accountSid, authToken);
 
             if (ForwardToNumber != null)
