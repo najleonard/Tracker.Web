@@ -78,9 +78,9 @@ namespace Tracker.Web.Controllers
 
         public ActionResult SendSMS()
         {
-            var accountSid = "AC01316b284a8c2fe1a2024489794cada6";
-            var authToken = "08a1f0d1a1f00414358c6e42dd16e807";
-            TwilioClient.Init(accountSid, authToken);
+			var accountSid = ConfigurationManager.AppSettings["TwilioAccountSid"];
+			var authToken = ConfigurationManager.AppSettings["TwilioAuthToken"];
+			TwilioClient.Init(accountSid, authToken);
 
             var to = new PhoneNumber("+14156963814");
             var from = new PhoneNumber("+14152002558");
