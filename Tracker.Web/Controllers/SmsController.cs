@@ -22,9 +22,16 @@ namespace Tracker.Web.Controllers
 			string To = Request["To"];
 			string Body = Request["Body"];
 
-			messagingResponse.Message(Body);
 
-			return TwiML(messagingResponse);
+			var to = new PhoneNumber("+14156963814");
+			var from = new PhoneNumber("+14152002558");
+
+			var message = MessageResource.Create(
+				to: to,
+				from: from,
+				body: Body
+			);
+			return TwiML(message);
 		}
 
         public ActionResult SendSMS()
