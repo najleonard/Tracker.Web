@@ -51,9 +51,9 @@ namespace Tracker.Web.Controllers
 					body: SMSFrom + ": " + Body
 				);
 
-                var to = new PhoneNumber("+14157066938");
+                var to2 = new PhoneNumber("+14157066938");
 				var message2 = MessageResource.Create(
-					to: to,
+					to: to2,
 					from: from,
 					body: SMSFrom + ": " + Body
 				);
