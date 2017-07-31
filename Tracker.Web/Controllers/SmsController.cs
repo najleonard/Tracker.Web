@@ -39,6 +39,7 @@ namespace Tracker.Web.Controllers
 					from: from,
 					body: Body
 				);
+                return Content(message.Sid);
 			}
             else
             {
@@ -50,10 +51,8 @@ namespace Tracker.Web.Controllers
 					from: from,
 					body: from + ": " + Body
 				);
+                return Content(message.Sid);
             }
-
-
-			return Content(message.Sid);
 
 		}
 
