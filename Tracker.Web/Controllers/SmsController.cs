@@ -18,7 +18,7 @@ namespace Tracker.Web.Controllers
 		public ActionResult ReceiveSms()
 		{
 			var messagingResponse = new MessagingResponse();
-			string From = Request["From"];
+			string SMSFrom = Request["From"];
 			string To = Request["To"];
 			string Body = Request["Body"];
             string ForwardToNumber = Request["ForwardToNumber"];
@@ -43,13 +43,19 @@ namespace Tracker.Web.Controllers
 			}
             else
             {
-				var to = new PhoneNumber("+14156963814");
 				var from = new PhoneNumber("+14152002558");
 
 				var message = MessageResource.Create(
 					to: to,
 					from: from,
-					body: from + ": " + Body
+					body: SMSFrom + ": " + Body
+				);
+
+                var to = new PhoneNumber("+14157066938");
+				var message = MessageResource.Create(
+					to: to,
+					from: from,
+					body: SMSFrom + ": " + Body
 				);
                 return Content(message.Sid);
             }
