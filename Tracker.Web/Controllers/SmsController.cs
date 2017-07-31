@@ -43,6 +43,7 @@ namespace Tracker.Web.Controllers
 			}
             else
             {
+				var to = new PhoneNumber("+14156963814");
 				var from = new PhoneNumber("+14152002558");
 
 				var message = MessageResource.Create(
@@ -52,12 +53,12 @@ namespace Tracker.Web.Controllers
 				);
 
                 var to2 = new PhoneNumber("+14157066938");
-				var message2 = MessageResource.Create(
+				var message = MessageResource.Create(
 					to: to2,
 					from: from,
 					body: SMSFrom + ": " + Body
 				);
-                return Content(message2.Sid);
+                return Content(message.Sid);
             }
 
 		}
