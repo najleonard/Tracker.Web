@@ -21,6 +21,8 @@ namespace Tracker.Web.Controllers
 			string From = Request["From"];
 			string To = Request["To"];
 			string Body = Request["Body"];
+            string ForwardToNumber = Request["ForwardToNumber"];
+
 
             //forward to L&L staff numbers
 			var accountSid = "AC01316b284a8c2fe1a2024489794cada6";
@@ -33,7 +35,7 @@ namespace Tracker.Web.Controllers
 			var message = MessageResource.Create(
 				to: to,
 				from: from,
-				body: Body
+				body: Body + ForwardToNumber
 			);
 
 			return Content(message.Sid);
