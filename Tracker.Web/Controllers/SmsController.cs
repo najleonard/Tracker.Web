@@ -18,5 +18,24 @@ namespace Tracker.Web.Controllers
 
 			return TwiML(messagingResponse);
 		}
+
+        public ActionResult SendSMS()
+        {
+            var accountSid = "AC01316b284a8c2fe1a2024489794cada6";
+            var authToken = "08a1f0d1a1f00414358c6e42dd16e807";
+            TwilioClient.Init(accountSid, authToken);
+
+            var to = new PhoneNumber("+14156963814");
+            var from = new PhoneNumber("+14152002558");
+
+            var message = MessageResource.Create(
+                to: to,
+                from: from,
+                body: "hello neil testing"
+            );
+
+            return Content(message.Sid);
+
+        }
 	}
 }
