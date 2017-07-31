@@ -15,10 +15,14 @@ namespace Tracker.Web.Controllers
 	public class SmsController : TwilioController
 	{
 		[HttpPost]
-		public ActionResult Index()
+		public ActionResult ReceiveSms()
 		{
 			var messagingResponse = new MessagingResponse();
-			messagingResponse.Message("The Robots are coming! Head for the hills!");
+			string From = Request["From"];
+			string To = Request["To"];
+			string Body = Request["Body"];
+
+			messagingResponse.Message(Body);
 
 			return TwiML(messagingResponse);
 		}
