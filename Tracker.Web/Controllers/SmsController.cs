@@ -43,22 +43,35 @@ namespace Tracker.Web.Controllers
 			}
             else
             {
-				var to = new PhoneNumber("+14156963814");
-				var from = new PhoneNumber("+14152002558");
+                var from = new PhoneNumber("+14152002558");
+                if (SMSFrom == "+14156963814")
+                {
+                    var to3 = new PhoneNumber(Body.Substring(0,12));
+					var message3 = MessageResource.Create(
+					   to: to3,
+					   from: from,
+                        body: Body.Substring(13,Body.Length)
+				   );
+                    return Content(message3.Sid);
+                }
+                else
+                {
+                    var to = new PhoneNumber("+14156963814");
 
-				var message = MessageResource.Create(
-					to: to,
-					from: from,
-					body: SMSFrom + ": " + Body
-				);
+                    var message = MessageResource.Create(
+                        to: to,
+                        from: from,
+                        body: SMSFrom + ": " + Body
+                    );
 
-                var to2 = new PhoneNumber("+14157066938");
-				var message2 = MessageResource.Create(
-					to: to2,
-					from: from,
-					body: SMSFrom + ": " + Body
-				);
-                return Content(message.Sid);
+                    var to2 = new PhoneNumber("+14157066938");
+                    var message2 = MessageResource.Create(
+                        to: to2,
+                        from: from,
+                        body: SMSFrom + ": " + Body
+                    );
+                    return Content(message.Sid);
+                }
             }
 
 		}
