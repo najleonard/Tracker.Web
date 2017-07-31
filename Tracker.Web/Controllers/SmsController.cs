@@ -29,14 +29,29 @@ namespace Tracker.Web.Controllers
 			var authToken = "08a1f0d1a1f00414358c6e42dd16e807";
 			TwilioClient.Init(accountSid, authToken);
 
-			var to = new PhoneNumber("+14156963814");
-			var from = new PhoneNumber("+14152002558");
+            if (ForwardToNumber != null)
+            {
+                var to = new PhoneNumber(ForwardToNumber);
+				var from = new PhoneNumber("+14152002558");
 
-			var message = MessageResource.Create(
-				to: to,
-				from: from,
-				body: Body + ForwardToNumber
-			);
+				var message = MessageResource.Create(
+					to: to,
+					from: from,
+					body: Body
+				);
+			}
+            else
+            {
+				var to = new PhoneNumber("+14156963814");
+				var from = new PhoneNumber("+14152002558");
+
+				var message = MessageResource.Create(
+					to: to,
+					from: from,
+					body: from + ": " + Body
+				);
+            }
+
 
 			return Content(message.Sid);
 
