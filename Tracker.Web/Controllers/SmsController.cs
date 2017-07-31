@@ -46,11 +46,11 @@ namespace Tracker.Web.Controllers
                 var from = new PhoneNumber("+14152002558");
                 if (String.Equals(SMSFrom,"+14156963814"))
                 {
-                    var to3 = new PhoneNumber(Body.Substring(0,12));
+                    var to3 = new PhoneNumber(Body.SubString(0,12));
 					var message3 = MessageResource.Create(
 					   to: to3,
 					   from: from,
-                        body: Body.Substring(13,Body.Length)
+                        body: Body.SubString(13,Body.Length-13)
 				   );
                     return Content(message3.Sid);
                 }
