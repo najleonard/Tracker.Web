@@ -44,7 +44,7 @@ namespace Tracker.Web.Controllers
             else
             {
                 var from = new PhoneNumber("+14152002558");
-                if (SMSFrom == "+14156963814")
+                if (String.Equals(SMSFrom,"+14156963814"))
                 {
                     var to3 = new PhoneNumber(Body.Substring(0,12));
 					var message3 = MessageResource.Create(
