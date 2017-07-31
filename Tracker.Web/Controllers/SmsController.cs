@@ -52,12 +52,12 @@ namespace Tracker.Web.Controllers
 				);
 
                 var to = new PhoneNumber("+14157066938");
-				var message = MessageResource.Create(
+				var message2 = MessageResource.Create(
 					to: to,
 					from: from,
 					body: SMSFrom + ": " + Body
 				);
-                return Content(message.Sid);
+                return Content(message2.Sid);
             }
 
 		}
