@@ -42,15 +42,11 @@ namespace Tracker.Web.Models
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
-        public virtual DbSet<TOAH_readyCount> TOAH_readyCount { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
-        public virtual DbSet<TOAH_allOptions> TOAH_allOptions { get; set; }
         public virtual DbSet<TOAH_requests> TOAH_requests { get; set; }
-        public virtual DbSet<TOAH_requests2> TOAH_requests2 { get; set; }
-        public virtual DbSet<TOAH_requests3> TOAH_requests3 { get; set; }
-        public virtual DbSet<TOAH_sizeRelevant8> TOAH_sizeRelevant8 { get; set; }
         public virtual DbSet<UnshippedTOAH> UnshippedTOAHs { get; set; }
         public virtual DbSet<SizingRule> SizingRules { get; set; }
+        public virtual DbSet<TOAH_readyCount> TOAH_readyCount { get; set; }
     
         public virtual ObjectResult<InsertOrUpdateTracking_Result> InsertOrUpdateTracking(string trackingNumber, string status, string updateDate, string estDeliveryDate)
         {
