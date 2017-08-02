@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b75f12cabfcc4c0f85462212cf0a87c9" Name="Diagram1">
+      <Diagram DiagramId="b75f12cabfcc4c0f85462212cf0a87c9" Name="Diagram1" ZoomLevel="64">
         <EntityTypeShape EntityType="trackerwebdbModel.Client" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="trackerwebdbModel.Inventory" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="trackerwebdbModel.Order" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
@@ -19,7 +19,7 @@
         <AssociationConnector Association="trackerwebdbModel.Order_Inventory2_Id_fk" ManuallyRouted="false" />
         <EntityTypeShape EntityType="trackerwebdbModel.Tracking" Width="1.5" PointX="8.75" PointY="9.75" />
         <EntityTypeShape EntityType="trackerwebdbModel.FullInventoryView2" Width="1.5" PointX="0.75" PointY="10.75" />
-        <EntityTypeShape EntityType="trackerwebdbModel.UpdateInventoryLocation" Width="1.5" PointX="2.75" PointY="10.75" />
+        <EntityTypeShape EntityType="trackerwebdbModel.UpdateInventoryLocation" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
         <AssociationConnector Association="trackerwebdbModel.Order_Inventory3_Id_fk" />
         <AssociationConnector Association="trackerwebdbModel.Order_Inventory4_Id_fk" />
         <AssociationConnector Association="trackerwebdbModel.Order_Inventory5_Id_fk" />
@@ -39,12 +39,6 @@
         <EntityTypeShape EntityType="trackerwebdbModel.TOAH_requests" Width="1.5" PointX="12.75" PointY="0.75" />
         <EntityTypeShape EntityType="trackerwebdbModel.TOAH_requests2" Width="1.5" PointX="7.75" PointY="12.75" />
         <EntityTypeShape EntityType="trackerwebdbModel.TOAH_requests3" Width="1.5" PointX="13.75" PointY="9.75" />
-        <EntityTypeShape EntityType="trackerwebdbModel.TOAH_sizeRelevant" Width="1.5" PointX="13.75" PointY="12.75" />
-        <EntityTypeShape EntityType="trackerwebdbModel.TOAH_sizeRelevant3" Width="1.5" PointX="0.75" PointY="15.75" />
-        <EntityTypeShape EntityType="trackerwebdbModel.TOAH_sizeRelevant4" Width="1.5" PointX="2.75" PointY="15.75" />
-        <EntityTypeShape EntityType="trackerwebdbModel.TOAH_sizeRelevant5" Width="1.5" PointX="4.75" PointY="15.75" />
-        <EntityTypeShape EntityType="trackerwebdbModel.TOAH_sizeRelevant6" Width="1.5" PointX="6.75" PointY="15.75" />
-        <EntityTypeShape EntityType="trackerwebdbModel.TOAH_sizeRelevant7" Width="1.5" PointX="8.75" PointY="15.75" />
         <EntityTypeShape EntityType="trackerwebdbModel.TOAH_sizeRelevant8" Width="1.5" PointX="15.75" PointY="9.75" />
         <EntityTypeShape EntityType="trackerwebdbModel.UnshippedTOAH" Width="1.5" PointX="10.75" PointY="15.75" />
       </Diagram>

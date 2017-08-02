@@ -316,24 +316,6 @@
     <Compile Include="Models\TOAH_requests3.cs">
       <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TOAH_sizeRelevant.cs">
-      <DependentUpon>InventoryDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TOAH_sizeRelevant3.cs">
-      <DependentUpon>InventoryDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TOAH_sizeRelevant4.cs">
-      <DependentUpon>InventoryDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TOAH_sizeRelevant5.cs">
-      <DependentUpon>InventoryDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TOAH_sizeRelevant6.cs">
-      <DependentUpon>InventoryDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TOAH_sizeRelevant7.cs">
-      <DependentUpon>InventoryDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\TOAH_sizeRelevant8.cs">
       <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>

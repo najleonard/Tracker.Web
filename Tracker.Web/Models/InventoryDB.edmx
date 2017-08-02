@@ -76,27 +76,6 @@
           <Property Name="Location" Type="varchar" MaxLength="50" />
           <Property Name="rfid_tag" Type="varchar" MaxLength="40" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'trackerwebdb.dbo.Measurements' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Measurements">
-          <Property Name="name" Type="varchar" MaxLength="60" />
-          <Property Name="email" Type="varchar" MaxLength="60" />
-          <Property Name="bust" Type="int" />
-          <Property Name="heel_height" Type="int" />
-          <Property Name="height" Type="int" />
-          <Property Name="hips" Type="int" />
-          <Property Name="length_of_train" Type="int" />
-          <Property Name="lower_waist" Type="int" />
-          <Property Name="natural_waist" Type="int" />
-          <Property Name="neck_to_chest" Type="int" />
-          <Property Name="neck_to_dress" Type="int" />
-          <Property Name="neck_to_hipbone" Type="int" />
-          <Property Name="neck_to_waist" Type="int" />
-          <Property Name="street_sizing" Type="int" />
-          <Property Name="upper_chest_circumference" Type="int" />
-          <Property Name="upper_chest_width" Type="int" />
-          <Property Name="waist_to_floor" Type="int" />
-        </EntityType>-->
         <EntityType Name="Order">
           <Key>
             <PropertyRef Name="Id" />
@@ -135,22 +114,6 @@ warning 6013: The table/view 'trackerwebdb.dbo.Measurements' does not have a pri
           </Key>
           <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'trackerwebdb.dbo.Shipping' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Shipping">
-          <Property Name="orderNumber" Type="varchar" MaxLength="50" />
-          <Property Name="isReturnLabel" Type="bit" />
-          <Property Name="trackingNumber" Type="varchar" MaxLength="50" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'trackerwebdb.dbo.SizingRules' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="SizingRules">
-          <Property Name="ProductType" Type="varchar" MaxLength="50" />
-          <Property Name="Size" Type="int" />
-          <Property Name="LowerLimitAdjustment" Type="int" />
-          <Property Name="UpperLimitAdjustment" Type="int" />
-          <Property Name="SizingCode" Type="varchar" MaxLength="50" />
-        </EntityType>-->
         <EntityType Name="Tracking">
           <Key>
             <PropertyRef Name="trackingNumber" />
@@ -209,15 +172,6 @@ warning 6002: The table/view 'trackerwebdb.dbo.SemiInventoryView' does not have 
           <Property Name="Extras" Type="varchar" MaxLength="20" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'trackerwebdb.dbo.ShippingStatus' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ShippingStatus">
-          <Property Name="orderNumber" Type="varchar" MaxLength="50" />
-          <Property Name="isReturnLabel" Type="bit" />
-          <Property Name="trackingNumber" Type="varchar" MaxLength="50" />
-          <Property Name="status" Type="varchar" MaxLength="100" />
-          <Property Name="estDeliveryDate" Type="varchar" MaxLength="100" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'trackerwebdb.dbo.TOAH.readyCount' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="TOAH_readyCount">
           <Key>
@@ -245,20 +199,6 @@ warning 6002: The table/view 'trackerwebdb.dbo.TOAH_allOptions' does not have a 
           <Property Name="Location" Type="varchar" MaxLength="50" />
           <Property Name="SizeDiff" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'trackerwebdb.dbo.TOAH_finalTable' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TOAH_finalTable">
-          <Property Name="OrderId" Type="int" />
-          <Property Name="ItemNumber" Type="bigint" />
-          <Property Name="RequestCount" Type="bigint" />
-          <Property Name="InventoryId" Type="int" />
-          <Property Name="SKU" Type="varchar" MaxLength="10" />
-          <Property Name="Name" Type="varchar" MaxLength="100" />
-          <Property Name="Request_StreetSize" Type="int" />
-          <Property Name="Size" Type="int" />
-          <Property Name="SizeDiff" Type="int" />
-          <Property Name="Location" Type="varchar" MaxLength="50" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'trackerwebdb.dbo.TOAH_requests' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="TOAH_requests">
@@ -288,175 +228,6 @@ warning 6002: The table/view 'trackerwebdb.dbo.TOAH_requests3' does not have a p
           </Key>
           <Property Name="OrderId" Type="int" Nullable="false" />
           <Property Name="RequestCount" Type="bigint" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'trackerwebdb.dbo.TOAH_requests4' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TOAH_requests4">
-          <Property Name="OrderId" Type="int" />
-          <Property Name="Request_RequestedItem" Type="varchar" MaxLength="500" />
-          <Property Name="Request_StreetSize" Type="int" />
-          <Property Name="ItemNumber" Type="bigint" />
-          <Property Name="RequestCount" Type="bigint" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'trackerwebdb.dbo.TOAH_shipableCount' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TOAH_shipableCount">
-          <Property Name="OrderId" Type="int" />
-          <Property Name="ShipableCount" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'trackerwebdb.dbo.TOAH_sizeRelevant' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="TOAH_sizeRelevant">
-          <Key>
-            <PropertyRef Name="OrderId" />
-          </Key>
-          <Property Name="Type" Type="varchar" MaxLength="20" />
-          <Property Name="Request_RequestedItem" Type="varchar" MaxLength="500" />
-          <Property Name="Request_StreetSize" Type="int" />
-          <Property Name="OrderId" Type="int" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="100" />
-          <Property Name="SKU" Type="varchar" MaxLength="10" />
-          <Property Name="InventoryId" Type="int" />
-          <Property Name="Size" Type="int" />
-          <Property Name="Location" Type="varchar" MaxLength="50" />
-          <Property Name="LowerLimitAdjustment" Type="int" />
-          <Property Name="UpperLimitAdjustment" Type="int" />
-          <Property Name="SizeDiff" Type="int" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'trackerwebdb.dbo.TOAH_sizeRelevant2' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TOAH_sizeRelevant2">
-          <Property Name="Type" Type="varchar" MaxLength="20" />
-          <Property Name="Request_RequestedItem" Type="varchar" MaxLength="500" />
-          <Property Name="Request_StreetSize" Type="int" />
-          <Property Name="OrderId" Type="int" />
-          <Property Name="Name" Type="varchar" MaxLength="100" />
-          <Property Name="SKU" Type="varchar" MaxLength="10" />
-          <Property Name="InventoryId" Type="int" />
-          <Property Name="Size" Type="int" />
-          <Property Name="Location" Type="varchar" MaxLength="50" />
-          <Property Name="LowerLimitAdjustment" Type="int" />
-          <Property Name="UpperLimitAdjustment" Type="int" />
-          <Property Name="SizeDiff" Type="int" />
-          <Property Name="ItemNumber" Type="bigint" />
-          <Property Name="RequestCount" Type="bigint" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'trackerwebdb.dbo.TOAH_sizeRelevant3' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="TOAH_sizeRelevant3">
-          <Key>
-            <PropertyRef Name="CanShip" />
-          </Key>
-          <Property Name="Type" Type="varchar" MaxLength="20" />
-          <Property Name="Request_RequestedItem" Type="varchar" MaxLength="500" />
-          <Property Name="Request_StreetSize" Type="int" />
-          <Property Name="OrderId" Type="int" />
-          <Property Name="Name" Type="varchar" MaxLength="100" />
-          <Property Name="SKU" Type="varchar" MaxLength="10" />
-          <Property Name="InventoryId" Type="int" />
-          <Property Name="Size" Type="int" />
-          <Property Name="Location" Type="varchar" MaxLength="50" />
-          <Property Name="LowerLimitAdjustment" Type="int" />
-          <Property Name="UpperLimitAdjustment" Type="int" />
-          <Property Name="SizeDiff" Type="int" />
-          <Property Name="ItemNumber" Type="bigint" />
-          <Property Name="RequestCount" Type="bigint" />
-          <Property Name="CanShip" Type="int" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'trackerwebdb.dbo.TOAH_sizeRelevant4' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="TOAH_sizeRelevant4">
-          <Key>
-            <PropertyRef Name="CanShip" />
-          </Key>
-          <Property Name="Type" Type="varchar" MaxLength="20" />
-          <Property Name="Request_RequestedItem" Type="varchar" MaxLength="500" />
-          <Property Name="Request_StreetSize" Type="int" />
-          <Property Name="OrderId" Type="int" />
-          <Property Name="Name" Type="varchar" MaxLength="100" />
-          <Property Name="SKU" Type="varchar" MaxLength="10" />
-          <Property Name="InventoryId" Type="int" />
-          <Property Name="Size" Type="int" />
-          <Property Name="Location" Type="varchar" MaxLength="50" />
-          <Property Name="LowerLimitAdjustment" Type="int" />
-          <Property Name="UpperLimitAdjustment" Type="int" />
-          <Property Name="SizeDiff" Type="int" />
-          <Property Name="ItemNumber" Type="bigint" />
-          <Property Name="RequestCount" Type="bigint" />
-          <Property Name="CanShip" Type="int" Nullable="false" />
-          <Property Name="OrderReady" Type="int" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'trackerwebdb.dbo.TOAH_sizeRelevant5' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="TOAH_sizeRelevant5">
-          <Key>
-            <PropertyRef Name="CanShip" />
-          </Key>
-          <Property Name="Type" Type="varchar" MaxLength="20" />
-          <Property Name="Request_RequestedItem" Type="varchar" MaxLength="500" />
-          <Property Name="Request_StreetSize" Type="int" />
-          <Property Name="OrderId" Type="int" />
-          <Property Name="Name" Type="varchar" MaxLength="100" />
-          <Property Name="SKU" Type="varchar" MaxLength="10" />
-          <Property Name="InventoryId" Type="int" />
-          <Property Name="Size" Type="int" />
-          <Property Name="Location" Type="varchar" MaxLength="50" />
-          <Property Name="LowerLimitAdjustment" Type="int" />
-          <Property Name="UpperLimitAdjustment" Type="int" />
-          <Property Name="SizeDiff" Type="int" />
-          <Property Name="ItemNumber" Type="bigint" />
-          <Property Name="RequestCount" Type="bigint" />
-          <Property Name="CanShip" Type="int" Nullable="false" />
-          <Property Name="OrderReady" Type="int" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'trackerwebdb.dbo.TOAH_sizeRelevant6' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="TOAH_sizeRelevant6">
-          <Key>
-            <PropertyRef Name="CanShip" />
-          </Key>
-          <Property Name="rk" Type="bigint" />
-          <Property Name="Type" Type="varchar" MaxLength="20" />
-          <Property Name="Request_RequestedItem" Type="varchar" MaxLength="500" />
-          <Property Name="Request_StreetSize" Type="int" />
-          <Property Name="OrderId" Type="int" />
-          <Property Name="Name" Type="varchar" MaxLength="100" />
-          <Property Name="SKU" Type="varchar" MaxLength="10" />
-          <Property Name="InventoryId" Type="int" />
-          <Property Name="Size" Type="int" />
-          <Property Name="Location" Type="varchar" MaxLength="50" />
-          <Property Name="LowerLimitAdjustment" Type="int" />
-          <Property Name="UpperLimitAdjustment" Type="int" />
-          <Property Name="SizeDiff" Type="int" />
-          <Property Name="ItemNumber" Type="bigint" />
-          <Property Name="RequestCount" Type="bigint" />
-          <Property Name="CanShip" Type="int" Nullable="false" />
-          <Property Name="OrderReady" Type="int" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'trackerwebdb.dbo.TOAH_sizeRelevant7' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="TOAH_sizeRelevant7">
-          <Key>
-            <PropertyRef Name="CanShip" />
-          </Key>
-          <Property Name="rk" Type="bigint" />
-          <Property Name="Type" Type="varchar" MaxLength="20" />
-          <Property Name="Request_RequestedItem" Type="varchar" MaxLength="500" />
-          <Property Name="Request_StreetSize" Type="int" />
-          <Property Name="OrderId" Type="int" />
-          <Property Name="Name" Type="varchar" MaxLength="100" />
-          <Property Name="SKU" Type="varchar" MaxLength="10" />
-          <Property Name="InventoryId" Type="int" />
-          <Property Name="Size" Type="int" />
-          <Property Name="Location" Type="varchar" MaxLength="50" />
-          <Property Name="LowerLimitAdjustment" Type="int" />
-          <Property Name="UpperLimitAdjustment" Type="int" />
-          <Property Name="SizeDiff" Type="int" />
-          <Property Name="ItemNumber" Type="bigint" />
-          <Property Name="RequestCount" Type="bigint" />
-          <Property Name="CanShip" Type="int" Nullable="false" />
-          <Property Name="OrderReady" Type="int" />
-          <Property Name="row_number" Type="bigint" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'trackerwebdb.dbo.TOAH_sizeRelevant8' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -738,9 +509,6 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-error 6004: The table 'trackerwebdb.dbo.SizingRules' is referenced by a relationship, but cannot be found.
-        <Association Name="SizingRules_ProductTypes_Type_fk" />-->
         <Function Name="InsertOrUpdateTracking" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="trackingNumber" Type="varchar" Mode="In" />
           <Parameter Name="status" Type="varchar" Mode="In" />
@@ -839,124 +607,6 @@ error 6004: The table 'trackerwebdb.dbo.SizingRules' is referenced by a relation
     [TOAH_requests3].[OrderId] AS [OrderId], 
     [TOAH_requests3].[RequestCount] AS [RequestCount]
     FROM [dbo].[TOAH_requests3] AS [TOAH_requests3]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="TOAH_sizeRelevant" EntityType="Self.TOAH_sizeRelevant" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [TOAH_sizeRelevant].[Type] AS [Type], 
-    [TOAH_sizeRelevant].[Request_RequestedItem] AS [Request_RequestedItem], 
-    [TOAH_sizeRelevant].[Request_StreetSize] AS [Request_StreetSize], 
-    [TOAH_sizeRelevant].[OrderId] AS [OrderId], 
-    [TOAH_sizeRelevant].[Name] AS [Name], 
-    [TOAH_sizeRelevant].[SKU] AS [SKU], 
-    [TOAH_sizeRelevant].[InventoryId] AS [InventoryId], 
-    [TOAH_sizeRelevant].[Size] AS [Size], 
-    [TOAH_sizeRelevant].[Location] AS [Location], 
-    [TOAH_sizeRelevant].[LowerLimitAdjustment] AS [LowerLimitAdjustment], 
-    [TOAH_sizeRelevant].[UpperLimitAdjustment] AS [UpperLimitAdjustment], 
-    [TOAH_sizeRelevant].[SizeDiff] AS [SizeDiff]
-    FROM [dbo].[TOAH_sizeRelevant] AS [TOAH_sizeRelevant]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="TOAH_sizeRelevant3" EntityType="Self.TOAH_sizeRelevant3" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [TOAH_sizeRelevant3].[Type] AS [Type], 
-    [TOAH_sizeRelevant3].[Request_RequestedItem] AS [Request_RequestedItem], 
-    [TOAH_sizeRelevant3].[Request_StreetSize] AS [Request_StreetSize], 
-    [TOAH_sizeRelevant3].[OrderId] AS [OrderId], 
-    [TOAH_sizeRelevant3].[Name] AS [Name], 
-    [TOAH_sizeRelevant3].[SKU] AS [SKU], 
-    [TOAH_sizeRelevant3].[InventoryId] AS [InventoryId], 
-    [TOAH_sizeRelevant3].[Size] AS [Size], 
-    [TOAH_sizeRelevant3].[Location] AS [Location], 
-    [TOAH_sizeRelevant3].[LowerLimitAdjustment] AS [LowerLimitAdjustment], 
-    [TOAH_sizeRelevant3].[UpperLimitAdjustment] AS [UpperLimitAdjustment], 
-    [TOAH_sizeRelevant3].[SizeDiff] AS [SizeDiff], 
-    [TOAH_sizeRelevant3].[ItemNumber] AS [ItemNumber], 
-    [TOAH_sizeRelevant3].[RequestCount] AS [RequestCount], 
-    [TOAH_sizeRelevant3].[CanShip] AS [CanShip]
-    FROM [dbo].[TOAH_sizeRelevant3] AS [TOAH_sizeRelevant3]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="TOAH_sizeRelevant4" EntityType="Self.TOAH_sizeRelevant4" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [TOAH_sizeRelevant4].[Type] AS [Type], 
-    [TOAH_sizeRelevant4].[Request_RequestedItem] AS [Request_RequestedItem], 
-    [TOAH_sizeRelevant4].[Request_StreetSize] AS [Request_StreetSize], 
-    [TOAH_sizeRelevant4].[OrderId] AS [OrderId], 
-    [TOAH_sizeRelevant4].[Name] AS [Name], 
-    [TOAH_sizeRelevant4].[SKU] AS [SKU], 
-    [TOAH_sizeRelevant4].[InventoryId] AS [InventoryId], 
-    [TOAH_sizeRelevant4].[Size] AS [Size], 
-    [TOAH_sizeRelevant4].[Location] AS [Location], 
-    [TOAH_sizeRelevant4].[LowerLimitAdjustment] AS [LowerLimitAdjustment], 
-    [TOAH_sizeRelevant4].[UpperLimitAdjustment] AS [UpperLimitAdjustment], 
-    [TOAH_sizeRelevant4].[SizeDiff] AS [SizeDiff], 
-    [TOAH_sizeRelevant4].[ItemNumber] AS [ItemNumber], 
-    [TOAH_sizeRelevant4].[RequestCount] AS [RequestCount], 
-    [TOAH_sizeRelevant4].[CanShip] AS [CanShip], 
-    [TOAH_sizeRelevant4].[OrderReady] AS [OrderReady]
-    FROM [dbo].[TOAH_sizeRelevant4] AS [TOAH_sizeRelevant4]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="TOAH_sizeRelevant5" EntityType="Self.TOAH_sizeRelevant5" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [TOAH_sizeRelevant5].[Type] AS [Type], 
-    [TOAH_sizeRelevant5].[Request_RequestedItem] AS [Request_RequestedItem], 
-    [TOAH_sizeRelevant5].[Request_StreetSize] AS [Request_StreetSize], 
-    [TOAH_sizeRelevant5].[OrderId] AS [OrderId], 
-    [TOAH_sizeRelevant5].[Name] AS [Name], 
-    [TOAH_sizeRelevant5].[SKU] AS [SKU], 
-    [TOAH_sizeRelevant5].[InventoryId] AS [InventoryId], 
-    [TOAH_sizeRelevant5].[Size] AS [Size], 
-    [TOAH_sizeRelevant5].[Location] AS [Location], 
-    [TOAH_sizeRelevant5].[LowerLimitAdjustment] AS [LowerLimitAdjustment], 
-    [TOAH_sizeRelevant5].[UpperLimitAdjustment] AS [UpperLimitAdjustment], 
-    [TOAH_sizeRelevant5].[SizeDiff] AS [SizeDiff], 
-    [TOAH_sizeRelevant5].[ItemNumber] AS [ItemNumber], 
-    [TOAH_sizeRelevant5].[RequestCount] AS [RequestCount], 
-    [TOAH_sizeRelevant5].[CanShip] AS [CanShip], 
-    [TOAH_sizeRelevant5].[OrderReady] AS [OrderReady]
-    FROM [dbo].[TOAH_sizeRelevant5] AS [TOAH_sizeRelevant5]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="TOAH_sizeRelevant6" EntityType="Self.TOAH_sizeRelevant6" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [TOAH_sizeRelevant6].[rk] AS [rk], 
-    [TOAH_sizeRelevant6].[Type] AS [Type], 
-    [TOAH_sizeRelevant6].[Request_RequestedItem] AS [Request_RequestedItem], 
-    [TOAH_sizeRelevant6].[Request_StreetSize] AS [Request_StreetSize], 
-    [TOAH_sizeRelevant6].[OrderId] AS [OrderId], 
-    [TOAH_sizeRelevant6].[Name] AS [Name], 
-    [TOAH_sizeRelevant6].[SKU] AS [SKU], 
-    [TOAH_sizeRelevant6].[InventoryId] AS [InventoryId], 
-    [TOAH_sizeRelevant6].[Size] AS [Size], 
-    [TOAH_sizeRelevant6].[Location] AS [Location], 
-    [TOAH_sizeRelevant6].[LowerLimitAdjustment] AS [LowerLimitAdjustment], 
-    [TOAH_sizeRelevant6].[UpperLimitAdjustment] AS [UpperLimitAdjustment], 
-    [TOAH_sizeRelevant6].[SizeDiff] AS [SizeDiff], 
-    [TOAH_sizeRelevant6].[ItemNumber] AS [ItemNumber], 
-    [TOAH_sizeRelevant6].[RequestCount] AS [RequestCount], 
-    [TOAH_sizeRelevant6].[CanShip] AS [CanShip], 
-    [TOAH_sizeRelevant6].[OrderReady] AS [OrderReady]
-    FROM [dbo].[TOAH_sizeRelevant6] AS [TOAH_sizeRelevant6]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="TOAH_sizeRelevant7" EntityType="Self.TOAH_sizeRelevant7" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [TOAH_sizeRelevant7].[rk] AS [rk], 
-    [TOAH_sizeRelevant7].[Type] AS [Type], 
-    [TOAH_sizeRelevant7].[Request_RequestedItem] AS [Request_RequestedItem], 
-    [TOAH_sizeRelevant7].[Request_StreetSize] AS [Request_StreetSize], 
-    [TOAH_sizeRelevant7].[OrderId] AS [OrderId], 
-    [TOAH_sizeRelevant7].[Name] AS [Name], 
-    [TOAH_sizeRelevant7].[SKU] AS [SKU], 
-    [TOAH_sizeRelevant7].[InventoryId] AS [InventoryId], 
-    [TOAH_sizeRelevant7].[Size] AS [Size], 
-    [TOAH_sizeRelevant7].[Location] AS [Location], 
-    [TOAH_sizeRelevant7].[LowerLimitAdjustment] AS [LowerLimitAdjustment], 
-    [TOAH_sizeRelevant7].[UpperLimitAdjustment] AS [UpperLimitAdjustment], 
-    [TOAH_sizeRelevant7].[SizeDiff] AS [SizeDiff], 
-    [TOAH_sizeRelevant7].[ItemNumber] AS [ItemNumber], 
-    [TOAH_sizeRelevant7].[RequestCount] AS [RequestCount], 
-    [TOAH_sizeRelevant7].[CanShip] AS [CanShip], 
-    [TOAH_sizeRelevant7].[OrderReady] AS [OrderReady], 
-    [TOAH_sizeRelevant7].[row_number] AS [row_number]
-    FROM [dbo].[TOAH_sizeRelevant7] AS [TOAH_sizeRelevant7]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="TOAH_sizeRelevant8" EntityType="Self.TOAH_sizeRelevant8" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -1357,12 +1007,6 @@ error 6004: The table 'trackerwebdb.dbo.SizingRules' is referenced by a relation
           <EntitySet Name="TOAH_requests" EntityType="trackerwebdbModel.TOAH_requests" />
           <EntitySet Name="TOAH_requests2" EntityType="trackerwebdbModel.TOAH_requests2" />
           <EntitySet Name="TOAH_requests3" EntityType="trackerwebdbModel.TOAH_requests3" />
-          <EntitySet Name="TOAH_sizeRelevant" EntityType="trackerwebdbModel.TOAH_sizeRelevant" />
-          <EntitySet Name="TOAH_sizeRelevant3" EntityType="trackerwebdbModel.TOAH_sizeRelevant3" />
-          <EntitySet Name="TOAH_sizeRelevant4" EntityType="trackerwebdbModel.TOAH_sizeRelevant4" />
-          <EntitySet Name="TOAH_sizeRelevant5" EntityType="trackerwebdbModel.TOAH_sizeRelevant5" />
-          <EntitySet Name="TOAH_sizeRelevant6" EntityType="trackerwebdbModel.TOAH_sizeRelevant6" />
-          <EntitySet Name="TOAH_sizeRelevant7" EntityType="trackerwebdbModel.TOAH_sizeRelevant7" />
           <EntitySet Name="TOAH_sizeRelevant8" EntityType="trackerwebdbModel.TOAH_sizeRelevant8" />
           <EntitySet Name="UnshippedTOAHs" EntityType="trackerwebdbModel.UnshippedTOAH" />
           <FunctionImport Name="InsertOrUpdateTracking" ReturnType="Collection(trackerwebdbModel.InsertOrUpdateTracking_Result)">
@@ -1621,130 +1265,6 @@ error 6004: The table 'trackerwebdb.dbo.SizingRules' is referenced by a relation
           </Key>
           <Property Name="OrderId" Type="Int32" Nullable="false" />
           <Property Name="RequestCount" Type="Int64" />
-        </EntityType>
-        <EntityType Name="TOAH_sizeRelevant">
-          <Key>
-            <PropertyRef Name="OrderId" />
-          </Key>
-          <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Request_RequestedItem" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="Request_StreetSize" Type="Int32" />
-          <Property Name="OrderId" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="SKU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="InventoryId" Type="Int32" />
-          <Property Name="Size" Type="Int32" />
-          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="LowerLimitAdjustment" Type="Int32" />
-          <Property Name="UpperLimitAdjustment" Type="Int32" />
-          <Property Name="SizeDiff" Type="Int32" />
-        </EntityType>
-        <EntityType Name="TOAH_sizeRelevant3">
-          <Key>
-            <PropertyRef Name="CanShip" />
-          </Key>
-          <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Request_RequestedItem" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="Request_StreetSize" Type="Int32" />
-          <Property Name="OrderId" Type="Int32" />
-          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="SKU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="InventoryId" Type="Int32" />
-          <Property Name="Size" Type="Int32" />
-          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="LowerLimitAdjustment" Type="Int32" />
-          <Property Name="UpperLimitAdjustment" Type="Int32" />
-          <Property Name="SizeDiff" Type="Int32" />
-          <Property Name="ItemNumber" Type="Int64" />
-          <Property Name="RequestCount" Type="Int64" />
-          <Property Name="CanShip" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="TOAH_sizeRelevant4">
-          <Key>
-            <PropertyRef Name="CanShip" />
-          </Key>
-          <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Request_RequestedItem" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="Request_StreetSize" Type="Int32" />
-          <Property Name="OrderId" Type="Int32" />
-          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="SKU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="InventoryId" Type="Int32" />
-          <Property Name="Size" Type="Int32" />
-          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="LowerLimitAdjustment" Type="Int32" />
-          <Property Name="UpperLimitAdjustment" Type="Int32" />
-          <Property Name="SizeDiff" Type="Int32" />
-          <Property Name="ItemNumber" Type="Int64" />
-          <Property Name="RequestCount" Type="Int64" />
-          <Property Name="CanShip" Type="Int32" Nullable="false" />
-          <Property Name="OrderReady" Type="Int32" />
-        </EntityType>
-        <EntityType Name="TOAH_sizeRelevant5">
-          <Key>
-            <PropertyRef Name="CanShip" />
-          </Key>
-          <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Request_RequestedItem" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="Request_StreetSize" Type="Int32" />
-          <Property Name="OrderId" Type="Int32" />
-          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="SKU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="InventoryId" Type="Int32" />
-          <Property Name="Size" Type="Int32" />
-          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="LowerLimitAdjustment" Type="Int32" />
-          <Property Name="UpperLimitAdjustment" Type="Int32" />
-          <Property Name="SizeDiff" Type="Int32" />
-          <Property Name="ItemNumber" Type="Int64" />
-          <Property Name="RequestCount" Type="Int64" />
-          <Property Name="CanShip" Type="Int32" Nullable="false" />
-          <Property Name="OrderReady" Type="Int32" />
-        </EntityType>
-        <EntityType Name="TOAH_sizeRelevant6">
-          <Key>
-            <PropertyRef Name="CanShip" />
-          </Key>
-          <Property Name="rk" Type="Int64" />
-          <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Request_RequestedItem" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="Request_StreetSize" Type="Int32" />
-          <Property Name="OrderId" Type="Int32" />
-          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="SKU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="InventoryId" Type="Int32" />
-          <Property Name="Size" Type="Int32" />
-          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="LowerLimitAdjustment" Type="Int32" />
-          <Property Name="UpperLimitAdjustment" Type="Int32" />
-          <Property Name="SizeDiff" Type="Int32" />
-          <Property Name="ItemNumber" Type="Int64" />
-          <Property Name="RequestCount" Type="Int64" />
-          <Property Name="CanShip" Type="Int32" Nullable="false" />
-          <Property Name="OrderReady" Type="Int32" />
-        </EntityType>
-        <EntityType Name="TOAH_sizeRelevant7">
-          <Key>
-            <PropertyRef Name="CanShip" />
-          </Key>
-          <Property Name="rk" Type="Int64" />
-          <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Request_RequestedItem" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="Request_StreetSize" Type="Int32" />
-          <Property Name="OrderId" Type="Int32" />
-          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="SKU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="InventoryId" Type="Int32" />
-          <Property Name="Size" Type="Int32" />
-          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="LowerLimitAdjustment" Type="Int32" />
-          <Property Name="UpperLimitAdjustment" Type="Int32" />
-          <Property Name="SizeDiff" Type="Int32" />
-          <Property Name="ItemNumber" Type="Int64" />
-          <Property Name="RequestCount" Type="Int64" />
-          <Property Name="CanShip" Type="Int32" Nullable="false" />
-          <Property Name="OrderReady" Type="Int32" />
-          <Property Name="row_number" Type="Int64" />
         </EntityType>
         <EntityType Name="TOAH_sizeRelevant8">
           <Key>
@@ -2073,136 +1593,6 @@ error 6004: The table 'trackerwebdb.dbo.SizingRules' is referenced by a relation
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TOAH_sizeRelevant">
-            <EntityTypeMapping TypeName="trackerwebdbModel.TOAH_sizeRelevant">
-              <MappingFragment StoreEntitySet="TOAH_sizeRelevant">
-                <ScalarProperty Name="SizeDiff" ColumnName="SizeDiff" />
-                <ScalarProperty Name="UpperLimitAdjustment" ColumnName="UpperLimitAdjustment" />
-                <ScalarProperty Name="LowerLimitAdjustment" ColumnName="LowerLimitAdjustment" />
-                <ScalarProperty Name="Location" ColumnName="Location" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
-                <ScalarProperty Name="InventoryId" ColumnName="InventoryId" />
-                <ScalarProperty Name="SKU" ColumnName="SKU" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
-                <ScalarProperty Name="Request_StreetSize" ColumnName="Request_StreetSize" />
-                <ScalarProperty Name="Request_RequestedItem" ColumnName="Request_RequestedItem" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TOAH_sizeRelevant3">
-            <EntityTypeMapping TypeName="trackerwebdbModel.TOAH_sizeRelevant3">
-              <MappingFragment StoreEntitySet="TOAH_sizeRelevant3">
-                <ScalarProperty Name="CanShip" ColumnName="CanShip" />
-                <ScalarProperty Name="RequestCount" ColumnName="RequestCount" />
-                <ScalarProperty Name="ItemNumber" ColumnName="ItemNumber" />
-                <ScalarProperty Name="SizeDiff" ColumnName="SizeDiff" />
-                <ScalarProperty Name="UpperLimitAdjustment" ColumnName="UpperLimitAdjustment" />
-                <ScalarProperty Name="LowerLimitAdjustment" ColumnName="LowerLimitAdjustment" />
-                <ScalarProperty Name="Location" ColumnName="Location" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
-                <ScalarProperty Name="InventoryId" ColumnName="InventoryId" />
-                <ScalarProperty Name="SKU" ColumnName="SKU" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
-                <ScalarProperty Name="Request_StreetSize" ColumnName="Request_StreetSize" />
-                <ScalarProperty Name="Request_RequestedItem" ColumnName="Request_RequestedItem" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TOAH_sizeRelevant4">
-            <EntityTypeMapping TypeName="trackerwebdbModel.TOAH_sizeRelevant4">
-              <MappingFragment StoreEntitySet="TOAH_sizeRelevant4">
-                <ScalarProperty Name="OrderReady" ColumnName="OrderReady" />
-                <ScalarProperty Name="CanShip" ColumnName="CanShip" />
-                <ScalarProperty Name="RequestCount" ColumnName="RequestCount" />
-                <ScalarProperty Name="ItemNumber" ColumnName="ItemNumber" />
-                <ScalarProperty Name="SizeDiff" ColumnName="SizeDiff" />
-                <ScalarProperty Name="UpperLimitAdjustment" ColumnName="UpperLimitAdjustment" />
-                <ScalarProperty Name="LowerLimitAdjustment" ColumnName="LowerLimitAdjustment" />
-                <ScalarProperty Name="Location" ColumnName="Location" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
-                <ScalarProperty Name="InventoryId" ColumnName="InventoryId" />
-                <ScalarProperty Name="SKU" ColumnName="SKU" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
-                <ScalarProperty Name="Request_StreetSize" ColumnName="Request_StreetSize" />
-                <ScalarProperty Name="Request_RequestedItem" ColumnName="Request_RequestedItem" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TOAH_sizeRelevant5">
-            <EntityTypeMapping TypeName="trackerwebdbModel.TOAH_sizeRelevant5">
-              <MappingFragment StoreEntitySet="TOAH_sizeRelevant5">
-                <ScalarProperty Name="OrderReady" ColumnName="OrderReady" />
-                <ScalarProperty Name="CanShip" ColumnName="CanShip" />
-                <ScalarProperty Name="RequestCount" ColumnName="RequestCount" />
-                <ScalarProperty Name="ItemNumber" ColumnName="ItemNumber" />
-                <ScalarProperty Name="SizeDiff" ColumnName="SizeDiff" />
-                <ScalarProperty Name="UpperLimitAdjustment" ColumnName="UpperLimitAdjustment" />
-                <ScalarProperty Name="LowerLimitAdjustment" ColumnName="LowerLimitAdjustment" />
-                <ScalarProperty Name="Location" ColumnName="Location" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
-                <ScalarProperty Name="InventoryId" ColumnName="InventoryId" />
-                <ScalarProperty Name="SKU" ColumnName="SKU" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
-                <ScalarProperty Name="Request_StreetSize" ColumnName="Request_StreetSize" />
-                <ScalarProperty Name="Request_RequestedItem" ColumnName="Request_RequestedItem" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TOAH_sizeRelevant6">
-            <EntityTypeMapping TypeName="trackerwebdbModel.TOAH_sizeRelevant6">
-              <MappingFragment StoreEntitySet="TOAH_sizeRelevant6">
-                <ScalarProperty Name="OrderReady" ColumnName="OrderReady" />
-                <ScalarProperty Name="CanShip" ColumnName="CanShip" />
-                <ScalarProperty Name="RequestCount" ColumnName="RequestCount" />
-                <ScalarProperty Name="ItemNumber" ColumnName="ItemNumber" />
-                <ScalarProperty Name="SizeDiff" ColumnName="SizeDiff" />
-                <ScalarProperty Name="UpperLimitAdjustment" ColumnName="UpperLimitAdjustment" />
-                <ScalarProperty Name="LowerLimitAdjustment" ColumnName="LowerLimitAdjustment" />
-                <ScalarProperty Name="Location" ColumnName="Location" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
-                <ScalarProperty Name="InventoryId" ColumnName="InventoryId" />
-                <ScalarProperty Name="SKU" ColumnName="SKU" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
-                <ScalarProperty Name="Request_StreetSize" ColumnName="Request_StreetSize" />
-                <ScalarProperty Name="Request_RequestedItem" ColumnName="Request_RequestedItem" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="rk" ColumnName="rk" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TOAH_sizeRelevant7">
-            <EntityTypeMapping TypeName="trackerwebdbModel.TOAH_sizeRelevant7">
-              <MappingFragment StoreEntitySet="TOAH_sizeRelevant7">
-                <ScalarProperty Name="row_number" ColumnName="row_number" />
-                <ScalarProperty Name="OrderReady" ColumnName="OrderReady" />
-                <ScalarProperty Name="CanShip" ColumnName="CanShip" />
-                <ScalarProperty Name="RequestCount" ColumnName="RequestCount" />
-                <ScalarProperty Name="ItemNumber" ColumnName="ItemNumber" />
-                <ScalarProperty Name="SizeDiff" ColumnName="SizeDiff" />
-                <ScalarProperty Name="UpperLimitAdjustment" ColumnName="UpperLimitAdjustment" />
-                <ScalarProperty Name="LowerLimitAdjustment" ColumnName="LowerLimitAdjustment" />
-                <ScalarProperty Name="Location" ColumnName="Location" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
-                <ScalarProperty Name="InventoryId" ColumnName="InventoryId" />
-                <ScalarProperty Name="SKU" ColumnName="SKU" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
-                <ScalarProperty Name="Request_StreetSize" ColumnName="Request_StreetSize" />
-                <ScalarProperty Name="Request_RequestedItem" ColumnName="Request_RequestedItem" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="rk" ColumnName="rk" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TOAH_sizeRelevant8">
             <EntityTypeMapping TypeName="trackerwebdbModel.TOAH_sizeRelevant8">
               <MappingFragment StoreEntitySet="TOAH_sizeRelevant8">
@@ -2272,7 +1662,7 @@ error 6004: The table 'trackerwebdb.dbo.SizingRules' is referenced by a relation
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
