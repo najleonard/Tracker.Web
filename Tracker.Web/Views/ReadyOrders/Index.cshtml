@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Tracker.Web.Models.UpdateInventoryLocation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Returned Items still marked 'away'</h2>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayFor(model => model.OrderId)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.ItemNumber)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.RequestCount)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.InventoryId)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.SKU)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.Request_StreetSize)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.Size)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.SizeDiff)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.Location)
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <th>
+            @Html.DisplayNameFor(modelItem => item.OrderId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(modelItem => item.ItemNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(modelItem => item.RequestCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(modelItem => item.InventoryId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(modelItem => item.SKU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(modelItem => item.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(modelItem => item.Request_StreetSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(modelItem => item.Size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(modelItem => item.SizeDiff)
+        </th>
+        <th>
+            @Html.DisplayNameFor(modelItem => item.Location)
+        </th>
+        
+    </tr>
+}
+
+</table>
