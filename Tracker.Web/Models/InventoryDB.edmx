@@ -197,12 +197,8 @@ warning 6002: The table/view 'trackerwebdb.dbo.TOAH_readyCount' does not have a 
         </EntityType>
         <!--Errors Found During Generation:
 warning 6013: The table/view 'trackerwebdb.dbo.TOAH_readyDetails' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
--->
         <EntityType Name="TOAH_readyDetails">
-        <Key>
-            <PropertyRef Name="rk" />
-          </Key>
-          <Property Name="rk" Type="int" />
+          <Property Name="rk" Type="bigint" />
           <Property Name="OrderId" Type="int" />
           <Property Name="ItemNumber" Type="bigint" />
           <Property Name="RequestCount" Type="bigint" />
@@ -213,7 +209,7 @@ warning 6013: The table/view 'trackerwebdb.dbo.TOAH_readyDetails' does not have 
           <Property Name="Size" Type="int" />
           <Property Name="SizeDiff" Type="int" />
           <Property Name="Location" Type="varchar" MaxLength="50" />
-        </EntityType>
+        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'trackerwebdb.dbo.TOAH_requests' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="TOAH_requests">
