@@ -11,34 +11,34 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayFor(model => model.OrderId)
+            @Html.DisplayNameFor(model => model.OrderId)
         </th>
         <th>
-            @Html.DisplayFor(model => model.ItemNumber)
+            @Html.DisplayNameFor(model => model.ItemNumber)
         </th>
         <th>
-            @Html.DisplayFor(model => model.RequestCount)
+            @Html.DisplayNameFor(model => model.RequestCount)
         </th>
         <th>
-            @Html.DisplayFor(model => model.InventoryId)
+            @Html.DisplayNameFor(model => model.InventoryId)
         </th>
         <th>
-            @Html.DisplayFor(model => model.SKU)
+            @Html.DisplayNameFor(model => model.SKU)
         </th>
         <th>
-            @Html.DisplayFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            @Html.DisplayFor(model => model.Request_StreetSize)
+            @Html.DisplayNameFor(model => model.Request_StreetSize)
         </th>
         <th>
-            @Html.DisplayFor(model => model.Size)
+            @Html.DisplayNameFor(model => model.Size)
         </th>
         <th>
-            @Html.DisplayFor(model => model.SizeDiff)
+            @Html.DisplayNameFor(model => model.SizeDiff)
         </th>
         <th>
-            @Html.DisplayFor(model => model.Location)
+            @Html.DisplayNameFor(model => model.Location)
         </th>
        
     </tr>
@@ -46,34 +46,34 @@
 @foreach (var item in Model) {
     <tr>
         <th>
-            @Html.DisplayNameFor(modelItem => item.OrderId)
+            @Html.DisplayFor(modelItem => item.OrderId)
         </th>
         <th>
-            @Html.DisplayNameFor(modelItem => item.ItemNumber)
+            @Html.DisplayFor(modelItem => item.ItemNumber)
         </th>
         <th>
-            @Html.DisplayNameFor(modelItem => item.RequestCount)
+            @Html.DisplayFor(modelItem => item.RequestCount)
         </th>
         <th>
-            @Html.DisplayNameFor(modelItem => item.InventoryId)
+            @Html.DisplayFor(modelItem => item.InventoryId)
         </th>
         <th>
-            @Html.DisplayNameFor(modelItem => item.SKU)
+            @Html.DisplayFor(modelItem => item.SKU)
         </th>
         <th>
-            @Html.DisplayNameFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(modelItem => item.Request_StreetSize)
+            @Html.DisplayFor(modelItem => item.Request_StreetSize)
         </th>
         <th>
-            @Html.DisplayNameFor(modelItem => item.Size)
+            @Html.DisplayFor(modelItem => item.Size)
         </th>
         <th>
-            @Html.DisplayNameFor(modelItem => item.SizeDiff)
+            @Html.DisplayFor(modelItem => item.SizeDiff)
         </th>
         <th>
-            @Html.DisplayNameFor(modelItem => item.Location)
+            @Html.DisplayFor(modelItem => item.Location)
         </th>
         
     </tr>
