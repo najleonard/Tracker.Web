@@ -268,6 +268,9 @@
     <Compile Include="Models\FullInventoryView2.cs">
       <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\InsertOrUpdateTracking_Result.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Inventory.cs">
       <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
@@ -292,13 +295,55 @@
     <Compile Include="Models\Product.cs">
       <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductType.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SemiInventoryView.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TOAH_allOptions.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TOAH_readyCount.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TOAH_requests.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TOAH_requests2.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TOAH_requests3.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TOAH_sizeRelevant.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TOAH_sizeRelevant3.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TOAH_sizeRelevant4.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TOAH_sizeRelevant5.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TOAH_sizeRelevant6.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TOAH_sizeRelevant7.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TOAH_sizeRelevant8.cs">
       <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tracking.cs">
       <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TryOnAtHomeView.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UnshippedTOAH.cs">
       <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UpdateInventoryLocation.cs">
