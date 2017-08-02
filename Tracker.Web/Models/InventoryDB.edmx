@@ -114,6 +114,18 @@
           </Key>
           <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'trackerwebdb.dbo.SizingRules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SizingRules">
+          <Key>
+            <PropertyRef Name="ProductType" />
+          </Key>
+          <Property Name="ProductType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Size" Type="int" />
+          <Property Name="LowerLimitAdjustment" Type="int" />
+          <Property Name="UpperLimitAdjustment" Type="int" />
+          <Property Name="SizingCode" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Tracking">
           <Key>
             <PropertyRef Name="trackingNumber" />
@@ -243,6 +255,12 @@ warning 6002: The table/view 'trackerwebdb.dbo.TOAH_requests3' does not have a p
           <Property Name="OrderId" Type="int" Nullable="false" />
           <Property Name="RequestCount" Type="bigint" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'trackerwebdb.dbo.TOAH_shipableCount' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TOAH_shipableCount">
+          <Property Name="OrderId" Type="int" />
+          <Property Name="ShipableCount" Type="int" />
+        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'trackerwebdb.dbo.TOAH_sizeRelevant8' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="TOAH_sizeRelevant8">
@@ -523,6 +541,18 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="SizingRules_ProductTypes_Type_fk">
+          <End Role="ProductTypes" Type="Self.ProductTypes" Multiplicity="1" />
+          <End Role="SizingRules" Type="Self.SizingRules" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ProductTypes">
+              <PropertyRef Name="Type" />
+            </Principal>
+            <Dependent Role="SizingRules">
+              <PropertyRef Name="ProductType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="InsertOrUpdateTracking" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="trackingNumber" Type="varchar" Mode="In" />
           <Parameter Name="status" Type="varchar" Mode="In" />
@@ -541,6 +571,15 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProductTypes" EntityType="Self.ProductTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tracking" EntityType="Self.Tracking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SizingRules" EntityType="Self.SizingRules" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SizingRules].[ProductType] AS [ProductType], 
+    [SizingRules].[Size] AS [Size], 
+    [SizingRules].[LowerLimitAdjustment] AS [LowerLimitAdjustment], 
+    [SizingRules].[UpperLimitAdjustment] AS [UpperLimitAdjustment], 
+    [SizingRules].[SizingCode] AS [SizingCode]
+    FROM [dbo].[SizingRules] AS [SizingRules]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="FullInventoryView" EntityType="Self.FullInventoryView" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [FullInventoryView].[InventoryId] AS [InventoryId], 
@@ -761,6 +800,10 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
           <AssociationSet Name="Order_Inventory8_Id_fk" Association="Self.Order_Inventory8_Id_fk">
             <End Role="Inventory" EntitySet="Inventory" />
             <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="SizingRules_ProductTypes_Type_fk" Association="Self.SizingRules_ProductTypes_Type_fk">
+            <End Role="ProductTypes" EntitySet="ProductTypes" />
+            <End Role="SizingRules" EntitySet="SizingRules" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -1029,6 +1072,11 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
             <Parameter Name="updateDate" Mode="In" Type="String" />
             <Parameter Name="estDeliveryDate" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="SizingRules" EntityType="trackerwebdbModel.SizingRule" />
+          <AssociationSet Name="SizingRules_ProductTypes_Type_fk" Association="trackerwebdbModel.SizingRules_ProductTypes_Type_fk">
+            <End Role="ProductType" EntitySet="ProductTypes" />
+            <End Role="SizingRule" EntitySet="SizingRules" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Tracking">
           <Key>
@@ -1241,6 +1289,7 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
             <PropertyRef Name="Type" />
           </Key>
           <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SizingRule" Relationship="trackerwebdbModel.SizingRules_ProductTypes_Type_fk" FromRole="ProductType" ToRole="SizingRule" />
         </EntityType>
         <EntityType Name="TOAH_allOptions">
           <Key>
@@ -1328,6 +1377,29 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
           <Property Type="String" Name="updateDate" Nullable="true" MaxLength="100" />
           <Property Type="String" Name="estDeliveryDate" Nullable="true" MaxLength="100" />
         </ComplexType>
+        <EntityType Name="SizingRule">
+          <Key>
+            <PropertyRef Name="ProductType" />
+          </Key>
+          <Property Name="ProductType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Size" Type="Int32" />
+          <Property Name="LowerLimitAdjustment" Type="Int32" />
+          <Property Name="UpperLimitAdjustment" Type="Int32" />
+          <Property Name="SizingCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ProductType1" Relationship="trackerwebdbModel.SizingRules_ProductTypes_Type_fk" FromRole="SizingRule" ToRole="ProductType" />
+        </EntityType>
+        <Association Name="SizingRules_ProductTypes_Type_fk">
+          <End Type="trackerwebdbModel.ProductType" Role="ProductType" Multiplicity="1" />
+          <End Type="trackerwebdbModel.SizingRule" Role="SizingRule" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ProductType">
+              <PropertyRef Name="Type" />
+            </Principal>
+            <Dependent Role="SizingRule">
+              <PropertyRef Name="ProductType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1661,6 +1733,17 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="SizingRules">
+            <EntityTypeMapping TypeName="trackerwebdbModel.SizingRule">
+              <MappingFragment StoreEntitySet="SizingRules">
+                <ScalarProperty Name="SizingCode" ColumnName="SizingCode" />
+                <ScalarProperty Name="UpperLimitAdjustment" ColumnName="UpperLimitAdjustment" />
+                <ScalarProperty Name="LowerLimitAdjustment" ColumnName="LowerLimitAdjustment" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

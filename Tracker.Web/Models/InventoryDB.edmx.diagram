@@ -41,6 +41,8 @@
         <EntityTypeShape EntityType="trackerwebdbModel.TOAH_requests3" Width="1.5" PointX="13.75" PointY="9.75" />
         <EntityTypeShape EntityType="trackerwebdbModel.TOAH_sizeRelevant8" Width="1.5" PointX="15.75" PointY="9.75" />
         <EntityTypeShape EntityType="trackerwebdbModel.UnshippedTOAH" Width="1.5" PointX="9.75" PointY="12.75" />
+        <EntityTypeShape EntityType="trackerwebdbModel.SizingRule" Width="1.5" PointX="14" PointY="15.375" />
+        <AssociationConnector Association="trackerwebdbModel.SizingRules_ProductTypes_Type_fk" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -12,10 +12,14 @@ namespace Tracker.Web.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductType
+    public partial class SizingRule
     {
-        public string Type { get; set; }
+        public string ProductType { get; set; }
+        public Nullable<int> Size { get; set; }
+        public Nullable<int> LowerLimitAdjustment { get; set; }
+        public Nullable<int> UpperLimitAdjustment { get; set; }
+        public string SizingCode { get; set; }
     
-        public virtual SizingRule SizingRule { get; set; }
+        public virtual ProductType ProductType1 { get; set; }
     }
 }

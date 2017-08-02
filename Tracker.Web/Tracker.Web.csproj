@@ -301,6 +301,9 @@
     <Compile Include="Models\SemiInventoryView.cs">
       <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SizingRule.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\TOAH_allOptions.cs">
       <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
