@@ -311,6 +311,9 @@
     <Compile Include="Models\TOAH_requests.cs">
       <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TOAH_sizeRelevant8.cs">
+      <DependentUpon>InventoryDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Tracking.cs">
       <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
@@ -321,9 +324,6 @@
       <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UpdateInventoryLocation.cs">
-      <DependentUpon>InventoryDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ReadyOrders.cs">
       <DependentUpon>InventoryDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UploadModel.cs" />
@@ -665,7 +665,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\UpdateInventory\Index.cshtml" />
     <Content Include="Views\UpdateInventoryLocations\Index.cshtml" />
-      <Content Include="Views\ReadyOrders\Index.cshtml" />
+    <Content Include="Views\ReadyOrders\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
