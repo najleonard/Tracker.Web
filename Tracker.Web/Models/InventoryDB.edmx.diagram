@@ -40,7 +40,7 @@
         <EntityTypeShape EntityType="trackerwebdbModel.TOAH_requests2" Width="1.5" PointX="7.75" PointY="12.75" />
         <EntityTypeShape EntityType="trackerwebdbModel.TOAH_requests3" Width="1.5" PointX="13.75" PointY="9.75" />
         <EntityTypeShape EntityType="trackerwebdbModel.TOAH_sizeRelevant8" Width="1.5" PointX="15.75" PointY="9.75" />
-        <EntityTypeShape EntityType="trackerwebdbModel.UnshippedTOAH" Width="1.5" PointX="10.75" PointY="15.75" />
+        <EntityTypeShape EntityType="trackerwebdbModel.UnshippedTOAH" Width="1.5" PointX="9.75" PointY="12.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
