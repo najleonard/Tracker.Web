@@ -47,7 +47,7 @@ namespace Tracker.Web.Models
         public virtual DbSet<UnshippedTOAH> UnshippedTOAHs { get; set; }
         public virtual DbSet<SizingRule> SizingRules { get; set; }
         public virtual DbSet<TOAH_readyCount> TOAH_readyCount { get; set; }
-        public virtual DbSet<TOAH_sizeRelevant8> TOAH_sizeRelevant8 { get; set; }
+        public virtual DbSet<TOAH_sizeRelevant8> TOAH_sizeRelevant8s { get; set; }
     
         public virtual ObjectResult<InsertOrUpdateTracking_Result> InsertOrUpdateTracking(string trackingNumber, string status, string updateDate, string estDeliveryDate)
         {

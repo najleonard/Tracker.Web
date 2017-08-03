@@ -17,7 +17,7 @@ namespace Tracker.Web.Controllers
         // GET: UpdateInventoryLocations
         public ActionResult Index()
         {
-            return View(db.TOAH_sizeRelevant8.ToList());
+            return View(db.TOAH_sizeRelevant8s.ToList());
         }
 
     }

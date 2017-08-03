@@ -1005,7 +1005,7 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
             <End Role="SizingRule" EntitySet="SizingRules" />
           </AssociationSet>
           <EntitySet Name="TOAH_readyCount" EntityType="trackerwebdbModel.TOAH_readyCount" />
-          <EntitySet Name="TOAH_sizeRelevant8" EntityType="trackerwebdbModel.TOAH_sizeRelevant8" />
+          <EntitySet Name="TOAH_sizeRelevant8s" EntityType="trackerwebdbModel.TOAH_sizeRelevant8" />
         </EntityContainer>
         <EntityType Name="Tracking">
           <Key>
@@ -1586,7 +1586,7 @@ warning 6002: The table/view 'trackerwebdb.sys.database_firewall_rules' does not
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TOAH_sizeRelevant8">
+          <EntitySetMapping Name="TOAH_sizeRelevant8s">
             <EntityTypeMapping TypeName="trackerwebdbModel.TOAH_sizeRelevant8">
               <MappingFragment StoreEntitySet="TOAH_sizeRelevant8">
                 <ScalarProperty Name="row_number" ColumnName="row_number" />
