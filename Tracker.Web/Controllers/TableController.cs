@@ -142,8 +142,8 @@ namespace Tracker.Web.Controllers
     
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
-                DtResponse response  = new Editor(db, "Inventory","Id")
-                    .Model<TOAH_sizeRelevant8s>()
+                DtResponse response  = new Editor(db, "testing")
+                    .Model<TOAH_sizeRelevant8>()
                     .Process(request)
                     .Data();
                 return Json(response);
