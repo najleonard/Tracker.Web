@@ -142,7 +142,7 @@ namespace Tracker.Web.Controllers
     
             using (var db = new Database(settings.DbType, settings.DbConnection))
             {
-                DtResponse response  = new Editor(db, "testing")
+                DtResponse response  = new Editor(db, "TOAH_sizeRelevant8")
                     .Model<TOAH_sizeRelevant8>()
                     .Process(request)
                     .Data();
@@ -199,7 +199,7 @@ namespace Tracker.Web.Controllers
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             }
         }
-        
+
 
         
         [HttpGet]
