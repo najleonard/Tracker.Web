@@ -133,6 +133,22 @@ namespace Tracker.Web.Controllers
     [Authorize]
     public class TableController : ApiController
     {
+        [Route("getReadyDetails")]
+        [HttpGet, HttpPost]
+        public IHttpActionResult ReadyDetailsTable()
+        {
+            var settings = Properties.Settings.Default;
+            var request = HttpContext.Current.Request;
+    
+            using (var db = new Database(settings.DbType, settings.DbConnection))
+            {
+                DtResponse response  = new Editor(db, "Inventory","Id")
+                    .Model<TOAH_sizeRelevant8s>()
+                    .Process(request)
+                    .Data();
+                return Json(response);
+            }
+        }
 
         [Route("getInventory")]
         [HttpGet, HttpPost]
