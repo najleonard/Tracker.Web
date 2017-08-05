@@ -13,24 +13,21 @@
 (function($){
 
 $(document).ready(function() {
-	var editor = new $.fn.dataTable.Editor( {
-		ajax: '/api/table/getReadyDetails',
-		table: '#example',
-		fields: [
-			{
-				"label": "OrderId:",
-				"name": "OrderId"
-			}
-		]
-	} );
+    $('#example').DataTable( {
+        "ajax": '/api/table/getReadyDetails',,
+        "columns": [
+            { "data": "OrderId" }
+        ]
+    } );
 } );
+
 
 }(jQuery));
         
 </script>
 </head>
 
-<h2>Lace & Liberty Inventory</h2>
+<h2>Lace & Liberty Ready Orders</h2>
 <table id="example" class="display"cellspacing="0" style="font-family:arial;font-size:10px">
         <thead>
             <tr>
