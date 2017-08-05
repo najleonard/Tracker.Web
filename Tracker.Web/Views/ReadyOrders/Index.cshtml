@@ -13,7 +13,16 @@ $(document).ready(function() {
     $('#example').DataTable( {
         "ajax": '/api/table/getReadyDetails',
         "columns": [
-            { "data": "OrderId" }
+            { "data": "OrderId" },
+            { "data": "ItemNumber" },
+            { "data": "RequestCount" },
+            { "data": "InventoryId" },
+            { "data": "SKU" },
+            { "data": "Name" },
+            { "data": "Request_StreetSize" },
+            { "data": "Size" },
+            { "data": "SizeDiff" },
+            { "data": "Location" }
         ]
     } );
 } );
@@ -29,12 +38,29 @@ $(document).ready(function() {
         <thead>
             <tr>
                 <th cellpadding="5px" >OrderId</th>
+                <th>ItemNumber</th>
+                <th>RequestCount</th>
+                <th>InventoryId</th>
+                <th>SKU</th>
+                <th>Name</th>
+                <th>Request_StreetSize</th>
+                <th>Size</th>
+                <th>SizeDiff</th>
+                <th>Location</th>
             </tr>
         </thead>
         <tfoot>
             <tr>
                 <th cellpadding="5px" >OrderId</th>
-              
+                <th>ItemNumber</th>
+                <th>RequestCount</th>
+                <th>InventoryId</th>
+                <th>SKU</th>
+                <th>Name</th>
+                <th>Request_StreetSize</th>
+                <th>Size</th>
+                <th>SizeDiff</th>
+                <th>Location</th>
             </tr>
         </tfoot>
     </table>
