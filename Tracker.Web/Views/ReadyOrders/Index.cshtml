@@ -1,82 +1,50 @@
-﻿@model IEnumerable<Tracker.Web.Models.TOAH_sizeRelevant8>
+﻿<head>    <!-- DataTables CSS -->
+    
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.4/moment-2.13.0/dt-1.10.13/b-1.2.4/se-1.2.0/datatables.min.css">
+	<link rel="stylesheet" type="text/css" href="Content/editor.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedcolumns/3.2.2/css/fixedColumns.dataTables.min.css">
 
-@{
-    ViewBag.Title = "Index";
-}
+	<script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/v/dt/jqc-1.12.4/moment-2.13.0/dt-1.10.13/b-1.2.4/se-1.2.0/datatables.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="Scripts/dataTables.editor.js"></script>
+	<script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/fixedcolumns/3.2.2/js/dataTables.fixedColumns.min.js"></script>
+	
 
-<h2>Returned Items still marked 'away'</h2>
+<script type="text/javascript" charset="utf8">
+(function($){
 
+$(document).ready(function() {
+	var editor = new $.fn.dataTable.Editor( {
+		ajax: '/api/table/getReadyDetails',
+		table: '#example',
+		fields: [
+			{
+				"label": "OrderId:",
+				"name": "OrderId"
+			}
+		]
+	} );
+	
+} );
 
-
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.OrderId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ItemNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RequestCount)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.InventoryId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SKU)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Request_StreetSize)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Size)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SizeDiff)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Location)
-        </th>
-       
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <th>
-            @Html.DisplayFor(modelItem => item.OrderId)
-        </th>
-        <th>
-            @Html.DisplayFor(modelItem => item.ItemNumber)
-        </th>
-        <th>
-            @Html.DisplayFor(modelItem => item.RequestCount)
-        </th>
-        <th>
-            @Html.DisplayFor(modelItem => item.InventoryId)
-        </th>
-        <th>
-            @Html.DisplayFor(modelItem => item.SKU)
-        </th>
-        <th>
-            @Html.DisplayFor(modelItem => item.Name)
-        </th>
-        <th>
-            @Html.DisplayFor(modelItem => item.Request_StreetSize)
-        </th>
-        <th>
-            @Html.DisplayFor(modelItem => item.Size)
-        </th>
-        <th>
-            @Html.DisplayFor(modelItem => item.SizeDiff)
-        </th>
-        <th>
-            @Html.DisplayFor(modelItem => item.Location)
-        </th>
+}(jQuery));
         
-    </tr>
-}
+</script>
+</head>
 
-</table>
+<h2>Lace & Liberty Inventory</h2>
+<table id="example" class="display"cellspacing="0" style="font-family:arial;font-size:10px">
+        <thead>
+            <tr>
+                <th cellpadding="5px" >OrderId</th>
+                
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th cellpadding="5px" >OrderId</th>
+              
+            </tr>
+        </tfoot>
+    </table>
+
+
