@@ -152,7 +152,7 @@ namespace Tracker.Web.Controllers
 
         [Route("getInventory")]
         [HttpGet, HttpPost]
-        public IHttpActionResult InventoryTable()
+        public IHttpActionResult InventoryTable(int OrderId)
         {
             var settings = Properties.Settings.Default;
             var request = HttpContext.Current.Request;
@@ -163,6 +163,7 @@ namespace Tracker.Web.Controllers
                     .Model<JoinInventoryProducts>()
                     .LeftJoin("Products", "Products.sku", "=", "Inventory.Product_sku")
                     .Process(request)
+                    .Where("Inventory.Location",OrderId)
                     .Data();
                 return Json(response);
             }
