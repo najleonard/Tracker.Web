@@ -25,6 +25,15 @@ $(document).ready(function() {
             { "data": "Location" }
         ]
     } );
+    alert(
+    table
+        .columns( 0 )
+        .data()
+        .eq( 0 )      // Reduce the 2D array into a 1D array of data
+        .sort()       // Sort data alphabetically
+        .unique()     // Reduce to unique values
+        .join( '<br>' )
+    );
 } );
 
 
