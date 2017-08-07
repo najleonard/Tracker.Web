@@ -21,7 +21,7 @@ function gup( name, url ) {
 $(document).ready(function() {
      testing = $('#example').DataTable( {
          "searching": false,
-          "dom": 'lrtip',
+           "paging": false,
         "ajax": '/api/table/getInventory2?OrderId='+gup('orderId'),
         "columns": [
             { "data": "Inventory.Id" },
