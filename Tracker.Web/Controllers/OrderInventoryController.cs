@@ -16,7 +16,7 @@ namespace Tracker.Web.Controllers
     public class OrderInventoryController : Controller
     {
         // GET: Monitor
-        public ActionResult Index()
+        public ActionResult Index(string OrderId)
         {
             return View();
         }
