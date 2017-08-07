@@ -16,11 +16,11 @@ function gup( name, url ) {
     var results = regex.exec( url );
     return results == null ? null : results[1];
 }
-alert(gup(orderId));
+//alert(gup('orderId'));
 (function($){
 $(document).ready(function() {
      testing = $('#example').DataTable( {
-        "ajax": '/api/table/getInventory2?OrderId='+gup(orderId),
+        "ajax": '/api/table/getInventory2?OrderId='+gup('orderId'),
         "columns": [
             { "data": "Inventory.Id" },
             { "data": "Products.name" },
