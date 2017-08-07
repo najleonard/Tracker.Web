@@ -25,7 +25,14 @@ $(document).ready(function() {
             { "data": "Location" }
         ]
     } );
-    alert(table.column(4).data());
+    alert( 'Column 4 sum: '+
+    table
+        .column( 4 )
+        .data()
+        .reduce( function (a,b) {
+            return a + b;
+        } );
+    );
 } );
 
 
