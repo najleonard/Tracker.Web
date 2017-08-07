@@ -10,7 +10,7 @@
 (function($){
 
 $(document).ready(function() {
-    $('#example').DataTable( {
+    var table = $('#example').DataTable( {
         "ajax": '/api/table/getReadyDetails',
         "columns": [
             { "data": "OrderId" },
@@ -25,6 +25,7 @@ $(document).ready(function() {
             { "data": "Location" }
         ]
     } );
+    alert(table.column(4).data());
 } );
 
 
