@@ -10,7 +10,7 @@
 (function($){
 
 $(document).ready(function() {
-    var table = $('#example').DataTable( {
+    var testing = $('#example').DataTable( {
         "ajax": '/api/table/getReadyDetails',
         "columns": [
             { "data": "OrderId" },
@@ -26,13 +26,12 @@ $(document).ready(function() {
         ]
     } );
     alert(
-    table
+    testing
         .columns( 0 )
         .data()
         .eq( 0 )      // Reduce the 2D array into a 1D array of data
         .sort()       // Sort data alphabetically
         .unique()     // Reduce to unique values
-        .join( '<br>' )
     );
 } );
 
