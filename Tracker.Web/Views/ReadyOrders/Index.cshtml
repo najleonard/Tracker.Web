@@ -7,7 +7,8 @@
 	
 
 <script type="text/javascript" charset="utf8">
-
+var testing;
+(function($){
 $(document).ready(function() {
      testing = $('#example').DataTable( {
         "ajax": '/api/table/getReadyDetails',
@@ -25,6 +26,7 @@ $(document).ready(function() {
         ]
     } );
 } );
+}(jQuery));
         
 </script>
 </head>
