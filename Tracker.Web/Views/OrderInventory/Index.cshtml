@@ -22,6 +22,7 @@ $(document).ready(function() {
      testing = $('#example').DataTable( {
          "searching": false,
            "paging": false,
+           "dom":'<"top">t<"bottom">',
         "ajax": '/api/table/getInventory2?OrderId='+gup('orderId'),
         "columns": [
             { "data": "Inventory.Id" },
