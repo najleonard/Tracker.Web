@@ -8,9 +8,9 @@
 
 <script type="text/javascript" charset="utf8">
 (function($){
-
+var testing;
 $(document).ready(function() {
-    var testing = $('#example').DataTable( {
+     testing = $('#example').DataTable( {
         "ajax": '/api/table/getReadyDetails',
         "columns": [
             { "data": "OrderId" },
