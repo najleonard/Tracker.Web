@@ -1,0 +1,48 @@
+﻿<head>    <!-- DataTables CSS -->
+    
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+	
+	<script type="text/javascript" charset="utf-8" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+	
+
+<script type="text/javascript" charset="utf8">
+var testing;
+(function($){
+$(document).ready(function() {
+     testing = $('#example').DataTable( {
+        "ajax": '/api/table/getInventory2?OrderId=1633',
+        "columns": [
+            { "data": "Inventory.Id" },
+            { "data": "Products.name" },
+            { "data": "Inventory.Size" },
+            { "data": "Products.description" }
+        ]
+    } );
+} );
+}(jQuery));
+        
+</script>
+</head>
+
+<h2>Lace & Liberty Inventory Orders</h2>
+<table id="example" class="display"cellspacing="0" style="font-family:arial;font-size:10px">
+        <thead>
+            <tr>
+                <th cellpadding="5px" >Inventory.Id</th>
+                <th>Name</th>
+                <th>Size</th>
+                <th>Descroption</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th cellpadding="5px" >Inventory.Id</th>
+                <th>Name</th>
+                <th>Size</th>
+                <th>Descroption</th>
+            </tr>
+        </tfoot>
+    </table>
+
+
