@@ -227,6 +227,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UpdateInventoryLocationsController.cs" />
     <Compile Include="Controllers\ReadyOrdersController.cs" />
+    <Compile Include="Controllers\OrderInventoryController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -666,6 +667,7 @@
     <Content Include="Views\UpdateInventory\Index.cshtml" />
     <Content Include="Views\UpdateInventoryLocations\Index.cshtml" />
     <Content Include="Views\ReadyOrders\Index.cshtml" />
+    <Content Include="Views\OrderInventory\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
