@@ -129,28 +129,7 @@ namespace Tracker.Web.Controllers
         
     }
 
-    [RoutePrefix("api/order")]
-    public class TableController2 : ApiController
-    {
-        [Route("getInventory2")]
-        [HttpGet, HttpPost]
-        public IHttpActionResult InventoryTable2(string OrderId)
-        {
-            var settings = Properties.Settings.Default;
-            var request = HttpContext.Current.Request;
-    
-            using (var db = new Database(settings.DbType, settings.DbConnection))
-            {
-                DtResponse response  = new Editor(db, "Inventory","Id")
-                    .Model<JoinInventoryProducts>()
-                    .LeftJoin("Products", "Products.sku", "=", "Inventory.Product_sku")
-                    .Where("Inventory.Location",OrderId)
-                    .Process(request)
-                    .Data();
-                return Json(response);
-            }
-        }
-    }
+
     [RoutePrefix("api/table")]
     [Authorize]
     public class TableController : ApiController
@@ -184,6 +163,26 @@ namespace Tracker.Web.Controllers
                 DtResponse response  = new Editor(db, "Inventory","Id")
                     .Model<JoinInventoryProducts>()
                     .LeftJoin("Products", "Products.sku", "=", "Inventory.Product_sku")
+                    .Process(request)
+                    .Data();
+                return Json(response);
+            }
+        }
+
+        [Route("getInventory2")]
+        [HttpGet, HttpPost]
+        [AllowAnonymous]
+        public IHttpActionResult InventoryTable2(string OrderId)
+        {
+            var settings = Properties.Settings.Default;
+            var request = HttpContext.Current.Request;
+    
+            using (var db = new Database(settings.DbType, settings.DbConnection))
+            {
+                DtResponse response  = new Editor(db, "Inventory","Id")
+                    .Model<JoinInventoryProducts>()
+                    .LeftJoin("Products", "Products.sku", "=", "Inventory.Product_sku")
+                    .Where("Inventory.Location",OrderId)
                     .Process(request)
                     .Data();
                 return Json(response);
