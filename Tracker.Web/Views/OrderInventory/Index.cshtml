@@ -23,7 +23,7 @@ $(document).ready(function() {
          "searching": false,
            "paging": false,
            "dom":'<"top">t<"bottom">',
-        "ajax": '/api/table/getInventory2?OrderId='+gup('orderId'),
+        "ajax": '/api/order/getInventory2?OrderId='+gup('orderId'),
         "columns": [
             { "data": "Inventory.Id" },
             { "data": "Products.name" },
