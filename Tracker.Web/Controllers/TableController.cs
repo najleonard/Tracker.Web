@@ -152,7 +152,7 @@ namespace Tracker.Web.Controllers
 
         [Route("getInventory")]
         [HttpGet, HttpPost]
-        public IHttpActionResult InventoryTable(int OrderId)
+        public IHttpActionResult InventoryTable()
         {
             var settings = Properties.Settings.Default;
             var request = HttpContext.Current.Request;
@@ -163,7 +163,25 @@ namespace Tracker.Web.Controllers
                     .Model<JoinInventoryProducts>()
                     .LeftJoin("Products", "Products.sku", "=", "Inventory.Product_sku")
                     .Process(request)
+                    .Data();
+                return Json(response);
+            }
+        }
+
+        [Route("getInventory2")]
+        [HttpGet, HttpPost]
+        public IHttpActionResult InventoryTable2(int OrderId)
+        {
+            var settings = Properties.Settings.Default;
+            var request = HttpContext.Current.Request;
+    
+            using (var db = new Database(settings.DbType, settings.DbConnection))
+            {
+                DtResponse response  = new Editor(db, "Inventory","Id")
+                    .Model<JoinInventoryProducts>()
+                    .LeftJoin("Products", "Products.sku", "=", "Inventory.Product_sku")
                     .Where("Inventory.Location",OrderId)
+                    .Process(request)
                     .Data();
                 return Json(response);
             }
