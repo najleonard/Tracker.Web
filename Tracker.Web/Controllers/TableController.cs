@@ -170,7 +170,7 @@ namespace Tracker.Web.Controllers
 
         [Route("getInventory2")]
         [HttpGet, HttpPost]
-        public IHttpActionResult InventoryTable2(int OrderId)
+        public IHttpActionResult InventoryTable2(string OrderId)
         {
             var settings = Properties.Settings.Default;
             var request = HttpContext.Current.Request;
