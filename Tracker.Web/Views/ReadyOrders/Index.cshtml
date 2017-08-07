@@ -7,8 +7,7 @@
 	
 
 <script type="text/javascript" charset="utf8">
-(function($){
-var testing;
+
 $(document).ready(function() {
      testing = $('#example').DataTable( {
         "ajax": '/api/table/getReadyDetails',
@@ -25,18 +24,7 @@ $(document).ready(function() {
             { "data": "Location" }
         ]
     } );
-    alert(
-    testing
-        .columns( 0 )
-        .data()
-        .eq( 0 )      // Reduce the 2D array into a 1D array of data
-        .sort()       // Sort data alphabetically
-        .unique()     // Reduce to unique values
-    );
 } );
-
-
-}(jQuery));
         
 </script>
 </head>
