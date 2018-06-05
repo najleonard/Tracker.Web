@@ -26,7 +26,6 @@ namespace Tracker.Web.Controllers
 
 
             //forward to L&L staff numbers
-            //neil/danielle/annie
 			var accountSid = ConfigurationManager.AppSettings["TwilioAccountSid"];
 			var authToken = ConfigurationManager.AppSettings["TwilioAuthToken"];
 			TwilioClient.Init(accountSid, authToken);
