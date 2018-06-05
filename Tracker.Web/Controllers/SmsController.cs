@@ -73,7 +73,7 @@ namespace Tracker.Web.Controllers
                     );
 
                     var to3 = new PhoneNumber("+17073194734");
-                    var message2 = MessageResource.Create(
+                    var message3 = MessageResource.Create(
                         to: to3,
                         from: from,
                         body: SMSFrom + ": " + Body
