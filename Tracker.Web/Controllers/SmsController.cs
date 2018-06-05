@@ -71,6 +71,13 @@ namespace Tracker.Web.Controllers
                         from: from,
                         body: SMSFrom + ": " + Body
                     );
+
+                    var to3 = new PhoneNumber("+17073194734");
+                    var message3 = MessageResource.Create(
+                        to: to3,
+                        from: from,
+                        body: SMSFrom + ": " + Body
+                    );
                     return Content(message.Sid);
                 }
             }
